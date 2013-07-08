@@ -1,0 +1,87 @@
+
+URxvt.termName:            rxvt-unicode-256color
+URxvt.perl-ext-common:     default,matcher
+URxvt.url-launcher:        /usr/bin/chromium
+URxvt.matcher.button:      1
+URxvt.urgentOnBell:        True
+URxvt.intensityStyles:     True
+URxvt.font:                -misc-proggytinyttsz-medium-r-normal--0-0-0-0-c-0-iso8859-1
+URxvt.boldFont:
+URxvt.italicFont:
+URxvt.scrollBar_floating:  True
+URxvt.scrollstyle:         plain
+
+! --- special colors ---
+*background: #2c2e27
+*foreground: #bcbdc0
+! --- standard colors ---
+! black
+*color0: #000000
+! bright_black
+*color8: #555753
+! red
+*color1: #CC0000
+! bright_red
+*color9: #EF2929
+! green
+*color2: #4E9A06
+! bright_green
+*color10: #8AE234
+! yellow
+*color3: #C4A000
+! bright_yellow
+*color11: #FCE94F
+! blue
+*color4: #3465A4
+! bright_blue
+*color12: #729FCF
+! magenta
+*color5: #75507B
+! bright_magenta
+*color13: #AD7FA8
+! cyan
+*color6: #06989A
+! bright_cyan
+*color14: #34E2E2
+! white
+*color7: #D3D7CF
+! bright_white
+*color15: #EEEEEC
+
+!! --- special colors ---
+!*background: #2c2e27
+!*foreground: #bcbdc0
+!! --- standard colors ---
+!! black
+!*color0: #090c0e
+!! bright_black
+!*color8: #424547
+!! red
+!*color1: #b32820
+!! bright_red
+!*color9: #db423a
+!! green
+!*color2: #1bb72a
+!! bright_green
+!*color10: #34de44
+!! yellow
+!*color3: #a9b720
+!! bright_yellow
+!*color11: #d0de3a
+!! blue
+!*color4: #251eb9
+!! bright_blue
+!*color12: #3f38e0
+!! magenta
+!*color5: #b31eaf
+!! bright_magenta
+!*color13: #db38d5
+!! cyan
+!*color6: #1badb9
+!! bright_cyan
+!*color14: #34d3e0
+!! white
+!*color7: #8d9193
+!! bright_white
+!*color15: #dfe3e5
+
