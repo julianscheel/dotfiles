@@ -9,7 +9,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-exec "~/.fehbg"
+exec "~/scripts/setwallpaper.sh"
 
 set $mod Mod4
 
@@ -126,6 +126,7 @@ bindsym XF86AudioPlay        exec "mpc -q toggle"
 bindsym XF86AudioStop        exec "mpc -q stop"
 bindsym XF86AudioNext        exec "mpc -q next"
 bindsym XF86AudioPrev        exec "mpc -q prev"
+bindsym XF86Sleep            exec "~/scripts/lock-screen.sh"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

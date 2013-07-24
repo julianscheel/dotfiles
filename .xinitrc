@@ -1,8 +1,6 @@
 #!/bin/sh
 
-./scripts/add_720p
-./scripts/scale_full_aspect
 xrdb -merge ~/.Xresources
-xset s 0 0
+xset s 0 0 -dpms
 exec urxvt -ls
 
