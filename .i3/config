@@ -9,6 +9,9 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+exec "start-pulseaudio-x11"
+exec "urxvtd -q -o -f"
+exec "mpd"
 exec "~/scripts/setwallpaper.sh"
 
 set $mod Mod4
@@ -31,7 +34,7 @@ for_window [class="dosbox"] floating enable
 
 
 # start a terminal
-bindsym $mod+Return exec urxvtc
+bindsym $mod+Return exec "urxvtc"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -117,7 +120,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'systemctl --user exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' '~/scripts/stop-i3.sh'"
 
 bindsym XF86AudioRaiseVolume exec "amixer -q set Master 2%+ unmute && killall -USR1 i3status"
 bindsym XF86AudioLowerVolume exec "amixer -q set Master 2%- && killall -USR1 i3status"
