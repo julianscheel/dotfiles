@@ -1,15 +1,19 @@
 
 URxvt.termName:            rxvt-unicode-256color
 URxvt.perl-ext-common:     default,matcher
-URxvt.url-launcher:        /usr/bin/chromium
+URxvt.url-launcher:        /usr/bin/firefox
 URxvt.matcher.button:      1
 URxvt.urgentOnBell:        True
 URxvt.intensityStyles:     True
-URxvt.font:                -misc-proggytinyttsz-medium-r-normal--0-0-0-0-c-0-iso8859-1
+URxvt.font:                xft:DejaVu Sans Mono:size=10
 URxvt.boldFont:
 URxvt.italicFont:
 URxvt.scrollBar_floating:  True
 URxvt.scrollstyle:         plain
+URxvt*scrollTtyOutput:     False
+URxvt*scrollWithBuffer:    True
+URxvt*scrollTtyKeypress:   True
+URxvt*saveLines:           1000
 
 ! --- special colors ---
 *background: #2c2e27
