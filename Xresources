@@ -5,7 +5,7 @@ URxvt.url-launcher:        /usr/bin/firefox
 URxvt.matcher.button:      1
 URxvt.urgentOnBell:        True
 URxvt.intensityStyles:     True
-URxvt.font:                xft:DejaVu Sans Mono:size=10
+URxvt.font:                xft:DejaVu Sans Mono for Powerline:size=10
 URxvt.boldFont:
 URxvt.italicFont:
 URxvt.scrollBar_floating:  True
@@ -15,77 +15,40 @@ URxvt*scrollWithBuffer:    True
 URxvt*scrollTtyKeypress:   True
 URxvt*saveLines:           1000
 
-! --- special colors ---
-*background: #2c2e27
-*foreground: #bcbdc0
-! --- standard colors ---
-! black
-*color0: #000000
-! bright_black
-*color8: #555753
-! red
-*color1: #CC0000
-! bright_red
-*color9: #EF2929
-! green
-*color2: #4E9A06
-! bright_green
-*color10: #8AE234
-! yellow
-*color3: #C4A000
-! bright_yellow
-*color11: #FCE94F
-! blue
-*color4: #3465A4
-! bright_blue
-*color12: #729FCF
-! magenta
-*color5: #75507B
-! bright_magenta
-*color13: #AD7FA8
-! cyan
-*color6: #06989A
-! bright_cyan
-*color14: #34E2E2
-! white
-*color7: #D3D7CF
-! bright_white
-*color15: #EEEEEC
+! -----------------------------------------------------------------------------
+! File: gruvbox-dark.xresources
+! Description: Retro groove colorscheme generalized
+! Author: morhetz <morhetz@gmail.com>
+! Source: https://github.com/morhetz/gruvbox-generalized
+! Last Modified: 6 Sep 2014
+! -----------------------------------------------------------------------------
 
-!! --- special colors ---
-!*background: #2c2e27
-!*foreground: #bcbdc0
-!! --- standard colors ---
-!! black
-!*color0: #090c0e
-!! bright_black
-!*color8: #424547
-!! red
-!*color1: #b32820
-!! bright_red
-!*color9: #db423a
-!! green
-!*color2: #1bb72a
-!! bright_green
-!*color10: #34de44
-!! yellow
-!*color3: #a9b720
-!! bright_yellow
-!*color11: #d0de3a
-!! blue
-!*color4: #251eb9
-!! bright_blue
-!*color12: #3f38e0
-!! magenta
-!*color5: #b31eaf
-!! bright_magenta
-!*color13: #db38d5
-!! cyan
-!*color6: #1badb9
-!! bright_cyan
-!*color14: #34d3e0
-!! white
-!*color7: #8d9193
-!! bright_white
-!*color15: #dfe3e5
+! hard contrast: *background: #1d2021
+*background: #282828
+! soft contrast: *background: #32302f
+*foreground: #ebdbb2
+! Black + DarkGrey
+*color0:  #282828
+*color8:  #928374
+! DarkRed + Red
+*color1:  #cc241d
+*color9:  #fb4934
+! DarkGreen + Green
+*color2:  #98971a
+*color10: #b8bb26
+! DarkYellow + Yellow
+*color3:  #d79921
+*color11: #fabd2f
+! DarkBlue + Blue
+*color4:  #458588
+*color12: #83a598
+! DarkMagenta + Magenta
+*color5:  #b16286
+*color13: #d3869b
+! DarkCyan + Cyan
+*color6:  #689d6a
+*color14: #8ec07c
+! LightGrey + White
+*color7:  #a89984
+*color15: #ebdbb2
 
