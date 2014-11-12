@@ -18,7 +18,6 @@ let g:ycm_confirm_extra_conf = 0
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'kien/ctrlp.vim'
-let g:ctrlp_map = '<Leader>p'
 
 Plugin 'scrooloose/nerdtree'
 nmap <silent> <S-TAB> :NERDTreeToggle<CR>
@@ -73,6 +72,7 @@ noremap j gj
 noremap k gk
 nmap <Leader>w :w<CR>
 nmap <Leader>n :noh<CR>
+nmap <Leader>p :CtrlP<CR>
 nmap <Leader>b :CtrlPBuffer<CR>
 
 " Commands
