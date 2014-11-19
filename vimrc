@@ -76,6 +76,8 @@ nmap <Leader>w :w<CR>
 nmap <Leader>n :noh<CR>
 nmap <Leader>p :CtrlP<CR>
 nmap <Leader>b :CtrlPBuffer<CR>
+vnoremap > >gv
+vnoremap < <gv
 
 " Commands
 com RC e ~/.vimrc
