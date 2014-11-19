@@ -37,6 +37,8 @@ let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 Plugin 'chrisbra/csv.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-session'
 
 call vundle#end()
 filetype plugin indent on
