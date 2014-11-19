@@ -39,6 +39,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
+Plugin 'sjl/gundo.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -78,6 +79,7 @@ nmap <Leader>p :CtrlP<CR>
 nmap <Leader>b :CtrlPBuffer<CR>
 vnoremap > >gv
 vnoremap < <gv
+nnoremap <f5> :GundoToggle<cr>
 
 " Commands
 com RC e ~/.vimrc
