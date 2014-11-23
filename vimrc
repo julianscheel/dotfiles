@@ -76,6 +76,7 @@ set noshowmode
 set wildmode=longest,list
 set splitbelow
 set splitright
+set spelllang=en
 syntax on
 
 " Keymappings
@@ -90,6 +91,9 @@ vnoremap > >gv
 vnoremap < <gv
 nnoremap <f5> :GundoToggle<cr>
 nnoremap Q <nop>
+nmap <leader>ss :setl spell!<cr>
+nmap <leader>se :setl spelllang=en<cr>
+nmap <leader>sd :setl spelllang=de<cr>
 
 " Commands
 com RC e ~/.vimrc
