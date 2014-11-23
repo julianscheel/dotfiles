@@ -86,6 +86,7 @@ nmap <Leader>b :CtrlPBuffer<CR>
 vnoremap > >gv
 vnoremap < <gv
 nnoremap <f5> :GundoToggle<cr>
+nnoremap Q <nop>
 
 " Commands
 com RC e ~/.vimrc
