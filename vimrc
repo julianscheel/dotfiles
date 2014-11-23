@@ -44,6 +44,7 @@ let g:session_autosave = 'no'
 
 Plugin 'sjl/gundo.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'jiangmiao/auto-pairs'
 
 call vundle#end()
 filetype plugin indent on
