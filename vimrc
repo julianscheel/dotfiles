@@ -43,6 +43,7 @@ let g:session_autoload = 'no'
 let g:session_autosave = 'no'
 
 Plugin 'sjl/gundo.vim'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 call vundle#end()
 filetype plugin indent on
