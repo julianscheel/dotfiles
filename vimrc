@@ -74,6 +74,8 @@ set ignorecase
 set smartcase
 set noshowmode
 set wildmode=longest,list
+set splitbelow
+set splitright
 syntax on
 
 " Keymappings
