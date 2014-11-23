@@ -71,6 +71,7 @@ set tabstop=4
 set expandtab
 set ignorecase
 set smartcase
+set noshowmode
 syntax on
 
 " Keymappings
