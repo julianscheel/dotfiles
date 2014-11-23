@@ -39,6 +39,9 @@ Plugin 'tpope/vim-surround'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
+let g:session_autoload = 'no'
+let g:session_autosave = 'no'
+
 Plugin 'sjl/gundo.vim'
 
 call vundle#end()
