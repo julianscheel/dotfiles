@@ -72,6 +72,7 @@ set expandtab
 set ignorecase
 set smartcase
 set noshowmode
+set wildmode=longest,list
 syntax on
 
 " Keymappings
