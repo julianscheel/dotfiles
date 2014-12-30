@@ -47,6 +47,7 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'sjl/gundo.vim'
 Plugin 'wting/rust.vim'
 Plugin 'mhinz/vim-startify'
+Plugin 'dag/vim-fish'
 
 call vundle#end()
 filetype plugin indent on
