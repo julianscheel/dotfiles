@@ -2,6 +2,10 @@
 set nocompatible
 set dir=~/.vim/swapfiles " Save swapfile in a central place
 
+if &shell =~# 'fish$'
+  set shell=sh
+endif
+
 " Setup Vundle
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
