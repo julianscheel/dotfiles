@@ -9,7 +9,13 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Bundles
+Plugin 'Shougo/vimproc.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'Shougo/unite.vim'
+
+Plugin 'Shougo/neocomplete.vim'
+let g:neocomplete#enable_at_startup = 1
+
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'kien/ctrlp.vim'
@@ -32,6 +38,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 Plugin 'tpope/vim-surround'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'sjl/gundo.vim'
+Plugin 'wting/rust.vim'
 
 call vundle#end()
 filetype plugin indent on
