@@ -17,6 +17,9 @@ Plugin 'Shougo/neocomplete.vim'
 let g:neocomplete#enable_at_startup = 1
 
 Plugin 'scrooloose/syntastic'
+let g:syntastic_cpp_checkers = ['clang_check']
+let g:syntastic_cpp_clang_check_post_args = ''
+
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'kien/ctrlp.vim'
 
