@@ -10,11 +10,6 @@ Plugin 'gmarik/Vundle.vim'
 
 " Bundles
 Plugin 'tpope/vim-fugitive'
-
-Plugin 'Valloric/YouCompleteMe'
-let g:ycm_complete_in_comments = 0
-let g:ycm_confirm_extra_conf = 0
-
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'kien/ctrlp.vim'
@@ -34,16 +29,9 @@ let g:UltiSnipsExpandTrigger = "<c-j>"
 let g:UltiSnipsJumpForwardTrigger = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 
-Plugin 'chrisbra/csv.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-session'
-let g:session_autoload = 'no'
-let g:session_autosave = 'no'
-
 Plugin 'sjl/gundo.vim'
-Plugin 'nathanaelkane/vim-indent-guides'
 
 call vundle#end()
 filetype plugin indent on
