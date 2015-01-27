@@ -6,50 +6,46 @@ if &shell =~# 'fish$'
   set shell=sh
 endif
 
-" Setup Vundle
+" Setup plugins
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.vim/plugins')
+Plug 'Shougo/vimproc.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'idanarye/vim-merginal'
 
-" Bundles
-Plugin 'Shougo/vimproc.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'idanarye/vim-merginal'
-
-Plugin 'Shougo/neocomplete.vim'
+Plug 'Shougo/neocomplete.vim'
 let g:neocomplete#enable_at_startup = 1
 
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 let g:syntastic_cpp_checkers = ['clang_check']
 let g:syntastic_cpp_clang_check_post_args = ''
 
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'kien/ctrlp.vim'
 
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 nmap <silent> <S-TAB> :NERDTreeToggle<CR>
 
-Plugin 'bling/vim-airline'
+Plug 'bling/vim-airline'
 let g:airline_exclude_preview = 1
 let g:airline_powerline_fonts = 1
 
-Plugin 'morhetz/gruvbox'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'SirVer/ultisnips'
+Plug 'morhetz/gruvbox'
+Plug 'airblade/vim-gitgutter'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'SirVer/ultisnips'
 let g:UltiSnipsExpandTrigger = "<c-j>"
 let g:UltiSnipsJumpForwardTrigger = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 
-Plugin 'tpope/vim-surround'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'sjl/gundo.vim'
-Plugin 'wting/rust.vim'
-Plugin 'mhinz/vim-startify'
-Plugin 'dag/vim-fish'
+Plug 'tpope/vim-surround'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'sjl/gundo.vim'
+Plug 'wting/rust.vim'
+Plug 'mhinz/vim-startify'
+Plug 'dag/vim-fish'
 
-call vundle#end()
+call plug#end()
 filetype plugin indent on
 
 " General settings
