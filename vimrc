@@ -11,6 +11,7 @@ Plugin 'gmarik/Vundle.vim'
 " Bundles
 Plugin 'Shougo/vimproc.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'idanarye/vim-merginal'
 Plugin 'Shougo/unite.vim'
 
 Plugin 'Shougo/neocomplete.vim'
