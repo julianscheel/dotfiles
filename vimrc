@@ -12,7 +12,6 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'idanarye/vim-merginal'
-Plugin 'Shougo/unite.vim'
 
 Plugin 'Shougo/neocomplete.vim'
 let g:neocomplete#enable_at_startup = 1
