@@ -9,7 +9,6 @@ endif
 " Setup plugins
 filetype off
 call plug#begin('~/.vim/plugins')
-Plug 'Shougo/vimproc.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'idanarye/vim-merginal'
 
