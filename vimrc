@@ -43,6 +43,7 @@ Plug 'sjl/gundo.vim'
 Plug 'wting/rust.vim'
 Plug 'mhinz/vim-startify'
 Plug 'dag/vim-fish'
+Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 
 call plug#end()
 filetype plugin indent on
