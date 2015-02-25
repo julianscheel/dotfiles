@@ -80,6 +80,7 @@ syntax on
 
 " Keymappings
 let mapleader = "ß"
+nnoremap <CR> :
 noremap j gj
 noremap k gk
 nmap <Leader>w :w<CR>
