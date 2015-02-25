@@ -20,9 +20,9 @@ let g:syntastic_cpp_checkers = ['clang_check']
 let g:syntastic_cpp_clang_check_post_args = ''
 
 Plug 'scrooloose/nerdcommenter'
-Plug 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim', { 'on': ['CtrlP', 'CtrlPBuffer'] }
 
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 nmap <silent> <S-TAB> :NERDTreeToggle<CR>
 
 Plug 'bling/vim-airline'
@@ -39,10 +39,10 @@ let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 
 Plug 'tpope/vim-surround'
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'sjl/gundo.vim'
-Plug 'wting/rust.vim'
+Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
+Plug 'wting/rust.vim', { 'for': 'rust' }
 Plug 'mhinz/vim-startify'
-Plug 'dag/vim-fish'
+Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 
 call plug#end()
