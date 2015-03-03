@@ -44,6 +44,7 @@ Plug 'wting/rust.vim', { 'for': 'rust' }
 Plug 'mhinz/vim-startify'
 Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
+Plug 'alx741/vinfo', { 'on': 'Vinfo' }
 
 call plug#end()
 filetype plugin indent on
