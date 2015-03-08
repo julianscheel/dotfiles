@@ -1,3 +1,4 @@
+" vim: foldmethod=marker
 
 set nocompatible
 set dir=~/.vim/swapfiles " Save swapfile in a central place
@@ -6,35 +7,21 @@ if &shell =~# 'fish$'
   set shell=sh
 endif
 
-" Setup plugins
+" {{{ Plugins
 filetype off
 call plug#begin('~/.vim/plugins')
 Plug 'tpope/vim-fugitive'
 Plug 'idanarye/vim-merginal'
 Plug 'Valloric/YouCompleteMe'
-
 Plug 'scrooloose/syntastic'
-let g:syntastic_cpp_checkers = ['clang_check']
-let g:syntastic_cpp_clang_check_post_args = ''
-
 Plug 'scrooloose/nerdcommenter'
 Plug 'kien/ctrlp.vim', { 'on': ['CtrlP', 'CtrlPBuffer'] }
-
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-nmap <silent> <S-TAB> :NERDTreeToggle<CR>
-
 Plug 'bling/vim-airline'
-let g:airline_exclude_preview = 1
-let g:airline_powerline_fonts = 1
-
 Plug 'morhetz/gruvbox'
 Plug 'airblade/vim-gitgutter'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'SirVer/ultisnips'
-let g:UltiSnipsExpandTrigger = "<c-j>"
-let g:UltiSnipsJumpForwardTrigger = "<c-j>"
-let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
-
 Plug 'tpope/vim-surround'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
@@ -43,11 +30,11 @@ Plug 'mhinz/vim-startify'
 Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 Plug 'alx741/vinfo', { 'on': 'Vinfo' }
-
 call plug#end()
 filetype plugin indent on
+" }}}
 
-" General settings
+" {{{ General settings
 set encoding=utf-8
 set shortmess=at " avoid some of those annoying "Press enter ..." messages
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
@@ -76,8 +63,9 @@ set splitbelow
 set splitright
 set spelllang=en
 syntax on
+" }}}
 
-" Keymappings
+" {{{ Keymappings
 let mapleader = "ß"
 nnoremap <CR> :
 noremap j gj
@@ -93,11 +81,13 @@ nnoremap Q <nop>
 nmap <leader>ss :setl spell!<cr>
 nmap <leader>se :setl spelllang=en<cr>
 nmap <leader>sd :setl spelllang=de<cr>
+" }}}
 
-" Commands
+" {{{ Commands
 com RC e ~/.vimrc
+" }}}
 
-" GUI settings
+" {{{ GUI settings
 if has("gui_running")
     set guioptions-=m " Disable menu
     set guioptions-=T " Disable toolbar
@@ -106,10 +96,35 @@ if has("gui_running")
     set guioptions-=e " Terminal style tabline
     set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 endif
+" }}}
 
-" Colorscheme
+" {{{ Plugin settings and keymappings
+
+" {{{ 'scrooloose/syntastic'
+let g:syntastic_cpp_checkers = ['clang_check']
+let g:syntastic_cpp_clang_check_post_args = ''
+" }}}
+
+" {{{ 'scrooloose/nerdtree'
+nmap <silent> <S-TAB> :NERDTreeToggle<CR>
+" }}}
+
+" {{{ 'bling/vim-airline'
+let g:airline_exclude_preview = 1
+let g:airline_powerline_fonts = 1
+" }}}
+
+" {{{ 'SirVer/ultisnips'
+let g:UltiSnipsExpandTrigger = "<c-j>"
+let g:UltiSnipsJumpForwardTrigger = "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
+" }}}
+
+" }}}
+
+" {{{ Colorscheme
 set background=dark
 if has("gui_running") || (&t_Co == 256)
     colorscheme gruvbox
 endif
-
+" }}}
