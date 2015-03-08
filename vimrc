@@ -11,9 +11,7 @@ filetype off
 call plug#begin('~/.vim/plugins')
 Plug 'tpope/vim-fugitive'
 Plug 'idanarye/vim-merginal'
-
-Plug 'Shougo/neocomplete.vim'
-let g:neocomplete#enable_at_startup = 1
+Plug 'Valloric/YouCompleteMe'
 
 Plug 'scrooloose/syntastic'
 let g:syntastic_cpp_checkers = ['clang_check']
