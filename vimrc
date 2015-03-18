@@ -125,8 +125,11 @@ let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 
 " {{{ 'Shougo/unite.vim'
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
+call unite#custom#source('buffer,file_rec/async,file_rec', 'matchers', ['converter_tail', 'matcher_default'])
 nnoremap <leader>u :<c-u>Unite -start-insert -ignorecase<cr>
-nnoremap <leader>p :<c-u>Unite -start-insert -ignorecase buffer file_rec/async<cr>
+nnoremap <leader>p :<c-u>Unite -start-insert -ignorecase file_rec/async<cr>
+nnoremap <leader>b :<c-u>Unite -start-insert -ignorecase buffer<cr>
 " }}}
 
 " {{{ 'bronson/vim-trailing-whitespace'
