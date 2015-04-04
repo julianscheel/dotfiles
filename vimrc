@@ -75,6 +75,10 @@ nnoremap <cr> :
 vnoremap <cr> :
 noremap j gj
 noremap k gk
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
 nmap <leader>w :w<cr>
 nmap <leader>n :noh<cr>
 vnoremap > >gv
@@ -97,7 +101,7 @@ if has("gui_running")
     set guioptions-=r " Disable right scroll bar
     set guioptions-=L " Disable left scroll bar
     set guioptions-=e " Terminal style tabline
-    set guifont=Terminess\ Powerline\ 10
+    set guifont=Source\ Code\ Pro\ for\ Powerline\ 10
 endif
 " }}}
 
@@ -127,9 +131,10 @@ let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
 call unite#custom#source('buffer,file_rec/async,file_rec', 'matchers', ['converter_tail', 'matcher_default'])
-nnoremap <leader>u :<c-u>Unite -start-insert -ignorecase<cr>
-nnoremap <leader>p :<c-u>Unite -start-insert -ignorecase file_rec/async<cr>
-nnoremap <leader>b :<c-u>Unite -start-insert -ignorecase buffer<cr>
+nnoremap <leader>u :<c-u>Unite -start-insert -smartcase<cr>
+nnoremap <leader>p :<c-u>Unite -start-insert -smartcase file_rec/async<cr>
+nnoremap <leader>b :<c-u>Unite -start-insert -smartcase buffer<cr>
+nnoremap <leader>l :<c-u>Unite -start-insert -smartcase line<cr>
 " }}}
 
 " {{{ 'bronson/vim-trailing-whitespace'
