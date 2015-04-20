@@ -26,7 +26,7 @@ Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-surround'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
-Plug 'wting/rust.vim', { 'for': 'rust' }
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'mhinz/vim-startify'
 Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
