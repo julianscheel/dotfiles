@@ -80,6 +80,9 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
+nnoremap <a-h> gT
+nnoremap <a-l> gt
+nnoremap <silent> <a-n> :<c-u>tabnew<cr>
 nmap <leader>w :w<cr>
 nmap <leader>n :noh<cr>
 vnoremap > >gv
