@@ -32,6 +32,7 @@ Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 Plug 'alx741/vinfo', { 'on': 'Vinfo' }
 Plug 'chrisbra/vim-diff-enhanced', { 'on': 'PatienceDiff' }
+Plug 'cespare/vim-toml', { 'for': 'toml' }
 call plug#end()
 filetype plugin indent on
 " }}}
