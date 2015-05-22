@@ -1,7 +1,0 @@
-*background: #282828
-*foreground: #ebdbb2
-
-rofi.font:              Source Code Pro for Powerline 20
-rofi.terminal:          gnome-terminal
-rofi.run-command:       fish -c "exec {cmd}"
-rofi.run-shell-command: {terminal} -e "fish -c {cmd}"

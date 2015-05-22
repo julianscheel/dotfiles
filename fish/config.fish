@@ -5,9 +5,7 @@ if test $TERM = xterm
     set -gx TERM xterm-256color
 end
 
-set -gx NVIM_TUI_ENABLE_TRUE_COLOR 1
-
-set -gx EDITOR nvim
+set -gx EDITOR vim
 set -gx VGL_FPS 60
 set -gx VGL_SPOIL 0
 set -gx PRIMUS_SYNC 1
