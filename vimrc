@@ -24,7 +24,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-surround'
-Plug 'bronson/vim-trailing-whitespace'
+Plug 'aserebryakov/filestyle'
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'mhinz/vim-startify'
