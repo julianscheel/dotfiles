@@ -40,6 +40,8 @@ filetype plugin indent on
 
 " {{{ General settings
 set encoding=utf-8
+set textwidth=100
+set formatoptions-=t
 set shortmess=at " avoid some of those annoying "Press enter ..." messages
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
 set nobackup " No backups but versions
