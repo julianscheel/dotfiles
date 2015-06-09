@@ -9,6 +9,7 @@ set -gx EDITOR vim
 set -gx VGL_FPS 60
 set -gx VGL_SPOIL 0
 set -gx PRIMUS_SYNC 1
+set -gx RANGER_LOAD_DEFAULT_RC FALSE
 
 # Prevent wine from creating stuff everywhere
 set -gx WINEDLLOVERRIDES winemenubuilder.exe=d
