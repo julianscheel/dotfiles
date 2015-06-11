@@ -4,7 +4,7 @@ set nocompatible
 set dir=~/.vim/swapfiles " Save swapfile in a central place
 
 if &shell =~# 'fish$'
-  set shell=sh
+    set shell=sh
 endif
 
 " {{{ Plugins
@@ -74,7 +74,16 @@ syntax on
 " }}}
 
 " {{{ Keymappings
-let mapleader = "ß"
+" Leader mappings
+noremap <Space> <Nop>
+let mapleader = "\<Space>"
+nmap <leader>w :w<cr>
+nmap <leader>n :noh<cr>
+nmap <leader>ss :setl spell!<cr>
+nmap <leader>se :setl spelllang=en<cr>
+nmap <leader>sd :setl spelllang=de<cr>
+
+" General mappings
 nnoremap <cr> :
 vnoremap <cr> :
 noremap j gj
@@ -86,14 +95,9 @@ nnoremap <c-l> <c-w>l
 nnoremap <a-h> gT
 nnoremap <a-l> gt
 nnoremap <silent> <a-n> :<c-u>tabnew<cr>
-nmap <leader>w :w<cr>
-nmap <leader>n :noh<cr>
 vnoremap > >gv
 vnoremap < <gv
 nnoremap Q <nop>
-nmap <leader>ss :setl spell!<cr>
-nmap <leader>se :setl spelllang=en<cr>
-nmap <leader>sd :setl spelllang=de<cr>
 nmap <silent> du :<c-u>diffupdate<cr>
 " }}}
 
