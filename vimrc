@@ -112,7 +112,7 @@ if has("gui_running")
     set guioptions-=r " Disable right scroll bar
     set guioptions-=L " Disable left scroll bar
     set guioptions-=e " Terminal style tabline
-    set guifont=Source\ Code\ Pro\ for\ Powerline\ 10
+    set guifont=Source\ Code\ Pro\ for\ Powerline\ 12
 endif
 " }}}
 
