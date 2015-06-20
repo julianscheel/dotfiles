@@ -75,8 +75,7 @@ syntax on
 
 " {{{ Keymappings
 " Leader mappings
-noremap <Space> <Nop>
-let mapleader = "\<Space>"
+let mapleader = "ß"
 nmap <leader>w :w<cr>
 nmap <leader>n :noh<cr>
 nmap <leader>ss :setl spell!<cr>
