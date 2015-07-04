@@ -5,7 +5,10 @@ if test $TERM = xterm
     set -gx TERM xterm-256color
 end
 
-set -gx EDITOR vim
+alias em "emacsclient -a= -t"
+
+set -gx EDITOR "emacsclient -a= -t"
+set -gx VISUAL "emacsclient -a= -c"
 set -gx VGL_FPS 60
 set -gx VGL_SPOIL 0
 set -gx PRIMUS_SYNC 1

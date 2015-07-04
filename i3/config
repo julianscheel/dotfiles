@@ -23,7 +23,7 @@ client.urgent           #dc322f #dc322f #282828 #dc322f
 
 # {{{ Keybindings
 bindsym $mod+Return           exec urxvtc
-bindsym $mod+Shift+Return     exec gvim
+bindsym $mod+Shift+Return     exec emacsclient -a "" -c
 bindsym $mod+d                exec rofi -show run -lines 5
 bindsym $mod+Shift+e          exec --no-startup-id ~/scripts/logout-menu.fish
 bindsym $mod+Shift+q          kill
