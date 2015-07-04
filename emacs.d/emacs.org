@@ -1,0 +1,498 @@
+* Package Management
+** Initialize package.el with Melpa
+   #+BEGIN_SRC emacs-lisp
+     (require 'package)
+     (add-to-list 'package-archives
+                  '("melpa" . "http://melpa.org/packages/"))
+     (package-initialize)
+   #+END_SRC
+** use-package
+   * Homepage: [[https://github.com/jwiegley/use-package]]
+
+   #+BEGIN_SRC emacs-lisp
+     (eval-when-compile
+       (unless (require 'use-package nil t)
+         (package-refresh-contents)
+         (package-install 'use-package)
+         (require 'use-package)))
+   #+END_SRC
+* Evil
+** Early settings
+   It seems this must be set quite early to have an effect.
+   #+BEGIN_SRC emacs-lisp
+     (setq evil-want-C-u-scroll t)
+   #+END_SRC
+** Evil Leader
+   * Homepage: [[https://github.com/cofi/evil-leader]]
+
+   Evil Leader is loaded before Evil to make it available in early
+   buffers. See [[https://github.com/cofi/evil-leader#usage]].
+   #+BEGIN_SRC emacs-lisp
+     (use-package evil-leader
+       :ensure t
+
+       :config
+       (global-evil-leader-mode 1))
+   #+END_SRC
+
+   Set leader key:
+   #+BEGIN_SRC emacs-lisp
+     (evil-leader/set-leader "ß")
+   #+END_SRC
+** Evil
+   * Homepage: [[https://bitbucket.org/lyro/evil/wiki/Home]]
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package evil
+       :ensure t
+
+       :config
+       (evil-mode 1)
+
+       ;; Use j and k to move by visual lines
+       (define-key evil-motion-state-map (kbd "j") 'evil-next-visual-line)
+       (define-key evil-motion-state-map (kbd "k") 'evil-previous-visual-line))
+   #+END_SRC
+** evil-jumper
+   evil-jumper provides Vim-like C-i and C-o functions and bindings.
+   * Homepage: [[https://github.com/bling/evil-jumper]]
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package evil-jumper
+       :ensure t
+       :defer 5
+
+       :config
+       (global-evil-jumper-mode))
+   #+END_SRC
+* General Settings
+** General Settings
+   #+BEGIN_SRC emacs-lisp
+     (setq inhibit-startup-screen t)
+     (setq make-backup-files nil)
+     (setq-default indent-tabs-mode nil)
+   #+END_SRC
+** GUI Settings
+   #+BEGIN_SRC emacs-lisp
+     (tool-bar-mode 0)
+     (scroll-bar-mode 0)
+   #+END_SRC
+** Smooth Scrolling
+   * Homepage: [[https://github.com/aspiers/smooth-scrolling]]
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package smooth-scrolling
+       :ensure t
+       :defer 1
+
+       :init
+       (setq smooth-scroll-margin 5)
+       (setq scroll-conservatively 101)
+       (setq scroll-preserve-screen-position t)
+       (setq auto-window-vscroll nil)
+       (setq scroll-margin 5))
+   #+END_SRC
+** Powerline
+   * Homepage: [[https://github.com/milkypostman/powerline]]
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package powerline
+       :ensure t
+
+       :init
+       (require 'powerline)
+
+       :config
+       (powerline-center-evil-theme))
+   #+END_SRC
+** Customize
+   #+BEGIN_SRC emacs-lisp
+     (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+     (load custom-file)
+   #+END_SRC
+* Plugins
+** dash.el
+   #+BEGIN_SRC emacs-lisp
+     (use-package dash
+       :ensure t)
+   #+END_SRC
+** Undo-Tree
+   * Homepage: [[http://www.dr-qubit.org/emacs.php]]
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package undo-tree
+       :ensure t
+       :diminish undo-tree-mode)
+   #+END_SRC
+** popwin
+   * Homepage: [[https://github.com/m2ym/popwin-el]]
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package popwin
+       :ensure t
+
+       :config
+       (popwin-mode))
+   #+END_SRC
+** Helm
+   * Homepage: [[https://github.com/emacs-helm/helm]]
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package helm
+       :ensure t
+       :defer 1
+       :diminish helm-mode
+
+       :init
+       (evil-leader/set-key
+         "x" 'helm-M-x
+         "f" 'helm-find-files
+         "bb" 'helm-buffers-list)
+
+       (evil-leader/set-key
+         "ho" 'helm-occur
+         "hi" 'helm-imenu
+         "hm" 'helm-mini
+         "hg" 'helm-do-ag)
+
+       :bind (("M-x" . helm-M-x)
+              ("C-x C-f" . helm-find-files)
+              ("C-x b" . helm-buffers-list))
+
+       :config
+       (helm-mode 1)
+       (define-key helm-map (kbd "TAB") 'helm-execute-persistent-action)
+       (define-key helm-map (kbd "<backtab>") 'helm-select-action)
+       (define-key helm-map (kbd "C-j") 'helm-next-line)
+       (define-key helm-map (kbd "C-k") 'helm-previous-line)
+
+       ;; Let popwin handle Helm windows
+       ;; Source: https://www.reddit.com/r/emacs/comments/33qj0p/make_helm_window_always_at_the_bottom_using/
+       (push '("^\*helm.+\*$" :regexp t) popwin:special-display-config)
+
+       ;; Disable popwin inside Helm
+       (add-hook 'helm-after-initialize-hook
+                 (lambda ()
+                   (popwin:display-buffer helm-buffer t)
+                   (popwin-mode -1)))
+       (add-hook 'helm-cleanup-hook (lambda () (popwin-mode 1))))
+   #+END_SRC
+** helm-ag
+   * Homepage: [[https://github.com/syohex/emacs-helm-ag]]
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package helm-ag
+       :ensure t
+       :defer t)
+   #+END_SRC
+** Magit
+   * Homepage: [[http://magit.vc]]
+   * Repository: [[https://github.com/magit/magit]]
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package magit
+       :ensure t
+       :defer t
+
+       :init
+       (evil-leader/set-key
+         "ms" 'magit-status
+         "ma" 'magit-stage-file
+         "me" 'magit-ediff-dwim))
+   #+END_SRC
+** Company
+   * Homepage: [[https://company-mode.github.io/]]
+   * Repository: [[https://github.com/company-mode/company-mode]]
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package company
+       :ensure t
+       :defer t
+       :diminish company-mode
+
+       :config
+       (define-key company-active-map (kbd "C-j") 'company-select-next)
+       (define-key company-active-map (kbd "C-k") 'company-select-previous))
+   #+END_SRC
+** Projectile
+   * Homepage: [[https://github.com/bbatsov/projectile]]
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package helm-projectile
+       :ensure t
+
+       :config
+       (projectile-global-mode 1)
+       (evil-leader/set-key
+         "pp" 'helm-projectile-find-file
+         "ps" 'helm-projectile-switch-project
+         "pg" 'helm-projectile-ag
+         "pk" 'projectile-kill-buffers
+         "pc" 'projectile-commander))
+   #+END_SRC
+** YASnippet
+   * Homepage: [[https://github.com/capitaomorte/yasnippet]]
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package yasnippet
+       :ensure t
+       :defer t
+       :diminish yas-minor-mode
+
+       :config
+       (yas-reload-all)
+       (use-package company)
+       (add-to-list 'company-backends 'company-yasnippet t))
+   #+END_SRC
+** Smartparens
+   * Homepage: [[https://github.com/Fuco1/smartparens]]
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package smartparens
+       :ensure t
+       :defer t
+       :diminish smartparens-mode
+
+       :config
+       (require 'smartparens-config))
+   #+END_SRC
+** guide-key
+   * Homepage: [[https://github.com/kai2nenobu/guide-key]]
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package guide-key
+       :ensure t
+       :diminish guide-key-mode
+
+       :init
+       (setq guide-key/popup-window-position 'bottom)
+       (setq guide-key/recursive-key-sequence-flag t)
+       (setq guide-key/guide-key-sequence
+             `("C-c" "C-x" "C-h" ,evil-leader/leader))
+
+       :config
+       (guide-key-mode 1))
+   #+END_SRC
+** highlight-indentation
+   * Homepage: [[https://github.com/antonj/Highlight-Indentation-for-Emacs]]
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package highlight-indentation
+       :ensure t
+       :defer t
+       :diminish highlight-indentation-mode
+       :diminish highlight-indentation-current-column-mode)
+   #+END_SRC
+* Minor Modes
+** whitespace-mode
+   #+BEGIN_SRC emacs-lisp
+     (use-package whitespace
+       :defer t
+       :diminish whitespace-mode
+
+       :init
+       (setq whitespace-style
+             '(face trailing empty indentation
+                    space-after-tab spaces-before-tab)))
+   #+END_SRC
+** visual-line-mode
+   #+BEGIN_SRC emacs-lisp
+     (add-hook 'after-init-hook
+               (lambda ()
+                 (global-visual-line-mode 1)
+                 (diminish 'visual-line-mode)))
+   #+END_SRC
+** hl-line-mode
+   #+BEGIN_SRC emacs-lisp
+     (add-hook 'after-init-hook (lambda () (global-hl-line-mode 1)))
+   #+END_SRC
+** show-paren-mode
+   #+BEGIN_SRC emacs-lisp
+     (setq show-paren-delay 0)
+   #+END_SRC
+** hideshow
+   #+BEGIN_SRC emacs-lisp
+     (use-package hideshow
+       :defer t
+       :diminish hs-minor-mode)
+   #+END_SRC
+* Major Modes
+** Preface
+   #+BEGIN_SRC emacs-lisp
+     (defun hamster/basic-programming-modes ()
+       (interactive)
+       (linum-mode 1)
+       (whitespace-mode 1)
+       (show-paren-mode 1)
+       (company-mode 1)
+       (yas-minor-mode 1)
+       (smartparens-mode 1)
+       (hs-minor-mode 1))
+
+     (defvar hamster/company-backends
+       '(company-files company-yasnippet))
+
+     (defun hamster/make-local-company-backends (&optional backends)
+       (set (make-local-variable 'company-backends)
+            (list (-concat hamster/company-backends backends))))
+   #+END_SRC
+** prog-mode
+   #+BEGIN_SRC emacs-lisp
+     (add-hook 'prog-mode-hook 'hamster/basic-programming-modes)
+   #+END_SRC
+** Emacs Lisp
+   #+BEGIN_SRC emacs-lisp
+     (add-hook 'emacs-lisp-mode-hook
+               (lambda ()
+                 (hamster/make-local-company-backends '(company-capf))))
+   #+END_SRC
+** Org Mode
+   * Homepage: [[http://orgmode.org]]
+
+   #+BEGIN_SRC emacs-lisp
+     (setq org-M-RET-may-split-line nil)
+     (setq org-src-fontify-natively t)
+   #+END_SRC
+** Ediff
+   #+BEGIN_SRC emacs-lisp
+     (setq ediff-split-window-function 'split-window-horizontally)
+     (setq ediff-window-setup-function 'ediff-setup-windows-plain)
+     (setq ediff-auto-refine nil)
+     (setq ediff-highlight-all-diffs nil)
+   #+END_SRC
+** Rust
+*** company-racer
+    * Homepage: [[https://github.com/emacs-pe/company-racer]]
+
+    #+BEGIN_SRC emacs-lisp
+      (use-package company-racer
+        :ensure t
+        :defer t
+
+        :init
+        (unless (getenv "RUST_SRC_PATH")
+          (setenv "RUST_SRC_PATH" (expand-file-name "~/code/rust/src")))
+
+        :config
+        (add-to-list 'company-backends 'company-racer))
+    #+END_SRC
+*** rust-mode
+    * Homepage: [[https://github.com/rust-lang/rust-mode]]
+
+    #+BEGIN_SRC emacs-lisp
+      (use-package rust-mode
+        :ensure t
+        :mode "\\.rs\\'"
+
+        :config
+        (use-package company-racer)
+        (add-hook 'rust-mode-hook
+                  (lambda ()
+                    (hamster/make-local-company-backends '(company-racer))
+                    (set (make-local-variable 'compile-command) "cargo build"))))
+    #+END_SRC
+*** toml-mode
+    * Homepage: [[https://github.com/dryman/toml-mode.el]]
+
+    #+BEGIN_SRC emacs-lisp
+      (use-package toml-mode
+        :ensure t
+
+        :mode "\\.toml\\'")
+    #+END_SRC
+** Python
+*** Elpy
+    * Homepage: [[https://github.com/jorgenschaefer/elpy]]
+    * Documentation: [[http://elpy.readthedocs.org/en/latest/index.html]]
+
+    #+BEGIN_SRC emacs-lisp
+      (use-package elpy
+        :ensure t
+        :defer t
+        :diminish elpy-mode)
+    #+END_SRC
+*** python-mode
+    #+BEGIN_SRC emacs-lisp
+      (setq python-shell-interpreter "ipython")
+      (add-hook 'python-mode-hook
+                (lambda ()
+                  (elpy-mode 1)
+                  (hamster/make-local-company-backends '(elpy-company-backend))))
+    #+END_SRC
+* Theme
+** moe-theme
+   * Homepage: [[https://github.com/kuanyui/moe-theme.el]]
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package moe-theme
+       :ensure t
+       :defer t
+
+       :commands (moe-dark moe-light)
+
+       :init
+       ;; (setq moe-theme-resize-markdown-title '(1.5 1.4 1.3 1.2 1.0 1.0))
+       (setq moe-theme-resize-org-title '(1.5 1.4 1.3 1.2 1.1 1.0 1.0 1.0 1.0))
+       ;; (setq moe-theme-resize-rst-title '(1.5 1.4 1.3 1.2 1.1 1.0))
+
+       :config
+       (moe-theme-set-color 'blue))
+   #+END_SRC
+** Fix Moe ignoring Powerline
+   Moe doesn't set Powerline faces unsless using powerline-moe-theme.
+   #+BEGIN_SRC emacs-lisp
+     (defun hamster/set-mode-line-faces ()
+       (set-face-attribute 'mode-line nil :background "#5fafd7" :foreground "#ffffff")
+       (set-face-attribute 'mode-line-buffer-id nil :background nil :foreground "#080808")
+       (set-face-attribute 'mode-line-inactive nil :background "#4e4e4e" :foreground "#9e9e9e")
+       (set-face-attribute 'minibuffer-prompt nil :foreground "#005f87" :background "#afd7ff")
+       (set-face-attribute 'powerline-active1 nil :background "#afd7ff" :foreground "#005faf")
+       (set-face-attribute 'powerline-active2 nil :background "#ffffff" :foreground "#3a3a3a")
+       (set-face-attribute 'powerline-inactive1 nil :background "#626262" :foreground "#eeeeee")
+       (set-face-attribute 'powerline-inactive2 nil :background "#767676" :foreground "#e4e4e4"))
+   #+END_SRC
+** Initialize
+   #+BEGIN_SRC emacs-lisp
+     (defun hamster/setup-theme ()
+         (progn
+           (moe-dark)
+           (hamster/set-mode-line-faces)
+           (set-frame-font "Source Code Pro for Powerline 12" t nil)))
+
+     (if (daemonp)
+         (add-hook 'after-make-frame-functions
+                   (lambda (frame)
+                     (with-selected-frame frame
+                       (hamster/setup-theme))))
+       (hamster/setup-theme))
+   #+END_SRC
+* Miscellaneous
+  #+BEGIN_SRC emacs-lisp
+    (defun hamster/find-emacs-org ()
+      "Find ~/.emacs.d/emacs.org"
+      (interactive)
+      (find-file
+       (expand-file-name "~/.emacs.d/emacs.org")))
+  #+END_SRC
+* Global Keybindings
+** TODO Window Movement
+   Make this work *always*.
+   Maybe: [[http://stackoverflow.com/questions/683425/globally-override-key-binding-in-emacs/5340797]]
+
+   Use =C-w C-[hjkl]= to move between windows.
+   #+BEGIN_SRC emacs-lisp
+     (global-unset-key (kbd "C-w"))
+     (global-set-key (kbd "C-w C-h") 'evil-window-left)
+     (global-set-key (kbd "C-w C-j") 'evil-window-down)
+     (global-set-key (kbd "C-w C-k") 'evil-window-up)
+     (global-set-key (kbd "C-w C-l") 'evil-window-right)
+   #+END_SRC
+** Other
+   #+BEGIN_SRC emacs-lisp
+     (evil-leader/set-key
+       "cd" 'cd
+       "cc" 'comment-dwim
+       "bk" 'kill-buffer-and-window
+       "bi" 'ibuffer
+       "w" 'save-buffer)
+   #+END_SRC
