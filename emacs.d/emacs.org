@@ -352,6 +352,8 @@
    #+BEGIN_SRC emacs-lisp
      (setq org-M-RET-may-split-line nil)
      (setq org-src-fontify-natively t)
+     (add-hook 'org-mode-hook
+               (lambda () (whitespace-mode 1)))
    #+END_SRC
 ** Ediff
    #+BEGIN_SRC emacs-lisp
