@@ -421,6 +421,39 @@
                   (elpy-mode 1)
                   (hamster/make-local-company-backends '(elpy-company-backend))))
     #+END_SRC
+** AUCTeX
+*** Company-AUCTeX
+    * Homepage: [[https://github.com/alexeyr/company-auctex]]
+
+    #+BEGIN_SRC emacs-lisp
+      (use-package company-auctex
+        :ensure t
+        :defer t
+
+        :config
+        (company-auctex-init))
+    #+END_SRC
+*** AUCTeX
+    * Homepage: [[https://www.gnu.org/software/auctex/]]
+    * Documentation: [[https://www.gnu.org/software/auctex/manual/auctex/index.html]]
+
+    #+BEGIN_SRC emacs-lisp
+      (use-package tex-site
+        :ensure auctex
+        :defer t
+
+        :init
+        (use-package company-auctex)
+        (add-hook 'TeX-mode-hook
+                  (lambda ()
+                    (hamster/basic-programming-modes)
+                    (hamster/make-local-company-backends
+                     '(company-auctex-labels
+                       company-auctex-bibs
+                       company-auctex-macros
+                       company-auctex-symbols
+                       company-auctex-environments)))))
+    #+END_SRC
 * Theme
 ** moe-theme
    * Homepage: [[https://github.com/kuanyui/moe-theme.el]]
