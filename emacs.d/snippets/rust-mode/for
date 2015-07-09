@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: for
+# key: for
+# --
+for ${1:iter} in ${2:range} {
+    $0
+}
