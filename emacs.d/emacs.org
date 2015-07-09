@@ -225,6 +225,7 @@
        (projectile-global-mode 1)
        (evil-leader/set-key
          "pp" 'helm-projectile-find-file
+         "pb" 'helm-projectile-switch-to-buffer
          "ps" 'helm-projectile-switch-project
          "pg" 'helm-projectile-ag
          "pk" 'projectile-kill-buffers
