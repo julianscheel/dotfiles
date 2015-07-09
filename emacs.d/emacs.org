@@ -331,7 +331,7 @@
        (hs-minor-mode 1))
 
      (defvar hamster/company-backends
-       '(company-files company-yasnippet))
+       '(company-files company-yasnippet company-dabbrev))
 
      (defun hamster/make-local-company-backends (&optional backends)
        (set (make-local-variable 'company-backends)
