@@ -93,18 +93,27 @@
        (setq scroll-margin 5))
    #+END_SRC
 ** Powerline
-   * Homepage: [[https://github.com/milkypostman/powerline]]
+*** Powerline
+    * Homepage: [[https://github.com/milkypostman/powerline]]
 
-   #+BEGIN_SRC emacs-lisp
-     (use-package powerline
-       :ensure t
+    #+BEGIN_SRC emacs-lisp
+      (use-package powerline
+        :ensure t
+        :defer t)
+    #+END_SRC
+*** airline-themes
+    * Homepage: [[https://github.com/AnthonyDiGirolamo/airline-themes]]
 
-       :init
-       (require 'powerline)
+    #+BEGIN_SRC emacs-lisp
+      (use-package airline-themes
+        :ensure t
 
-       :config
-       (powerline-center-evil-theme))
-   #+END_SRC
+        :init
+        (setq airline-helm-colors nil)
+
+        :config
+        (load-theme 'airline-simple t))
+    #+END_SRC
 ** Customize
    #+BEGIN_SRC emacs-lisp
      (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
@@ -468,31 +477,14 @@
 
        :init
        ;; (setq moe-theme-resize-markdown-title '(1.5 1.4 1.3 1.2 1.0 1.0))
-       (setq moe-theme-resize-org-title '(1.5 1.4 1.3 1.2 1.1 1.0 1.0 1.0 1.0))
        ;; (setq moe-theme-resize-rst-title '(1.5 1.4 1.3 1.2 1.1 1.0))
-
-       :config
-       (moe-theme-set-color 'blue))
-   #+END_SRC
-** Fix Moe ignoring Powerline
-   Moe doesn't set Powerline faces unsless using powerline-moe-theme.
-   #+BEGIN_SRC emacs-lisp
-     (defun hamster/set-mode-line-faces ()
-       (set-face-attribute 'mode-line nil :background "#5fafd7" :foreground "#ffffff")
-       (set-face-attribute 'mode-line-buffer-id nil :background nil :foreground "#080808")
-       (set-face-attribute 'mode-line-inactive nil :background "#4e4e4e" :foreground "#9e9e9e")
-       (set-face-attribute 'minibuffer-prompt nil :foreground "#005f87" :background "#afd7ff")
-       (set-face-attribute 'powerline-active1 nil :background "#afd7ff" :foreground "#005faf")
-       (set-face-attribute 'powerline-active2 nil :background "#ffffff" :foreground "#3a3a3a")
-       (set-face-attribute 'powerline-inactive1 nil :background "#626262" :foreground "#eeeeee")
-       (set-face-attribute 'powerline-inactive2 nil :background "#767676" :foreground "#e4e4e4"))
+       (setq moe-theme-resize-org-title '(1.5 1.4 1.3 1.2 1.1 1.0 1.0 1.0 1.0)))
    #+END_SRC
 ** Initialize
    #+BEGIN_SRC emacs-lisp
      (defun hamster/setup-theme ()
          (progn
            (moe-dark)
-           (hamster/set-mode-line-faces)
            (set-frame-font "Source Code Pro for Powerline 12" t nil)))
 
      (if (daemonp)
