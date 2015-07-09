@@ -1,5 +1,3 @@
-rofi.font:              Source Code Pro for Powerline 20
-rofi.terminal:          urxvtc
-rofi.run-command:       fish -c "exec {cmd}"
-rofi.run-shell-command: {terminal} -e fish -c "exec {cmd}"
-rofi.levenshtein-sort:  false
+rofi.font: Source Code Pro for Powerline 20
+rofi.terminal: urxvtc
+rofi.levenshtein-sort: false
