@@ -9,6 +9,9 @@ fi
 export EDITOR=~/scripts/editor.sh
 export VISUAL=~/scripts/visual.sh
 
+export PAGER=less
+export LESS=-R
+
 export VGL_FPS=60
 export VGL_SPOIL=0
 export PRIMUS_SYNC=1
