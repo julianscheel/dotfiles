@@ -1,0 +1,21 @@
+# Path to my oh-my-zsh installation
+export ZSH=~/.oh-my-zsh
+
+# Install oh-my-zsh if necessary
+if [ ! -d "$ZSH" ]; then
+    git clone https://github.com/robbyrussell/oh-my-zsh.git $ZSH
+fi
+
+# Settings
+DISABLE_AUTO_UPDATE=true
+DEFAULT_USER=$USER
+ZSH_CUSTOM=~/dotfiles/oh-my-zsh
+
+# Theme
+ZSH_THEME="robbyrussell"
+
+# Plugins
+plugins=()
+
+# Start oh-my-zsh
+source $ZSH/oh-my-zsh.sh

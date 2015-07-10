@@ -1,0 +1,16 @@
+export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
+
+if [[ $TERM == xterm ]]; then
+    export TERM=xterm-256color
+fi
+
+export EDITOR=~/scripts/editor.sh
+export VISUAL=~/scripts/visual.sh
+
+export VGL_FPS=60
+export VGL_SPOIL=0
+export PRIMUS_SYNC=1
+export RANGER_LOAD_DEFAULT_RC=FALSE
+
+# Prevent wine from creating stuff everywhere
+export WINEDLLOVERRIDES=winemenubuilder.exe=d
