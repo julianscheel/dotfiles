@@ -1,1 +1,3 @@
+#!/bin/zsh
+
 gpg-connect-agent /bye
