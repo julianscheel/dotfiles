@@ -34,3 +34,6 @@ bindkey -e
 # bind C-k and C-j for history browsing
 bindkey '^K' history-substring-search-up
 bindkey '^J' history-substring-search-down
+
+# Aliases
+alias em=$EDITOR
