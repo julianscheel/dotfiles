@@ -35,5 +35,8 @@ bindkey -e
 bindkey '^K' history-substring-search-up
 bindkey '^J' history-substring-search-down
 
+# Completions
+zstyle ':completion:*' menu select
+
 # Aliases
 alias em=$EDITOR
