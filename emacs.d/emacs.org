@@ -71,6 +71,7 @@
      (setq inhibit-startup-screen t)
      (setq make-backup-files nil)
      (setq-default indent-tabs-mode nil)
+     (setq-default fill-column 100)
    #+END_SRC
 ** GUI Settings
    #+BEGIN_SRC emacs-lisp
