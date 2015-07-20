@@ -473,6 +473,14 @@
                        company-auctex-symbols
                        company-auctex-environments)))))
     #+END_SRC
+** markdown-mode
+   * Homepage: [[http://jblevins.org/projects/markdown-mode/]]
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package markdown-mode
+       :ensure t
+       :mode "\\.md\\'")
+   #+END_SRC
 * Theme
 ** moe-theme
    * Homepage: [[https://github.com/kuanyui/moe-theme.el]]
