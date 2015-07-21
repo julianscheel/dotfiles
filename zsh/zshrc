@@ -14,6 +14,7 @@ source ~/.zgen/zgen.zsh
 if ! zgen saved; then
     echo "Creating a zgen save"
 
+    zgen oh-my-zsh lib/key-bindings.zsh
     zgen oh-my-zsh lib/history.zsh
     zgen oh-my-zsh lib/theme-and-appearance.zsh
     zgen oh-my-zsh lib/git.zsh
@@ -27,9 +28,6 @@ if ! zgen saved; then
     # Save init script
     zgen save
 fi
-
-# Use Emacs style keybindings
-bindkey -e
 
 # bind C-k and C-j for history browsing
 bindkey '^K' history-substring-search-up
