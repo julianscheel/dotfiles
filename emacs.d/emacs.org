@@ -216,7 +216,10 @@
        (evil-leader/set-key
          "ms" 'magit-status
          "ma" 'magit-stage-file
-         "me" 'magit-ediff-dwim))
+         "me" 'magit-ediff-dwim)
+
+       :config
+       (add-hook 'git-commit-mode-hook 'flyspell-mode))
    #+END_SRC
 ** Company
    * Homepage: [[https://company-mode.github.io/]]
