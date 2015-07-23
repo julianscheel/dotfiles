@@ -1,3 +1,4 @@
+startup_slave_screen = visualizer
 browser_display_mode = columns
 lyrics_directory = ~/.ncmpcpp/lyrics
 media_library_primary_tag = album_artist
@@ -5,3 +6,10 @@ mouse_support = no
 playlist_display_mode = columns
 playlist_editor_display_mode = columns
 search_engine_display_mode = columns
+autocenter_mode = yes
+follow_now_playing_lyrics = yes
+visualizer_fifo_path = /tmp/mpd.fifo
+visualizer_output_name = my_fifo
+visualizer_sync_interval = 30
+visualizer_in_stereo = yes
+visualizer_type = ellipse
