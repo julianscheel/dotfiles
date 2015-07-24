@@ -19,3 +19,6 @@ export RANGER_LOAD_DEFAULT_RC=FALSE
 
 # Prevent wine from creating stuff everywhere
 export WINEDLLOVERRIDES=winemenubuilder.exe=d
+
+# Use GTK style for QT5
+export QT_STYLE_OVERRIDE=GTK+
