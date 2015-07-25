@@ -46,6 +46,10 @@
      (use-package evil
        :ensure t
 
+       :init
+       (setq evil-split-window-below t)
+       (setq evil-vsplit-window-right t)
+
        :config
        (evil-mode 1)
 
