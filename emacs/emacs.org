@@ -505,7 +505,7 @@
      (defun hamster/setup-theme ()
          (progn
            (moe-dark)
-           (set-frame-font "Source Code Pro for Powerline 12" t nil)))
+           (set-frame-font "Source Code Pro 11" t nil)))
 
      (if (daemonp)
          (add-hook 'after-make-frame-functions

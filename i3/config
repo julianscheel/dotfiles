@@ -10,7 +10,7 @@ floating_modifier $mod
 # }}}
 
 # {{{ Theme
-font pango:Source Code Pro for Powerline 11
+font pango:Source Code Pro 11
 new_window pixel 5
 gaps inner 20
 
@@ -100,7 +100,6 @@ mode "resize" {
 bar {
     position top
     status_command i3status
-    font pango:FontAwesome 11, Source Code Pro for Powerline 11
 
     colors {
         background #282828
@@ -117,7 +116,7 @@ bar {
 # }}}
 
 # {{{ Autostart
-exec_always --no-startup-id "imlibsetroot -s 1920,1053 -p 0,27 ~/Pictures/Wallpapers/media_life_1080.jpg"
+exec_always --no-startup-id "imlibsetroot -s 1920,1054 -p 0,26 ~/Pictures/Wallpapers/media_life_1080.jpg"
 exec_always --no-startup-id "xrdb -I$HOME ~/.Xresources"
 exec        --no-startup-id "redshift"
 exec        --no-startup-id "compton --backend glx"
