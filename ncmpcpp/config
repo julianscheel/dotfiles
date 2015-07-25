@@ -1,4 +1,3 @@
-startup_slave_screen = visualizer
 browser_display_mode = columns
 lyrics_directory = ~/.ncmpcpp/lyrics
 media_library_primary_tag = album_artist
