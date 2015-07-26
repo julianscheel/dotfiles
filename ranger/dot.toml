@@ -1,0 +1,4 @@
+[dotrix.link]
+".config/ranger/rc.conf" = "rc.conf"
+".config/ranger/rifle.conf" = "rifle.conf"
+".config/ranger/scope.sh" = "scope.sh"

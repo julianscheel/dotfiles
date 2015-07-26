@@ -1,0 +1,4 @@
+[dotrix.link]
+".zshrc" = "zshrc"
+".zshenv" = "zshenv"
+".zprofile" = "zprofile"
