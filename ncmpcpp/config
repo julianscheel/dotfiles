@@ -1,5 +1,6 @@
 browser_display_mode = columns
-lyrics_directory = ~/.ncmpcpp/lyrics
+ncmpcpp_directory = ~/.config/ncmpcpp
+lyrics_directory = ~/.config/ncmpcpp/lyrics
 media_library_primary_tag = album_artist
 mouse_support = no
 playlist_display_mode = columns
