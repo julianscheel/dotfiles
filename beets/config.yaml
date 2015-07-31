@@ -1,0 +1,10 @@
+library: ~/.local/share/beets/library.db
+plugins: replaygain mbsync
+
+import:
+  move: yes
+  languages: en
+
+replaygain:
+  backend: gstreamer
+  overwrite: yes
