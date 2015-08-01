@@ -204,7 +204,10 @@
    #+BEGIN_SRC emacs-lisp
      (use-package helm-ag
        :ensure t
-       :defer t)
+       :defer t
+
+       :config
+       (require 'grep))
    #+END_SRC
 ** Magit
    * Homepage: [[http://magit.vc]]
