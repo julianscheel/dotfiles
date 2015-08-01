@@ -170,6 +170,7 @@
          "bb" 'helm-buffers-list)
 
        (evil-leader/set-key
+         "hr" 'helm-resume
          "ho" 'helm-occur
          "hi" 'helm-imenu
          "hm" 'helm-mini
