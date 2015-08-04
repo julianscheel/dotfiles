@@ -24,13 +24,11 @@ Plug 'airblade/vim-gitgutter'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-surround'
-Plug 'aserebryakov/filestyle'
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'mhinz/vim-startify'
 Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
-Plug 'alx741/vinfo', { 'on': 'Vinfo' }
 Plug 'chrisbra/vim-diff-enhanced', { 'on': 'PatienceDiff' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'tpope/vim-abolish'
