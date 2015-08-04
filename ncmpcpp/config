@@ -1,13 +1,27 @@
-browser_display_mode = columns
+# Directories
 ncmpcpp_directory = ~/.config/ncmpcpp
 lyrics_directory = ~/.config/ncmpcpp/lyrics
-media_library_primary_tag = album_artist
+
+# General
 mouse_support = no
-playlist_display_mode = columns
-playlist_editor_display_mode = columns
-search_engine_display_mode = columns
 autocenter_mode = yes
+centered_cursor = yes
 follow_now_playing_lyrics = yes
+media_library_primary_tag = album_artist
+
+# Display
+user_interface = alternative
+header_visibility = no
+titles_visibility = no
+playlist_display_mode = classic
+browser_display_mode = columns
+search_engine_display_mode = columns
+playlist_editor_display_mode = columns
+song_list_format = "{$5%a $2>$3 }{$3%t}{$R $4(%l)}"
+progressbar_color = 5
+progressbar_elapsed_color = 2
+
+# Visualizer
 visualizer_fifo_path = /tmp/mpd.fifo
 visualizer_output_name = my_fifo
 visualizer_sync_interval = 30
