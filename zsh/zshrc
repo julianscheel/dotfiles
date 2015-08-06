@@ -33,7 +33,8 @@ fi
 
 # bullet-train colors
 export BULLETTRAIN_STATUS_FG=black
-export BULLETTRAIN_DIR_FG=black
+export BULLETTRAIN_DIR_FG=20
+export BULLETTRAIN_DIR_BG=18
 
 # bind C-k and C-j for history browsing
 bindkey '^K' history-substring-search-up
