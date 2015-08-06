@@ -28,6 +28,9 @@ if ! zgen saved; then
     zgen save
 fi
 
+# Bankert colorscheme
+~/code/bankert-theme/term/bankert.sh
+
 # bullet-train colors
 export BULLETTRAIN_STATUS_FG=black
 export BULLETTRAIN_DIR_FG=black
