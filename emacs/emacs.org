@@ -501,26 +501,18 @@
        :mode "\\.yml\\'")
    #+END_SRC
 * Theme
-** moe-theme
-   * Homepage: [[https://github.com/kuanyui/moe-theme.el]]
+** bankert-theme
+   * Homepage: [[https://gitlab.com/dennis.hamester/bankert-theme]]
 
    #+BEGIN_SRC emacs-lisp
-     (use-package moe-theme
-       :ensure t
-       :defer t
-
-       :commands (moe-dark moe-light)
-
-       :init
-       ;; (setq moe-theme-resize-markdown-title '(1.5 1.4 1.3 1.2 1.0 1.0))
-       ;; (setq moe-theme-resize-rst-title '(1.5 1.4 1.3 1.2 1.1 1.0))
-       (setq moe-theme-resize-org-title '(1.5 1.4 1.3 1.2 1.1 1.0 1.0 1.0 1.0)))
+     ;TODO: Change to a proper package, when bankert is ready
+     (load-file (expand-file-name "~/code/bankert-theme/emacs/bankert-theme.el"))
    #+END_SRC
 ** Initialize
    #+BEGIN_SRC emacs-lisp
      (defun hamster/setup-theme ()
          (progn
-           (moe-dark)
+           (load-theme 'bankert t)
            (set-frame-font "Source Code Pro 11" t nil)))
 
      (if (daemonp)
