@@ -121,6 +121,16 @@
         :init
         (setq airline-helm-colors nil)
 
+        ;; Use glyphs as defined by powerline.
+        ;; This is also the more appropriate Unicode area.
+        (setq airline-utf-glyph-branch #xe0a0)
+        (setq airline-utf-glyph-linenumber #xe0a1)
+        (setq airline-utf-glyph-readonly #xe0a2)
+        (setq airline-utf-glyph-separator-left #xe0b0)
+        (setq airline-utf-glyph-separator-right #xe0b2)
+        (setq airline-utf-glyph-subseparator-left #xe0b1)
+        (setq airline-utf-glyph-subseparator-right #xe0b3)
+
         :config
         (load-theme 'airline-simple t))
     #+END_SRC
