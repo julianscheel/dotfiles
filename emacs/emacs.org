@@ -23,7 +23,14 @@
      (use-package quelpa
        :ensure t)
    #+END_SRC
-* Evil
+** quelpa-use-package
+   * Homepage: [[https://github.com/quelpa/quelpa-use-package]]
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package quelpa-use-package
+       :ensure t)
+   #+END_SRC
+* evil
 ** Early settings
    It seems this must be set quite early to have an effect.
    #+BEGIN_SRC emacs-lisp
