@@ -375,6 +375,16 @@
        :defer t
        :diminish hs-minor-mode)
    #+END_SRC
+** evil-quickscope
+   * Homepage:: [[https://github.com/blorbx/evil-quickscope]]
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package evil-quickscope
+       :quelpa (evil-quickscope :fetcher github :repo "blorbx/evil-quickscope")
+
+       :config
+       (global-evil-quickscope-mode 1))
+   #+END_SRC
 * Major Modes
 ** Preface
    #+BEGIN_SRC emacs-lisp
