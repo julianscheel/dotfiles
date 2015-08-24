@@ -380,7 +380,7 @@
 
    #+BEGIN_SRC emacs-lisp
      (use-package evil-quickscope
-       :quelpa (evil-quickscope :fetcher github :repo "blorbx/evil-quickscope")
+       :ensure t
 
        :config
        (global-evil-quickscope-mode 1))
