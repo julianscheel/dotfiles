@@ -147,7 +147,7 @@
         (setq airline-utf-glyph-subseparator-right #xe0b3)
 
         :config
-        (load-theme 'airline-simple t))
+        (airline-themes-set-modeline))
     #+END_SRC
 ** Customize
    #+BEGIN_SRC emacs-lisp
