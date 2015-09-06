@@ -32,10 +32,13 @@ fi
 ~/code/bankert-theme/term/bankert.sh
 
 # bullet-train colors
+export BULLETTRAIN_TIME_SHOW=false
 export BULLETTRAIN_GIT_EXTENDED=false
-export BULLETTRAIN_STATUS_FG=black
-export BULLETTRAIN_DIR_FG=15
-export BULLETTRAIN_DIR_BG=34
+export BULLETTRAIN_STATUS_FG=32
+export BULLETTRAIN_DIR_FG=37
+export BULLETTRAIN_DIR_BG=35
+export BULLETTRAIN_GIT_FG=37
+export BULLETTRAIN_GIT_BG=33
 
 # bind C-k and C-j for history browsing
 bindkey '^K' history-substring-search-up
