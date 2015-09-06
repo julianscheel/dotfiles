@@ -568,7 +568,8 @@
       "Find ~/.emacs.d/emacs.org"
       (interactive)
       (find-file
-       (expand-file-name "~/.emacs.d/emacs.org")))
+       (expand-file-name "~/.emacs.d/emacs.org"))
+      (hamster/basic-programming-modes))
   #+END_SRC
 * Global Keybindings
 ** TODO Window Movement
