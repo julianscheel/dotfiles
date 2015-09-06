@@ -585,6 +585,7 @@
 ** Other
    #+BEGIN_SRC emacs-lisp
      (evil-leader/set-key
+       "qq" 'save-buffers-kill-emacs
        "cd" 'cd
        "cc" 'comment-dwim
        "bk" 'kill-buffer-and-window
