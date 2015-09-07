@@ -341,6 +341,15 @@
        :diminish highlight-indentation-mode
        :diminish highlight-indentation-current-column-mode)
    #+END_SRC
+** flycheck
+   * Homepage :: [[http://www.flycheck.org/]]
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package flycheck
+       :ensure t
+       :defer t
+       :diminish flycheck-mode)
+   #+END_SRC
 * Minor Modes
 ** whitespace-mode
    #+BEGIN_SRC emacs-lisp
@@ -395,7 +404,8 @@
        (company-mode 1)
        (yas-minor-mode 1)
        (smartparens-mode 1)
-       (hs-minor-mode 1))
+       (hs-minor-mode 1)
+       (flycheck-mode 1))
 
      (defvar hamster/company-backends
        '(company-files company-yasnippet company-dabbrev))
