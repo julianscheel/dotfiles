@@ -132,6 +132,7 @@
     #+BEGIN_SRC emacs-lisp
       (use-package airline-themes
         :ensure t
+        :defer t
 
         :init
         (setq airline-helm-colors nil)
@@ -144,10 +145,7 @@
         (setq airline-utf-glyph-separator-left #xe0b0)
         (setq airline-utf-glyph-separator-right #xe0b2)
         (setq airline-utf-glyph-subseparator-left #xe0b1)
-        (setq airline-utf-glyph-subseparator-right #xe0b3)
-
-        :config
-        (airline-themes-set-modeline))
+        (setq airline-utf-glyph-subseparator-right #xe0b3))
     #+END_SRC
 ** Customize
    #+BEGIN_SRC emacs-lisp
@@ -553,7 +551,8 @@
      (defun hamster/setup-theme ()
          (progn
            (load-theme 'bankert t)
-           (set-frame-font "Source Code Pro 11" t nil)))
+           (set-frame-font "Source Code Pro 11" t nil)
+           (airline-themes-set-modeline)))
 
      (if (daemonp)
          (add-hook 'after-make-frame-functions
