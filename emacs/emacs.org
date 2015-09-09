@@ -548,6 +548,14 @@
        :ensure t
        :mode "\\.yml\\'")
    #+END_SRC
+** vimrc-mode
+   * Homepage :: https://github.com/mcandre/vimrc-mode
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package vimrc-mode
+       :ensure t
+       :mode ".vim\\(rc\\)?$")
+   #+END_SRC
 * Theme
 ** bankert-theme
    * Homepage: [[https://gitlab.com/dennis.hamester/bankert-theme]]
