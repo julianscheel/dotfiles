@@ -1,0 +1,92 @@
+""" Options
+set vicmd=$EDITOR
+set trash
+set history=100
+" set nofollowlinks
+set fastrun
+set sortnumbers
+set undolevels=100
+set novimhelp
+set norunexec
+set noiec
+set rulerformat='%2l-%S%[ +%0-%]'
+set timefmt=%d.%m.%Y\ %H:%M
+set tuioptions=p
+set wildmenu
+set ignorecase
+set smartcase
+set nohlsearch
+set incsearch
+set scrolloff=4
+set nowrap
+set statusline="  %t%= %A %10u:%-7g %15s %20d  "
+set vifminfo=dhistory,chistory,state,shistory,phistory,fhistory,dirstack,
+             \registers,bookmarks,bmarks,tui
+
+colorscheme bankert
+
+""" Marks
+mark r /
+mark h ~/
+
+""" Commands
+command! df df -h %m 2> /dev/null
+command! reload :write | restart
+
+""" Mappings
+nnoremap s :shell<cr>
+nnoremap S :sort<cr>
+nnoremap w :view<cr>
+vnoremap w :view<cr>gv
+nnoremap o '
+nnoremap I cw<c-a>
+nnoremap cc cw<c-u>
+nnoremap A cw<c-w>
+nnoremap ßq :q<cr>
+nnoremap ßc :write | execute ':!$EDITOR $MYVIFMRC' | restart<cr>
+nnoremap ßt :lstrash<cr>
+
+""" Filetypes
+
+" Directories
+fileviewer .*/,*/ tree -L 1 -C %f
+
+" Archives
+filetype *.tar,*.gz,*.xz,*.zip,*.rar,*.jar,*.7z,*.tgz
+         \ {Unpack with aunpack}
+         \ aunpack,
+fileviewer *.tar,*.gz,*.tar.xz,*.zip,*.rar,*.jar,*.7z,*.tgz als %c
+
+" Images
+filextype *.jpg,*.png,*.gif
+          \ {Open in sxiv}
+          \ sxiv %f &,
+          \ {Open in GIMP}
+          \ gimp %f &,
+filextype *.svg
+          \ {Open in Inkscape}
+          \ inkscape &,
+fileviewer *.jpg,*.png,*.gif img2txt -f utf8 -W %pw %c
+
+" Music
+filextype *.mp3,*flac
+          \ {Open in VLC}
+          \ vlc %f %i &,
+fileviewer *.mp3,*.flac mediainfo %c
+
+" Videos
+filextype *.mkv,*.mp4,*.wmv
+          \ {Open in VLC}
+          \ vlc %f %i &,
+fileviewer *.mkv,*.mp4,*.wmv mediainfo %c
+
+" PDFs
+filextype *.pdf
+          \ {Open in zathura}
+          \ zathura &,
+          \ {Open in Evince}
+          \ evince %c %i &,
+fileviewer *.pdf pdftotext %c -
+
+" Other files
+fileviewer * sh -c '~/scripts/view-file.zsh %c'
