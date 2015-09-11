@@ -60,12 +60,12 @@ fileviewer *.tar,*.gz,*.tar.xz,*.zip,*.rar,*.jar,*.7z,*.tgz als %c
 " Images
 filextype *.jpg,*.png,*.gif
           \ {Open in sxiv}
-          \ sxiv %f &,
+          \ sxiv %f %i &,
           \ {Open in GIMP}
-          \ gimp %f &,
+          \ gimp %f %i &,
 filextype *.svg
           \ {Open in Inkscape}
-          \ inkscape &,
+          \ inkscape %c %i &,
 fileviewer *.jpg,*.png,*.gif img2txt -f utf8 -W %pw %c
 
 " Music
@@ -83,7 +83,7 @@ fileviewer *.mkv,*.mp4,*.wmv mediainfo %c
 " PDFs
 filextype *.pdf
           \ {Open in zathura}
-          \ zathura &,
+          \ zathura %c %i &,
           \ {Open in Evince}
           \ evince %c %i &,
 fileviewer *.pdf pdftotext %c -
