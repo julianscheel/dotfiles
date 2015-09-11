@@ -88,5 +88,10 @@ filextype *.pdf
           \ evince %c %i &,
 fileviewer *.pdf pdftotext %c -
 
+" HTML
+filextype *.html
+          \ {Open in Firefox}
+          \ firefox %c %i &,
+
 " Other files
 fileviewer * sh -c '~/scripts/view-file.zsh %c'
