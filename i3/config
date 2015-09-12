@@ -115,7 +115,7 @@ bar {
 # }}}
 
 # {{{ Autostart
-exec_always --no-startup-id "imlibsetroot -s 1920,1054 -p 0,26 ~/Pictures/Wallpapers/flat_space.jpg"
+exec_always --no-startup-id "imlibsetroot ~/Pictures/Wallpapers/wallpaper.jpg"
 exec_always --no-startup-id "xrdb -I$HOME ~/.Xresources"
 exec        --no-startup-id "redshift"
 exec        --no-startup-id "compton --backend glx"
