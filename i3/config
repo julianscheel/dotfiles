@@ -14,10 +14,10 @@ font pango:Source Code Pro 11
 new_window pixel 5
 
                         #border backgr. text    indicator
-client.focused          #268bd2 #268bd2 #282828 #b58900
-client.unfocused        #586e75 #586e75 #282828 #586e75
-client.focused_inactive #586e75 #586e75 #282828 #586e75
-client.urgent           #dc322f #dc322f #282828 #dc322f
+client.focused          #cdbf9c #cdbf9c #282828 #dca53b
+client.unfocused        #555147 #555147 #afa387 #555147
+client.focused_inactive #555147 #555147 #afa387 #555147
+client.urgent           #f54841 #f54841 #373532 #f54841
 # }}}
 
 # {{{ Keybindings
@@ -101,15 +101,15 @@ bar {
     status_command i3status
 
     colors {
-        background #282828
+        background #373532
         statusline #ebdbb2
-        separator  #073642
+        separator  #555147
 
                            #border backgr. text
-        focused_workspace  #268bd2 #268bd2 #002b36
-        active_workspace   #323232 #5f676a #ebdbb2
-        inactive_workspace #323232 #323232 #ebdbb2
-        urgent_workspace   #dc322f #dc322f #002b36
+        focused_workspace  #cdbf9c #cdbf9c #282828
+        active_workspace   #cdbf9c #373532 #cdbf9c
+        inactive_workspace #373532 #373532 #afa387
+        urgent_workspace   #f54841 #f54841 #373532
     }
 }
 # }}}
