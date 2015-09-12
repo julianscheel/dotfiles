@@ -1,3 +1,10 @@
 rofi.font: Source Code Pro 20
 rofi.terminal: urxvtc
 rofi.levenshtein-sort: false
+rofi.hide-scrollbar: true
+rofi.bg: #373532
+rofi.bc: #918872
+rofi.bw: 4
+rofi.fg: #ebdbb2
+rofi.hlbg: #46433d
+rofi.hlfg: #ebdbb2
