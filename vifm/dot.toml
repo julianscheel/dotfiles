@@ -1,2 +1,3 @@
 [dotrix.link]
 ".config/vifm/vifmrc" = "vifmrc"
+".config/vifm/colors/bankert.vifm" = "bankert.vifm"

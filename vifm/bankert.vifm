@@ -1,0 +1,27 @@
+" bankert.vifm --- Theme inspired by gruvbox and Tomorrow-Night-Eighties
+" Copyright (C) 2015 Dennis Hamester
+
+" This scheme requires the bankert terminal colors to be set properly,
+" including those beyond 15.
+
+highlight clear
+
+highlight JobLine cterm=bold ctermfg=white ctermbg=black
+highlight StatusLine cterm=none ctermfg=38 ctermbg=34
+ highlight WildMenu cterm=none ctermfg=27 ctermbg=35
+highlight Border cterm=none ctermfg=36 ctermbg=34
+highlight CmdLine cterm=none ctermfg=white ctermbg=black
+ highlight ErrorMsg cterm=none ctermfg=red ctermbg=none
+highlight Win cterm=none ctermfg=white ctermbg=black
+ highlight Directory cterm=none ctermfg=blue ctermbg=none
+ highlight Link cterm=none ctermfg=yellow ctermbg=none
+ highlight BrokenLink cterm=none ctermfg=red ctermbg=none
+ highlight Socket cterm=none ctermfg=magenta ctermbg=none
+ highlight Device cterm=none ctermfg=red ctermbg=none
+ highlight Fifo cterm=none ctermfg=cyan ctermbg=none
+ highlight Executable cterm=none ctermfg=green ctermbg=none
+  highlight Selected cterm=bold ctermfg=none ctermbg=35
+   highlight CurrLine cterm=bold ctermfg=none ctermbg=33
+   highlight OtherLine cterm=bold ctermfg=none ctermbg=none
+highlight TopLine cterm=none ctermfg=36 ctermbg=34
+ highlight TopLineSel cterm=bold ctermfg=37 ctermbg=none
