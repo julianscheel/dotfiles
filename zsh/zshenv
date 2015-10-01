@@ -22,3 +22,6 @@ export WINEDLLOVERRIDES=winemenubuilder.exe=d
 
 # Use GTK style for QT5
 export QT_STYLE_OVERRIDE=GTK+
+
+# Enable ccache everywhere
+export PATH="/usr/lib/ccache/bin/:$PATH"
