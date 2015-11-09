@@ -89,8 +89,10 @@
    #+BEGIN_SRC emacs-lisp
      (setq inhibit-startup-screen t)
      (setq backup-directory-alist `(("." . ,(expand-file-name "backups" user-emacs-directory))))
-     (setq-default indent-tabs-mode nil)
      (setq-default fill-column 100)
+     (setq-default indent-tabs-mode nil)
+     (setq-default tab-width 4)
+     (defvaralias 'c-basic-offset 'tab-width)
    #+END_SRC
 ** GUI Settings
    #+BEGIN_SRC emacs-lisp
