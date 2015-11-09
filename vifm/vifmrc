@@ -86,7 +86,6 @@ filextype *.pdf
           \ zathura %c %i &,
           \ {Open in Evince}
           \ evince %c %i &,
-fileviewer *.pdf pdftotext %c -
 
 " HTML
 filextype *.html
