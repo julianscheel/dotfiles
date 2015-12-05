@@ -70,14 +70,14 @@ fileviewer *.jpg,*.png,*.gif img2txt -f utf8 -W %pw %c
 
 " Music
 filextype *.mp3,*flac
-          \ {Open in VLC}
-          \ vlc %f %i &,
+          \ {Open in SMPlayer}
+          \ smplayer %f %i &,
 fileviewer *.mp3,*.flac mediainfo %c
 
 " Videos
 filextype *.mkv,*.mp4,*.wmv
-          \ {Open in VLC}
-          \ vlc %f %i &,
+          \ {Open in SMPlayer}
+          \ smplayer %f %i &,
 fileviewer *.mkv,*.mp4,*.wmv mediainfo %c
 
 " PDFs
