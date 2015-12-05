@@ -17,7 +17,7 @@ playlist_display_mode = classic
 browser_display_mode = columns
 search_engine_display_mode = columns
 playlist_editor_display_mode = columns
-song_list_format = "{$5%a $2>$3 }{$3%t}{$R $4[%l]}"
+song_list_format = "{$2%a$8} {$5%b$8} $R {$3%t$8} {$4(%l)$8}"
 progressbar_color = blue
 progressbar_elapsed_color = red
 
