@@ -75,10 +75,10 @@ filextype *.mp3,*flac
 fileviewer *.mp3,*.flac mediainfo %c
 
 " Videos
-filextype *.mkv,*.mp4,*.wmv
+filextype *.mkv,*.mp4,*.wmv,*.avi
           \ {Open in SMPlayer}
           \ smplayer %f %i &,
-fileviewer *.mkv,*.mp4,*.wmv mediainfo %c
+fileviewer *.mkv,*.mp4,*.wmv,*.avi mediainfo %c
 
 " PDFs
 filextype *.pdf
