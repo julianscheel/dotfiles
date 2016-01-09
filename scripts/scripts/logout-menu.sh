@@ -6,7 +6,7 @@ fi
 
 case $CMD in
     Logout)
-        i3-msg exit ;;
+        ~/scripts/quit-i3.sh ;;
     Lock)
         ~/scripts/lock-screen.sh ;;
     Poweroff)
