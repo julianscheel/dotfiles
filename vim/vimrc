@@ -99,7 +99,7 @@ nmap <silent> du :<c-u>diffupdate<cr>
 " }}}
 
 " {{{ Commands
-com RC e ~/dotfiles/vimrc
+com RC e ~/dotfiles/vim/vimrc
 " }}}
 
 " {{{ GUI settings
