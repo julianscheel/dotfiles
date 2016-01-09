@@ -21,7 +21,7 @@ client.urgent           #f54841 #f54841 #373532 #f54841
 # }}}
 
 # {{{ Keybindings
-bindsym $mod+Return           exec urxvtc
+bindsym $mod+Return           exec termite
 bindsym $mod+Shift+Return     exec ~/scripts/visual.sh
 bindsym $mod+d                exec rofi -show run -lines 5
 bindsym $mod+Shift+e          exec --no-startup-id ~/scripts/logout-menu.sh
@@ -119,7 +119,6 @@ exec_always --no-startup-id "~/.fehbg"
 exec_always --no-startup-id "xrdb -I$HOME ~/.Xresources"
 exec        --no-startup-id "redshift"
 exec        --no-startup-id "compton --backend glx"
-exec        --no-startup-id "urxvtd -q -o -f"
 exec        --no-startup-id "start-pulseaudio-x11"
 exec        --no-startup-id "dunst"
 exec        --no-startup-id "nm-applet"

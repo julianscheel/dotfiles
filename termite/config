@@ -1,0 +1,91 @@
+[options]
+scroll_on_output = false
+scroll_on_keystroke = true
+audible_bell = false
+mouse_autohide = false
+allow_bold = true
+dynamic_title = true
+urgent_on_bell = true
+clickable_url = true
+font = Source Code Pro 11
+scrollback_lines = 10000
+search_wrap = true
+#icon_name = terminal
+#geometry = 640x480
+
+# "system", "on" or "off"
+cursor_blink = off
+
+# "block", "underline" or "ibeam"
+cursor_shape = block
+
+# $BROWSER is used by default
+#browser = firefox
+
+# set size hints for the window
+size_hints = true
+
+# emit escape sequences for other keys modified by Control
+#modify_other_keys = false
+
+[colors]
+cursor = #ebdbb2
+foreground = #ebdbb2
+background = #282828
+
+# Basic 16 colors + bright variants
+color0 = #282828
+color8 = #555147
+color1 = #cc2929
+color9 = #f53931
+color2 = #569158
+color10 = #72b074
+color3 = #d79921
+color11 = #ffc144
+color4 = #47739e
+color12 = #668de5
+color5 = #805abf
+color13 = #9d74e2
+color6 = #60a1a6
+color14 = #81c7cd
+color7 = #918872
+color15 = #ebdbb2
+
+# The range 16-39 is used to repeat all colors.
+color16 = #cc2929
+color17 = #d65d0e
+color18 = #d79921
+color19 = #569158
+color20 = #60a1a6
+color21 = #47739e
+color22 = #805abf
+color23 = #836853
+color24 = #f53931
+color25 = #ff761b
+color26 = #ffc144
+color27 = #72b074
+color28 = #81c7cd
+color29 = #668de5
+color30 = #9d74e2
+color31 = #a68469
+color32 = #282828
+color33 = #373532
+color34 = #46433d
+color35 = #555147
+color36 = #918872
+color37 = #afa387
+color38 = #cdbf9c
+color39 = #ebdbb2
+
+[hints]
+#font = Monospace 12
+#foreground = #dcdccc
+#background = #3f3f3f
+#active_foreground = #e68080
+#active_background = #3f3f3f
+#padding = 2
+#border = #3f3f3f
+#border_width = 0.5
+#roundness = 2.0
+
+# vim: ft=dosini cms=#%s
