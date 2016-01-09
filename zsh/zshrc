@@ -48,4 +48,4 @@ bindkey '^J' history-substring-search-down
 zstyle ':completion:*' menu select
 
 # Aliases
-alias em=$EDITOR
+alias e=$EDITOR
