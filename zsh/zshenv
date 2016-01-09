@@ -8,7 +8,7 @@ fi
 
 export EDITOR=~/scripts/editor.sh
 export VISUAL=~/scripts/visual.sh
-
+export BROWSER=/usr/bin/firefox
 export PAGER=less
 export LESS=-R
 
