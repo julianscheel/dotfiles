@@ -443,21 +443,6 @@
      (setq ediff-highlight-all-diffs nil)
    #+END_SRC
 ** Rust
-*** company-racer
-    * Homepage: [[https://github.com/emacs-pe/company-racer]]
-
-    #+BEGIN_SRC emacs-lisp
-      (use-package company-racer
-        :ensure t
-        :defer t
-
-        :init
-        (unless (getenv "RUST_SRC_PATH")
-          (setenv "RUST_SRC_PATH" (expand-file-name "~/code/rust/src")))
-
-        :config
-        (add-to-list 'company-backends 'company-racer))
-    #+END_SRC
 *** rust-mode
     * Homepage: [[https://github.com/rust-lang/rust-mode]]
 
@@ -466,11 +451,13 @@
         :ensure t
         :mode "\\.rs\\'"
 
+        :init
+        (unless (getenv "RUST_SRC_PATH")
+          (setenv "RUST_SRC_PATH" (expand-file-name "~/code/rust/src")))
+
         :config
-        (use-package company-racer)
         (add-hook 'rust-mode-hook
                   (lambda ()
-                    (hamster/make-local-company-backends '(company-racer))
                     (set (make-local-variable 'compile-command) "cargo build"))))
     #+END_SRC
 *** toml-mode
