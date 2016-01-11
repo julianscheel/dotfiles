@@ -12,6 +12,7 @@ floating_modifier $mod
 # {{{ Theme
 font pango:Source Code Pro 11
 new_window pixel 5
+gaps inner 10
 
                         #border backgr. text    indicator
 client.focused          #cdbf9c #cdbf9c #282828 #dca53b
