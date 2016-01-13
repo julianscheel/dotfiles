@@ -352,6 +352,34 @@
        :defer t
        :diminish flycheck-mode)
    #+END_SRC
+** ycmd
+   * Homepage :: https://github.com/abingham/emacs-ycmd
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package ycmd
+       :ensure t
+       :diminish ycmd-mode
+
+       :init
+       (setq ycmd-server-command (list "python2" (expand-file-name "~/code/ycmd/ycmd"))))
+   #+END_SRC
+** company-ycmd
+   * Homepage :: https://github.com/abingham/emacs-ycmd
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package company-ycmd
+       :ensure t)
+   #+END_SRC
+** flycheck-ycmd
+   * Homepage :: https://github.com/abingham/emacs-ycmd
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package flycheck-ycmd
+       :ensure t
+
+       :config
+       (flycheck-ycmd-setup))
+   #+END_SRC
 * Minor Modes
 ** whitespace-mode
    #+BEGIN_SRC emacs-lisp
@@ -409,12 +437,15 @@
        (hs-minor-mode 1)
        (flycheck-mode 1))
 
-     (defvar hamster/company-backends
-       '(company-files company-yasnippet company-dabbrev))
+     (defvar hamster/company-backends-begin
+       '(company-files))
+
+     (defvar hamster/company-backends-end
+       '(company-yasnippet))
 
      (defun hamster/make-local-company-backends (&optional backends)
        (set (make-local-variable 'company-backends)
-            (list (-concat hamster/company-backends backends))))
+            (list (-concat hamster/company-backends-begin backends hamster/company-backends-end))))
    #+END_SRC
 ** prog-mode
    #+BEGIN_SRC emacs-lisp
@@ -458,7 +489,10 @@
         :config
         (add-hook 'rust-mode-hook
                   (lambda ()
-                    (set (make-local-variable 'compile-command) "cargo build"))))
+                    (set (make-local-variable 'compile-command) "cargo build")
+                    (ycmd-mode 1)
+                    (hamster/make-local-company-backends '(company-ycmd)))))
+
     #+END_SRC
 *** toml-mode
     * Homepage: [[https://github.com/dryman/toml-mode.el]]
