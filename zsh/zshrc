@@ -49,3 +49,6 @@ zstyle ':completion:*' menu select
 
 # Aliases
 alias e=$EDITOR
+alias ls="ls -h"
+alias l=ls
+alias ll="ls -l"
