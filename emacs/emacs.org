@@ -595,6 +595,15 @@
        :ensure t
        :defer t)
    #+END_SRC
+** C++
+   #+BEGIN_SRC emacs-lisp
+     (add-hook 'c++-mode-hook
+               (lambda ()
+                 (abbrev-mode -1)
+                 (ycmd-mode)
+                 (hamster/make-local-company-backends '(company-ycmd))))
+
+   #+END_SRC
 * Theme
 ** bankert-theme
    * Homepage: [[https://gitlab.com/dennis.hamester/bankert-theme]]
