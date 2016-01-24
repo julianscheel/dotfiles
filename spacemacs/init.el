@@ -8,16 +8,18 @@
 
    dotspacemacs-configuration-layers
    '(
-     auto-completion
+     (auto-completion :variables
+                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-enable-sort-by-usage t
+                      auto-completion-tab-key-behavior 'complete)
      c-c++
      emacs-lisp
      git
      org
+     (shell :variables shell-default-shell 'eshell)
      spell-checking
-     (syntax-checking
-      :variables syntax-checking-enable-tooltips nil)
+     (syntax-checking :variables syntax-checking-enable-tooltips nil)
      ycmd
-     xkcd
      )
 
    dotspacemacs-additional-packages '(mozc)
@@ -66,9 +68,8 @@ Spacemacs initialization before layers configuration."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(bankert
-                         spacemacs-dark
-                         zenburn)
+   dotspacemacs-themes '(monokai
+                         spacemacs-dark)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state nil
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
@@ -76,7 +77,7 @@ Spacemacs initialization before layers configuration."
    dotspacemacs-default-font '("Source Code Pro 11"
                                :weight normal
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 1.0)
    ;; The leader key
    dotspacemacs-leader-key "ß"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -164,7 +165,7 @@ Spacemacs initialization before layers configuration."
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
    dotspacemacs-inactive-transparency 100
    ;; If non nil unicode symbols are displayed in the mode line. (default t)
-   dotspacemacs-mode-line-unicode-symbols t
+   dotspacemacs-mode-line-unicode-symbols nil
    ;; If non nil smooth scrolling (native-scrolling) is enabled. Smooth
    ;; scrolling overrides the default behavior of Emacs which recenters the
    ;; point when it reaches the top or bottom of the screen. (default t)
@@ -172,7 +173,7 @@ Spacemacs initialization before layers configuration."
    ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
    ;; derivatives. If set to `relative', also turns on relative line numbers.
    ;; (default nil)
-   dotspacemacs-line-numbers t
+   dotspacemacs-line-numbers 'relative
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
    dotspacemacs-smartparens-strict-mode nil
@@ -200,38 +201,53 @@ Spacemacs initialization before layers configuration."
    ))
 
 (defun dotspacemacs/user-init ()
-  (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
-  (load-file (expand-file-name "~/code/bankert-theme/emacs/bankert-theme.el"))
+  ;; customize
+  (setq-default custom-file (expand-file-name "custom.el" dotspacemacs-directory))
+
+  ;; monokai
+  (setq-default monokai-high-contrast-mode-line t)
   )
 
 (defun hamster/display-system-init ()
   "Configurations which have to set after creating the first frame"
-  (setq powerline-default-separator 'arrow)
+  ;; powerline
+  (setq-default powerline-default-separator 'bar)
   )
 
 (defun dotspacemacs/user-config ()
-  ;; Make evil-mode up/down operate in screen lines instead of logical lines
-  (define-key evil-motion-state-map "j" 'evil-next-visual-line)
-  (define-key evil-motion-state-map "k" 'evil-previous-visual-line)
-  (define-key evil-visual-state-map "j" 'evil-next-visual-line)
-  (define-key evil-visual-state-map "k" 'evil-previous-visual-line)
+  ;; ediff
+  (setq-default ediff-auto-refine 'nix)
 
-  ;; Split windows to the right and below
-  (setq evil-split-window-below t)
-  (setq evil-vsplit-window-right t)
+  ;; evil
+  (setq-default evil-split-window-below t)
+  (setq-default evil-vsplit-window-right t)
 
-  ;; Disable minor modes in the mode line
+  ;; evil-shift
+  (setq-default evil-shift-round nil)
+
+  ;; company
+  (setq-default company-selection-wrap-around t)
+
+  ;; neotree
+  (setq-default neo-theme 'nerd)
+
+  ;; smartparens
+  (setq-default sp-highlight-pair-overlay nil)
+  (setq-default sp-highlight-wrap-overlay nil)
+  (setq-default sp-highlight-wrap-tag-overlay nil)
+
+  ;; spacemacs
+  (spacemacs/toggle-visual-line-navigation-on)
   (spacemacs/toggle-mode-line-minor-modes-off)
-
-  ;; Disable version control info in the mode line
   (spacemacs/toggle-mode-line-version-control-off)
 
-  ;; Setup YCMD
-  (setq ycmd-server-command `("python2" ,(expand-file-name "~/code/ycmd/ycmd")))
-
-  ;; Set default tab-width
+  ;; tab-width
   (setq-default tab-width 4)
   (setq-default c-basic-offset 4)
+
+  ;; ycmd
+  (setq-default ycmd-server-command `("python2" ,(expand-file-name "~/code/ycmd/ycmd")))
+  (setq-default ycmd-force-semantic-completion t)
 
   ;; Run hamster/display-system-init after creating the first frame
   (spacemacs|do-after-display-system-init (hamster/display-system-init))
