@@ -221,6 +221,8 @@ Spacemacs initialization before layers configuration."
   ;; evil
   (setq-default evil-split-window-below t)
   (setq-default evil-vsplit-window-right t)
+  (define-key evil-motion-state-map (kbd "M-j") 'evil-scroll-line-down)
+  (define-key evil-motion-state-map (kbd "M-k") 'evil-scroll-line-up)
 
   ;; evil-shift
   (setq-default evil-shift-round nil)
