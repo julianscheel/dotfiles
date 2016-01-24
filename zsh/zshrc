@@ -28,17 +28,14 @@ if ! zgen saved; then
     zgen save
 fi
 
-# Bankert colorscheme
-~/code/bankert-theme/term/bankert.sh
-
 # bullet-train colors
 export BULLETTRAIN_TIME_SHOW=false
 export BULLETTRAIN_GIT_EXTENDED=false
-export BULLETTRAIN_STATUS_FG=32
-export BULLETTRAIN_DIR_FG=37
-export BULLETTRAIN_DIR_BG=35
-export BULLETTRAIN_GIT_FG=37
-export BULLETTRAIN_GIT_BG=33
+export BULLETTRAIN_STATUS_FG=16
+export BULLETTRAIN_DIR_FG=16
+export BULLETTRAIN_DIR_BG=0
+export BULLETTRAIN_GIT_FG=16
+export BULLETTRAIN_GIT_BG=8
 
 # bind C-k and C-j for history browsing
 bindkey '^K' history-substring-search-up
