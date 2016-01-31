@@ -11,7 +11,7 @@ general {
 }
 
 order += "volume master"
-order += "disk /"
+order += "disk /home"
 order += "wireless wlp4s0"
 order += "battery 0"
 order += "cpu_temperature 0"
@@ -23,7 +23,7 @@ volume master {
     format_muted = "  %volume"
 }
 
-disk "/" {
+disk "/home" {
     format = "  %avail"
 }
 
