@@ -15,6 +15,7 @@
      c-c++
      emacs-lisp
      git
+     markdown
      org
      (shell :variables shell-default-shell 'eshell)
      spell-checking
