@@ -70,7 +70,7 @@ Spacemacs initialization before layers configuration."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(monokai
+   dotspacemacs-themes '(neogruv
                          spacemacs-dark)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state nil
@@ -203,11 +203,10 @@ Spacemacs initialization before layers configuration."
    ))
 
 (defun dotspacemacs/user-init ()
+  (load-file "~/code/neogruv/emacs/neogruv-theme.el")
+
   ;; customize
   (setq-default custom-file (expand-file-name "custom.el" dotspacemacs-directory))
-
-  ;; monokai
-  (setq-default monokai-high-contrast-mode-line t)
   )
 
 (defun hamster/display-system-init ()
