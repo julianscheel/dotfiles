@@ -64,7 +64,7 @@ Spacemacs initialization before layers configuration."
    dotspacemacs-startup-lists '(recents projects)
    ;; Number of recent files to show in the startup buffer. Ignored if
    ;; `dotspacemacs-startup-lists' doesn't include `recents'. (default 5)
-   dotspacemacs-startup-recent-list-size 5
+   dotspacemacs-startup-recent-list-size 10
    ;; Default major mode of the scratch buffer (default `text-mode')
    dotspacemacs-scratch-mode 'text-mode
    ;; List of themes, the first of the list is loaded when spacemacs starts.
@@ -79,7 +79,7 @@ Spacemacs initialization before layers configuration."
    dotspacemacs-default-font '("Source Code Pro 11"
                                :weight normal
                                :width normal
-                               :powerline-scale 1.0)
+                               :powerline-scale 1.1)
    ;; The leader key
    dotspacemacs-leader-key "ß"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -129,7 +129,7 @@ Spacemacs initialization before layers configuration."
    dotspacemacs-helm-resize nil
    ;; if non nil, the helm header is hidden when there is only one source.
    ;; (default nil)
-   dotspacemacs-helm-no-header t
+   dotspacemacs-helm-no-header nil
    ;; define the position to display `helm', options are `bottom', `top',
    ;; `left', or `right'. (default 'bottom)
    dotspacemacs-helm-position 'bottom
@@ -196,7 +196,7 @@ Spacemacs initialization before layers configuration."
    dotspacemacs-default-package-repository nil
    ;; Delete whitespace while saving buffer. Possible values are `all'
    ;; to aggressively delete empty line and long sequences of whitespace,
-   ;; `trailing' to delete only the whitespace at end of lines, `changed'to
+   ;; `trailing' to delete only the whitespace at end of lines, `changed' to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
    dotspacemacs-whitespace-cleanup nil
@@ -213,7 +213,7 @@ Spacemacs initialization before layers configuration."
 (defun hamster/display-system-init ()
   "Configurations which have to set after creating the first frame"
   ;; powerline
-  (setq-default powerline-default-separator 'bar)
+  (setq-default powerline-default-separator 'arrow)
   )
 
 (defun dotspacemacs/user-config ()
@@ -239,6 +239,9 @@ Spacemacs initialization before layers configuration."
   (setq-default sp-highlight-pair-overlay nil)
   (setq-default sp-highlight-wrap-overlay nil)
   (setq-default sp-highlight-wrap-tag-overlay nil)
+
+  ;; spaceline
+  (spaceline-toggle-buffer-size-off)
 
   ;; spacemacs
   (spacemacs/toggle-visual-line-navigation-on)
