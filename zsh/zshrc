@@ -37,6 +37,9 @@ export BULLETTRAIN_DIR_BG=30
 export BULLETTRAIN_GIT_FG=24
 export BULLETTRAIN_GIT_BG=29
 
+# dircolors
+eval $(dircolors)
+
 # bind C-k and C-j for history browsing
 bindkey '^K' history-substring-search-up
 bindkey '^J' history-substring-search-down
@@ -46,7 +49,7 @@ zstyle ':completion:*' menu select
 
 # Aliases
 alias e=$EDITOR
-alias ls="ls -h"
+alias ls="ls -h --color=auto"
 alias l=ls
 alias ll="ls -l"
 alias la="ls -a"
