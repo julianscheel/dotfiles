@@ -19,10 +19,12 @@
      (shell :variables shell-default-shell 'eshell)
      spell-checking
      (syntax-checking :variables syntax-checking-enable-tooltips nil)
+     vim-empty-lines
+     vimscript
      ycmd
      )
 
-   dotspacemacs-additional-packages '(mozc)
+   dotspacemacs-additional-packages '(mozc pkgbuild-mode)
    dotspacemacs-excluded-packages '()
    dotspacemacs-delete-orphan-packages t))
 
