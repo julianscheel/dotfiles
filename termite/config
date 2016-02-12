@@ -28,46 +28,6 @@ size_hints = true
 # emit escape sequences for other keys modified by Control
 #modify_other_keys = false
 
-[colors]
-# special
-foreground      = #f1ebeb
-foreground_bold = #f1ebeb
-cursor          = #f1ebeb
-background      = #272822
-
-# black
-color0  = #48483e
-color8  = #76715e
-
-# red
-color1  = #dc2566
-color9  = #fa2772
-
-# green
-color2  = #8fc029
-color10 = #a7e22e
-
-# yellow
-color3  = #d4c96e
-color11 = #e7db75
-
-# blue
-color4  = #55bcce
-color12 = #66d9ee
-
-# magenta
-color5  = #9358fe
-color13 = #ae82ff
-
-# cyan
-color6  = #56b7a5
-color14 = #66efd5
-
-# white
-color7  = #acada1
-color15 = #cfd0c2
-color16 = #f1ebeb
-
 [hints]
 #font = Monospace 12
 #foreground = #dcdccc
@@ -78,5 +38,55 @@ color16 = #f1ebeb
 #border = #3f3f3f
 #border_width = 0.5
 #roundness = 2.0
+
+# Dark theme inspired by gruvbox
+# Author: Dennis Hamester <dennis.hamester@startmail.com>
+# Homepage: https://gitlab.com/dennis.hamester/neogruv
+
+# This work is licensed under the Creative Commons Attribution 4.0
+# International License. To view a copy of this license, visit
+# http://creativecommons.org/licenses/by/4.0/.
+
+[colors]
+# Special colors
+foreground = #c3b69a
+background = #282828
+cursor = #897e78
+
+# Basic 8 colors and bright variants
+color0 = #282828
+color1 = #bb2d2f
+color2 = #878517
+color3 = #c48522
+color4 = #54747f
+color5 = #ac4a56
+color6 = #3b8f68
+color7 = #897e78
+color8 = #625c5b
+color9 = #ff1f2a
+color10 = #bdc400
+color11 = #ffa61b
+color12 = #558799
+color13 = #e14962
+color14 = #22ce8f
+color15 = #c3b69a
+
+# The range 16-31 is used to repeat all colors.
+color16 = #bb2d2f
+color17 = #c5570d
+color18 = #c48522
+color19 = #878517
+color20 = #3b8f68
+color21 = #54747f
+color22 = #ac4a56
+color23 = #935c37
+color24 = #282828
+color25 = #c3b69a
+color26 = #313131
+color27 = #625c5b
+color28 = #897e78
+color29 = #b7a387
+color30 = #655851
+color31 = #4f4845
 
 # vim: ft=dosini cms=#%s
