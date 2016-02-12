@@ -31,11 +31,11 @@ fi
 # bullet-train colors
 export BULLETTRAIN_TIME_SHOW=false
 export BULLETTRAIN_GIT_EXTENDED=false
-export BULLETTRAIN_STATUS_FG=16
-export BULLETTRAIN_DIR_FG=16
-export BULLETTRAIN_DIR_BG=0
-export BULLETTRAIN_GIT_FG=16
-export BULLETTRAIN_GIT_BG=8
+export BULLETTRAIN_STATUS_FG=24
+export BULLETTRAIN_DIR_FG=25
+export BULLETTRAIN_DIR_BG=30
+export BULLETTRAIN_GIT_FG=24
+export BULLETTRAIN_GIT_BG=29
 
 # bind C-k and C-j for history browsing
 bindkey '^K' history-substring-search-up
