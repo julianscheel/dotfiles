@@ -19,7 +19,7 @@
      (shell :variables shell-default-shell 'eshell)
      spell-checking
      (syntax-checking :variables syntax-checking-enable-tooltips nil)
-     vim-empty-lines
+     ;; vim-empty-lines
      vimscript
      ycmd
      )
