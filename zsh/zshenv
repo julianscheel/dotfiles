@@ -10,7 +10,7 @@ export EDITOR=~/scripts/editor.sh
 export VISUAL=~/scripts/visual.sh
 export BROWSER=/usr/bin/firefox
 export PAGER=less
-export LESS=-R
+export LESS=FRX
 
 export VGL_FPS=60
 export VGL_SPOIL=0
