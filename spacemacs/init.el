@@ -26,6 +26,7 @@ values."
      git
      markdown
      org
+     python
      (shell :variables shell-default-shell 'eshell)
      spell-checking
      (syntax-checking :variables syntax-checking-enable-tooltips nil)
