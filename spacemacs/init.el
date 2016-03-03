@@ -246,6 +246,9 @@ in `dotspacemacs/user-config'."
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
+  ;; company
+  (setq-default company-selection-wrap-around t)
+
   ;; ediff
   (setq-default ediff-auto-refine 'nix)
 
@@ -257,9 +260,6 @@ layers configuration. You are free to put any user code."
 
   ;; evil-shift
   (setq-default evil-shift-round nil)
-
-  ;; company
-  (setq-default company-selection-wrap-around t)
 
   ;; neotree
   (setq-default neo-theme 'nerd)
