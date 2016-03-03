@@ -19,6 +19,7 @@ values."
    dotspacemacs-configuration-layers
    '(
      (auto-completion :variables
+                      auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-sort-by-usage t
                       auto-completion-tab-key-behavior 'complete)
      c-c++
@@ -281,6 +282,10 @@ layers configuration. You are free to put any user code."
   ;; tab-width
   (setq-default tab-width 4)
   (setq-default c-basic-offset 4)
+
+  ;; yasnippet
+  (with-eval-after-load 'yasnippet
+    (setq yas-snippet-dirs (remq 'yas-installed-snippets-dir yas-snippet-dirs)))
 
   ;; ycmd
   (setq-default ycmd-server-command `("python2" ,(expand-file-name "~/code/ycmd/ycmd")))
