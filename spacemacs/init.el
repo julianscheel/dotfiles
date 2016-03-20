@@ -291,6 +291,9 @@ layers configuration. You are free to put any user code."
   (setq-default ycmd-server-command `("python2" ,(expand-file-name "~/code/ycmd/ycmd")))
   (setq-default ycmd-force-semantic-completion t)
   (add-hook 'c-mode-hook 'ycmd-mode)
+  (spacemacs/set-leader-keys-for-minor-mode 'ycmd-mode
+    "gg" 'ycmd-goto
+    "gG" 'ycmd-goto-imprecise)
 
   ;; Run hamster/display-system-init after creating the first frame
   (spacemacs|do-after-display-system-init (hamster/display-system-init))
