@@ -26,14 +26,17 @@ values."
      emacs-lisp
      git
      gtags
+     ibuffer
      markdown
      org
      python
+     rust
      (shell :variables shell-default-shell 'eshell)
      spell-checking
      (syntax-checking :variables syntax-checking-enable-tooltips nil)
      ;; vim-empty-lines
      vimscript
+     yaml
      ycmd
      )
    ;; List of additional packages that will be installed without being
