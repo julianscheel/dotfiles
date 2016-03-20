@@ -25,6 +25,7 @@ values."
      c-c++
      emacs-lisp
      git
+     gtags
      markdown
      org
      python
@@ -262,6 +263,10 @@ layers configuration. You are free to put any user code."
 
   ;; evil-shift
   (setq-default evil-shift-round nil)
+
+  ;; helm-gtags
+  (setq helm-gtags-use-input-at-cursor nil)
+  (setq helm-gtags-fuzzy-match t)
 
   ;; neotree
   (setq-default neo-theme 'nerd)
