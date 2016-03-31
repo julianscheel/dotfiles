@@ -11,6 +11,7 @@ export VISUAL=~/scripts/visual.sh
 export BROWSER=/usr/bin/firefox
 export PAGER=less
 export LESS=FRX
+export MAILDIR=~/Mail
 
 export VGL_FPS=60
 export VGL_SPOIL=0
