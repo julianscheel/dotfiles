@@ -305,6 +305,17 @@ you should place you code here."
   ;; neotree
   (setq-default neo-theme 'nerd)
 
+  ;; org
+  (setq org-startup-indented t)
+
+  ;; org-agenda
+  (setq org-agenda-files '("~/Agenda"))
+
+  ;; org-contacts
+  (setq org-contacts-files '("~/Agenda/contacts.org"))
+  (with-eval-after-load 'org-agenda
+    (require 'org-contacts))
+
   ;; smartparens
   (setq-default sp-highlight-pair-overlay nil)
   (setq-default sp-highlight-wrap-overlay nil)
