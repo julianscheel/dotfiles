@@ -248,7 +248,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 (defun hamster/display-system-init ()
   "Configurations which have to set after creating the first frame"
   ;; powerline
-  (setq-default powerline-default-separator 'arrow)
+  (setq-default powerline-default-separator 'arrow-fade)
   )
 
 (defun dotspacemacs/user-config ()
