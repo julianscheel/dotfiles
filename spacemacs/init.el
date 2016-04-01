@@ -57,7 +57,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(mozc pkgbuild-mode)
+   dotspacemacs-additional-packages '(mozc pkgbuild-mode calfw)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -276,6 +276,12 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (setq-default powerline-default-separator 'arrow-fade)
   )
 
+(defun hamster/calendar ()
+  (interactive)
+  (require 'calfw)
+  (cfw:open-calendar-buffer
+   :contents-sources hamster/calfw-sources))
+
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
@@ -283,6 +289,20 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place you code here."
+  ;; calendar
+  (setq calendar-week-start-day 1)
+
+  ;; calfw
+  (with-eval-after-load 'calfw
+    (require 'calfw-org)
+    (when (not (require 'private-calfw nil 'noerror))
+      (setq hamster/private-calfw-sources nil))
+    (setq hamster/calfw-sources
+          (-concat (list (cfw:org-create-source "Green"))
+                   hamster/private-calfw-sources)))
+  (spacemacs/set-leader-keys
+    "ac" 'hamster/calendar)
+
   ;; company
   (setq-default company-selection-wrap-around t)
 
