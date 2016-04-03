@@ -336,6 +336,9 @@ you should place you code here."
   (with-eval-after-load 'org-agenda
     (require 'org-contacts))
 
+  ;; projectile
+  (setq projectile-enable-caching t)
+
   ;; smartparens
   (setq-default sp-highlight-pair-overlay nil)
   (setq-default sp-highlight-wrap-overlay nil)
