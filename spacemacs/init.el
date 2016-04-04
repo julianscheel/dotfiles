@@ -57,7 +57,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(mozc pkgbuild-mode calfw)
+   dotspacemacs-additional-packages '(mozc pkgbuild-mode calfw gnus-alias)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -322,8 +322,23 @@ you should place you code here."
   (setq helm-gtags-use-input-at-cursor nil)
   (setq helm-gtags-fuzzy-match t)
 
+  ;; message-mode
+  (setq send-mail-function 'smtpmail-send-it)
+  (setq message-kill-buffer-on-exit t)
+  (require 'private-message nil 'noerror)
+
   ;; neotree
   (setq-default neo-theme 'nerd)
+
+  ;; notmuch
+  (setq notmuch-hello-thousands-separator "")
+  (setq notmuch-crypto-process-mime t)
+  (setq notmuch-search-oldest-first nil)
+  (setq notmuch-show-all-tags-list t)
+  (setq notmuch-show-indent-messages-width 4)
+  (setq notmuch-show-logo nil)
+  (when (require 'notmuch nil 'noerror)
+    (spacemacs/set-leader-keys "on" 'notmuch))
 
   ;; org
   (setq org-startup-indented t)
