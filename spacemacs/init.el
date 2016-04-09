@@ -305,7 +305,7 @@ you should place you code here."
           (-concat (list (cfw:org-create-source "Green"))
                    hamster/private-calfw-sources)))
   (spacemacs/set-leader-keys
-    "ac" 'hamster/calendar)
+    "oc" 'hamster/calendar)
 
   ;; company
   (setq-default company-selection-wrap-around t)
