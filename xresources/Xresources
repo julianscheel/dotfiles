@@ -1,3 +1,2 @@
-#include ".Xresources.d/neogruv"
 #include ".Xresources.d/xft"
 #include ".Xresources.d/rofi"
