@@ -362,6 +362,9 @@ you should place you code here."
   ;; projectile
   (setq projectile-enable-caching t)
 
+  ;; shell-pop
+  (setq shell-pop-autocd-to-working-dir nil)
+
   ;; smartparens
   (setq-default sp-highlight-pair-overlay nil)
   (setq-default sp-highlight-wrap-overlay nil)
