@@ -39,9 +39,10 @@ size_hints = true
 #border_width = 0.5
 #roundness = 2.0
 
-# Dark theme inspired by gruvbox
+# darksome - Dark theme with subtle colors
 # Author: Dennis Hamester <dennis.hamester@startmail.com>
-# Homepage: https://gitlab.com/dennis.hamester/neogruv
+# Homepage: https://gitlab.com/dennishamester/darksome
+# Version: 20160408
 
 # This work is licensed under the Creative Commons Attribution 4.0
 # International License. To view a copy of this license, visit
@@ -49,44 +50,42 @@ size_hints = true
 
 [colors]
 # Special colors
-foreground = #c3b69a
-background = #282828
-cursor = #897e78
+foreground = #c2b59a
+background = #2e2b28
+cursor = #837873
 
 # Basic 8 colors and bright variants
-color0 = #282828
-color1 = #bb2d2f
-color2 = #878517
-color3 = #c48522
-color4 = #54747f
-color5 = #ac4a56
-color6 = #3b8f68
-color7 = #897e78
-color8 = #625c5b
-color9 = #ff1f2a
-color10 = #bdc400
-color11 = #ffa61b
-color12 = #558799
-color13 = #e14962
-color14 = #22ce8f
-color15 = #c3b69a
+color0 = #2e2b28
+color1 = #bb5555
+color2 = #999944
+color3 = #cc9944
+color4 = #668899
+color5 = #886688
+color6 = #669977
+color7 = #837873
+color8 = #68615d
+color9 = #dd2222
+color10 = #999911
+color11 = #ff9900
+color12 = #4477aa
+color13 = #774488
+color14 = #449966
+color15 = #c2b59a
 
-# The range 16-31 is used to repeat all colors.
-color16 = #bb2d2f
-color17 = #c5570d
-color18 = #c48522
-color19 = #878517
-color20 = #3b8f68
-color21 = #54747f
-color22 = #ac4a56
-color23 = #935c37
-color24 = #282828
-color25 = #c3b69a
-color26 = #313131
-color27 = #625c5b
-color28 = #897e78
-color29 = #b7a387
-color30 = #655851
-color31 = #4f4845
+# The range 16-29 is used to repeat all colors.
+color16 = #bb5555
+color17 = #cc9944
+color18 = #999944
+color19 = #669977
+color20 = #668899
+color21 = #886688
+color22 = #2e2b28
+color23 = #333335
+color24 = #4f4845
+color25 = #62564f
+color26 = #c2b59a
+color27 = #ac9a80
+color28 = #837873
+color29 = #68615d
 
 # vim: ft=dosini cms=#%s

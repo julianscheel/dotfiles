@@ -118,8 +118,9 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(neogruv
-                         spacemacs-dark)
+   dotspacemacs-themes '(darksome
+                         spacemacs-dark
+                         leuven)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state nil
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
@@ -268,7 +269,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (add-to-list 'load-path "~/.spacemacs.d/elisp")
 
-  (load-file "~/code/neogruv/emacs/neogruv-theme.el")
+  (load-file "~/code/darksome/emacs/darksome-theme.el")
 
   ;; customize
   (setq-default custom-file (expand-file-name "custom.el" dotspacemacs-directory))
