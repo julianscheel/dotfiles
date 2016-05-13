@@ -55,3 +55,4 @@ alias ll="ls -l"
 alias la="ls -a"
 alias lla="ls -la"
 alias pac=pacaur
+alias cmus="tmux a -t cmus 2>/dev/null || tmux new -s cmus cmus"
