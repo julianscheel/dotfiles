@@ -126,7 +126,7 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 14
+                               :size 13
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -153,6 +153,9 @@ values."
    dotspacemacs-distinguish-gui-tab nil
    ;; If non nil `Y' is remapped to `y$' in Evil states. (default nil)
    dotspacemacs-remap-Y-to-y$ nil
+   ;; If non-nil, the shift mappings `<' and `>' retain visual state if used
+   ;; there. (default t)
+   dotspacemacs-retain-visual-state-on-shift t
    ;; If non nil, inverse the meaning of `g' in `:substitute' Evil ex-command.
    ;; (default nil)
    dotspacemacs-ex-substitute-global nil
@@ -277,8 +280,6 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
 (defun hamster/display-system-init ()
   "Configurations which have to set after creating the first frame"
-  ;; powerline
-  (setq-default powerline-default-separator 'arrow-fade)
   )
 
 (defun hamster/calendar ()
@@ -293,7 +294,7 @@ This function is called at the very end of Spacemacs initialization after
 layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
-you should place you code here."
+you should place your code here."
   ;; calendar
   (setq calendar-week-start-day 1)
 
@@ -373,6 +374,7 @@ you should place you code here."
 
   ;; spaceline
   (spaceline-toggle-buffer-size-off)
+  (setq-default powerline-default-separator 'arrow-fade)
 
   ;; spacemacs
   (spacemacs/toggle-visual-line-navigation-on)
