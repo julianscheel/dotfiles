@@ -17,6 +17,8 @@ def classify_spam(db):
         result = output[len(filename) + 1]
 
         msg.freeze()
+        msg.remove_tag('spam')
+        msg.remove_tag('spam-unsure')
         if result == 'S':
             msg.add_tag('spam')
         elif result == 'U':
