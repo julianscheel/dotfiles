@@ -23,7 +23,7 @@ client.urgent           #f54841 #f54841 #373532 #f54841
 
 # {{{ Keybindings
 bindsym $mod+Return           exec termite
-bindsym $mod+Shift+Return     exec --no-startup-id ~/scripts/visual.sh
+bindsym $mod+Shift+Return     exec termite -e nvim
 bindsym $mod+d                exec rofi -show run -lines 5
 bindsym $mod+Shift+e          exec --no-startup-id ~/scripts/logout-menu.sh
 bindsym $mod+Shift+q          kill

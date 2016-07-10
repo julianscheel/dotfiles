@@ -1,0 +1,100 @@
+; vim:ft=dosini
+
+[settings]
+
+[bar/bar]
+bottom = false
+dock = false
+
+width = 100%
+height = 24
+
+offset_x = 0
+offset_y = 0
+
+background = #ff2e2b28
+foreground = #ffc2b59a
+linecolor = ${bar/bar.background}
+
+spacing = 1
+lineheight = 2
+
+padding_left = 0
+padding_right = 0
+module_margin_left = 1
+module_margin_right = 1
+
+font-0 = Droid Sans:size=10;0
+font-1 = fontawesome:size=10:weight=heavy;0
+
+modules-left = bspwm
+modules-center = xtitle
+modules-right = volume wifi battery cpu clock
+
+[module/bspwm]
+type = internal/bspwm
+label-active = 
+label-active-padding = 1
+label-active-foreground = #ffcc9944
+label-occupied = 
+label-occupied-padding = 1
+label-empty = 
+label-empty-padding = 1
+label-empty-foreground = #ff837873
+label-urgent = 
+label-urgent-padding = 1
+label-urgent-foreground = #ffbb5555
+
+[module/xtitle]
+type = custom/script
+exec = xtitle -s
+tail = true
+
+[module/volume]
+type = internal/volume
+label-volume =  %percentage%
+label-muted =  %percentage%
+format-volume-underline = #ffbb5555
+format-volume-padding = 3
+format-muted-foreground = #ffcc9944
+format-muted-underline = #ffbb5555
+format-muted-padding = 3
+
+[module/wifi]
+type = internal/network
+interface = wlp4s0
+label-connected =  %essid%
+label-connected-padding = 3
+label-connected-underline = #ffcc9944
+label-disconnected =  none
+label-disconnected-padding = 3
+label-disconnected-foreground = #ffbb5555
+label-disconnected-underline = #ffcc9944
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC0
+full_at = 95
+label-charging-padding = 3
+label-charging =  %percentage%
+label-charging-underline = #ff999944
+label-discharging-padding = 3
+label-discharging =  %percentage%
+label-discharging-underline = #ff999944
+label-full-padding = 3
+label-full =  %percentage%
+label-full-underline = #ff999944
+
+[module/cpu]
+type = internal/cpu
+label =  %percentage%
+format-underline = #ff669977
+format-padding = 3
+
+[module/clock]
+type = internal/date
+format =   <date>
+date = %a %d %b, %H:%M
+format-underline = #ff668899
+format-padding = 3

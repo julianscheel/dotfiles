@@ -1,16 +1,5 @@
-[dotrix]
-ignore = [ "__pycache__" ]
-
 [dotrix.link]
-"scripts/editor.sh" = "editor.sh"
 "scripts/kb-backlight.py" = "kb-backlight.py"
 "scripts/lock-screen.sh" = "lock-screen.sh"
 "scripts/logout-menu.sh" = "logout-menu.sh"
-"scripts/mail/autotag_new_mails.py" = "autotag_new_mails.py"
-"scripts/mail/classify_spam.py" = "classify_spam.py"
-"scripts/mail/fix_spam.py" = "fix_spam.py"
-"scripts/mail/handle_new_mail.py" = "handle_new_mail.py"
-"scripts/mail/mail_utils.py" = "mail_utils.py"
-"scripts/mail/rebuild_bogofilter.py" = "rebuild_bogofilter.py"
 "scripts/quit-i3.sh" = "quit-i3.sh"
-"scripts/visual.sh" = "visual.sh"

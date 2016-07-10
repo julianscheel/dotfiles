@@ -1,1 +1,0 @@
-../private/scripts/autotag_new_mails.py
