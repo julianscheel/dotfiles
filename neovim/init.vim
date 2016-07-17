@@ -24,7 +24,6 @@ call plug#end()
 
 " {{{ General settings
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
-set cursorline
 set expandtab
 set foldlevel=99
 set foldmethod=syntax
