@@ -5,7 +5,6 @@ call plug#begin('~/.config/nvim/plugins')
 Plug 'airblade/vim-gitgutter'
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'chrisbra/vim-diff-enhanced', { 'on': 'PatienceDiff' }
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
 Plug 'morhetz/gruvbox'
@@ -18,6 +17,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
 Plug 'vimwiki/vimwiki'
+Plug 'wincent/command-t'
 
 Plug '~/code/darksome/vim'
 call plug#end()
@@ -60,15 +60,6 @@ colorscheme gruvbox
 let g:airline_powerline_fonts = 1
 " }}}
 
-" {{{ 'ctrlpvim/ctrlp.vim'
-let g:ctrlp_user_command = {
-    \ 'types': {
-    \ 1: ['.git', 'cd %s && git ls-files -co --exclude-standard'],
-    \ },
-    \ 'fallback': 'find %s -type f'
-    \ }
-" }}}
-
 " {{{ 'mbbill/undotree'
 let g:undotree_SetFocusWhenToggle = 1
 " }}}
@@ -106,6 +97,10 @@ let g:vimwiki_folding='syntax'
 " autocmd FileType vimwiki inoremap <silent><buffer> <M-CR> <ESC>:VimwikiReturn 4 2<CR>
 " }}}
 
+" {{{ 'wincent/command-t'
+let g:CommandTFileScanner = "git"
+" }}}
+
 " }}}
 
 " {{{ Keybindings
@@ -131,13 +126,13 @@ nmap <silent> <leader>af :<C-u>NERDTreeToggle<CR>
 " }}}
 
 " {{{ Buffers (b)
-nnoremap <leader>bb :<C-u>CtrlPBuffer<CR>
+nnoremap <leader>bb :<C-u>CommandTBuffer<CR>
 nnoremap <leader>bd :<C-u>bd<CR>
 " }}}
 
 " {{{ Files (f)
 nnoremap <leader>fs :<C-u>:w<CR>
-nnoremap <leader>fp :<C-u>CtrlP<CR>
+nnoremap <leader>fp :<C-u>CommandT<CR>
 " }}}
 
 " {{{ Git (g)
@@ -156,7 +151,7 @@ noremap <leader>tt <C-]>
 noremap <silent> <leader>tj :<C-u>tag<CR>
 noremap <silent> <leader>tk :<C-u>pop<CR>
 noremap <silent> <leader>ts :<C-u>tags<CR>
-noremap <silent> <leader>tf :<C-u>CtrlPTag<CR>
+noremap <silent> <leader>tf :<C-u>CommandTTag<CR>
 " }}}
 
 " {{{ Toggles (T)
