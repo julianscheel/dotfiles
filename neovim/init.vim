@@ -4,22 +4,23 @@
 call plug#begin('~/.config/nvim/plugins')
 Plug 'airblade/vim-gitgutter'
 Plug 'cespare/vim-toml', { 'for': 'toml' }
-Plug 'chrisbra/vim-diff-enhanced', { 'on': 'PatienceDiff' }
+Plug 'chrisbra/vim-diff-enhanced'
+Plug 'easymotion/vim-easymotion'
+Plug 'haya14busa/incsearch.vim'
 Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
+Plug 'mileszs/ack.vim'
 Plug 'morhetz/gruvbox'
 Plug 'rhysd/vim-clang-format'
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'SirVer/ultisnips'
-Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
 Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
 Plug 'vimwiki/vimwiki'
 Plug 'wincent/command-t'
-
-Plug '~/code/darksome/vim'
 call plug#end()
 " }}}
 
@@ -51,6 +52,8 @@ set wildmode=longest,list
 
 " {{{ Colorscheme
 set background=dark
+let g:gruvbox_italic = 1
+let g:gruvbox_contrast_dark = "soft"
 colorscheme gruvbox
 " }}}
 
@@ -60,8 +63,24 @@ colorscheme gruvbox
 let g:airline_powerline_fonts = 1
 " }}}
 
+" {{{ 'haya14busa/incsearch.vim'
+map / <Plug>(incsearch-stay)
+" }}}
+
 " {{{ 'mbbill/undotree'
 let g:undotree_SetFocusWhenToggle = 1
+" }}}
+
+" {{{ 'mileszs/ack.vim'
+let g:ackprg = 'ag --vimgrep'
+cnoreabbrev ag Ack!
+" }}}
+
+" {{{ 'scrooloose/nerdcommenter'
+let g:NERDCreateDefaultMappings = 0
+let g:NERDSpaceDelims = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDCommentEmptyLines = 1
 " }}}
 
 " {{{ 'scrooloose/nerdtree'
@@ -93,7 +112,7 @@ let g:ycm_key_list_previous_completion = ['<S-TAB>', '<Up>', '<C-k>']
 
 " {{{ 'vimwiki/vimwiki'
 let g:vimwiki_map_prefix = '<Leader>aw'
-let g:vimwiki_folding='syntax'
+let g:vimwiki_folding = 'syntax'
 " autocmd FileType vimwiki inoremap <silent><buffer> <M-CR> <ESC>:VimwikiReturn 4 2<CR>
 " }}}
 
@@ -115,53 +134,63 @@ vnoremap > >gv
 nnoremap <leader><tab> <C-^>
 noremap <A-j> <C-e>
 noremap <A-k> <C-y>
-nnoremap <silent> <leader>n :<C-u>nohlsearch<CR>
+nmap <silent> <leader>n :nohlsearch<CR>
 map <M-CR> <S-CR>
 imap <M-CR> <S-CR>
 " }}}
 
 " {{{ Applications (a)
-nmap <silent> <leader>au :<C-u>UndotreeToggle<CR>
-nmap <silent> <leader>af :<C-u>NERDTreeToggle<CR>
+nmap <silent> <leader>au :UndotreeToggle<CR>
+nmap <silent> <leader>af :NERDTreeToggle<CR>
 " }}}
 
 " {{{ Buffers (b)
-nnoremap <leader>bb :<C-u>CommandTBuffer<CR>
-nnoremap <leader>bd :<C-u>bd<CR>
+nmap <leader>bb :CommandTBuffer<CR>
+nmap <leader>bd :bd<CR>
+" }}}
+
+" {{{ Commenting (c)
+map <leader>cc <plug>NERDCommenterToggle
+map <leader>cy <plug>NERDCommenterYank
+map <leader>ca <plug>NERDCommenterAppend
 " }}}
 
 " {{{ Files (f)
-nnoremap <leader>fs :<C-u>:w<CR>
-nnoremap <leader>fp :<C-u>CommandT<CR>
+nmap <leader>fs :w<CR>
+nmap <leader>fp :CommandT<CR>
 " }}}
 
 " {{{ Git (g)
-nmap <silent> <leader>gs :<C-u>Gstatus<CR>
-nmap <silent> <leader>gc :<C-u>Gcommit<CR>
-nmap <silent> <leader>gd :<C-u>Gdiff<CR>
-nmap <leader>gw :<C-u>Gwrite<CR>
+nmap <silent> <leader>gs :Gstatus<CR>
+nmap <silent> <leader>gc :Gcommit<CR>
+nmap <silent> <leader>gd :Gdiff<CR>
+nmap <leader>gw :Gwrite<CR>
 " }}}
 
-" {{{ Quit / Restart (q)
-nmap <silent> <leader>qq :<C-u>qa<CR>
+" {{{ Quit / Quickfix (q)
+nmap <silent> <leader>qq :qa<CR>
+nmap <silent> <leader>qo :copen<CR>
+nmap <silent> <leader>qc :cclose<CR>
+nmap <silent> <leader>qj :cnext<CR>
+nmap <silent> <leader>qk :cprevious<CR>
 " }}}
 
 " {{{ Tags (t)
 noremap <leader>tt <C-]>
-noremap <silent> <leader>tj :<C-u>tag<CR>
-noremap <silent> <leader>tk :<C-u>pop<CR>
-noremap <silent> <leader>ts :<C-u>tags<CR>
-noremap <silent> <leader>tf :<C-u>CommandTTag<CR>
+nmap <silent> <leader>tj :tag<CR>
+nmap <silent> <leader>tk :pop<CR>
+nmap <silent> <leader>ts :tags<CR>
+nmap <silent> <leader>tf :CommandTTag<CR>
 " }}}
 
 " {{{ Toggles (T)
 
-nnoremap <silent> <leader>Tl :<C-u>setlocal number!<CR>
+nmap <silent> <leader>Tl :setlocal number!<CR>
 
 " {{{ Spelling (s)
-nnoremap <silent> <leader>Tss :<C-u>setlocal spell!<CR>
-nnoremap <silent> <leader>Tse :<C-u>setlocal spelllang=en<CR>
-nnoremap <silent> <leader>Tsd :<C-u>setlocal spelllang=de<CR>
+nmap <silent> <leader>Tss :setlocal spell!<CR>
+nmap <silent> <leader>Tse :setlocal spelllang=en<CR>
+nmap <silent> <leader>Tsd :setlocal spelllang=de<CR>
 " }}}
 
 " }}}

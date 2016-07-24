@@ -27,3 +27,6 @@ export QT_STYLE_OVERRIDE=GTK+
 export PATH="$HOME/.cargo/bin:$PATH"
 export RUST_SRC_PATH=~/code/rust/src
 export CARGO_HOME=~/.cargo
+
+# asp
+export ASPROOT=~/packages/asp

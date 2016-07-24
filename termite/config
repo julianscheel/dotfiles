@@ -3,7 +3,7 @@ scroll_on_output = false
 scroll_on_keystroke = true
 audible_bell = false
 mouse_autohide = false
-allow_bold = true
+allow_bold = false
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
@@ -39,53 +39,44 @@ size_hints = true
 #border_width = 0.5
 #roundness = 2.0
 
-# darksome - Dark theme with subtle colors
-# Author: Dennis Hamester <dennis.hamester@startmail.com>
-# Homepage: https://gitlab.com/dennishamester/darksome
-# Version: 20160408
-
-# This work is licensed under the Creative Commons Attribution 4.0
-# International License. To view a copy of this license, visit
-# http://creativecommons.org/licenses/by/4.0/.
-
 [colors]
-# Special colors
-foreground = #c2b59a
-background = #2e2b28
-cursor = #837873
+# hard contrast: background = #1d2021
+# medium contrast: background = #282828
+# soft contrast: background = #32302f
+background = #32302f
+foreground = #ebdbb2
+foreground_bold = #ebdbb2
 
-# Basic 8 colors and bright variants
-color0 = #2e2b28
-color1 = #bb5555
-color2 = #999944
-color3 = #cc9944
-color4 = #668899
-color5 = #886688
-color6 = #669977
-color7 = #837873
-color8 = #68615d
-color9 = #dd2222
-color10 = #999911
-color11 = #ff9900
-color12 = #4477aa
-color13 = #774488
-color14 = #449966
-color15 = #c2b59a
+# dark0 + gray
+color0 = #282828
+color8 = #928374
 
-# The range 16-29 is used to repeat all colors.
-color16 = #bb5555
-color17 = #cc9944
-color18 = #999944
-color19 = #669977
-color20 = #668899
-color21 = #886688
-color22 = #2e2b28
-color23 = #333335
-color24 = #4f4845
-color25 = #62564f
-color26 = #c2b59a
-color27 = #ac9a80
-color28 = #837873
-color29 = #68615d
+# neutral_red + bright_red
+color1 = #cc241d
+color9 = #fb4934
+
+# neutral_green + bright_green
+color2 = #98971a
+color10 = #b8bb26
+
+# neutral_yellow + bright_yellow
+color3 = #d79921
+color11 = #fabd2f
+
+# neutral_blue + bright_blue
+color4 = #458588
+color12 = #83a598
+
+# neutral_purple + bright_purple
+color5 = #b16286
+color13 = #d3869b
+
+# neutral_aqua + faded_aqua
+color6 = #689d6a
+color14 = #8ec07c
+
+# light4 + light1
+color7 = #a89984
+color15 = #ebdbb2
 
 # vim: ft=dosini cms=#%s
