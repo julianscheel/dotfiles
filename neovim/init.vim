@@ -7,6 +7,7 @@ Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/incsearch.vim'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
@@ -95,6 +96,7 @@ let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
 
 " {{{ 'Valloric/YouCompleteMe'
 let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_filetype_blacklist = {
             \ 'tagbar' : 1,
             \ 'qf' : 1,
