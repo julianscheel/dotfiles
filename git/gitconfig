@@ -1,0 +1,23 @@
+[user]
+	name = Dennis Hamester
+	email = dennis.hamester@startmail.com
+[diff]
+	tool = nvim -d
+	algorithm = minimal
+[merge]
+	tool = nvim -d
+[color]
+	ui = true
+[alias]
+    graph = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+[push]
+	default = nothing
+[rebase]
+	autosquash = true
+[sendemail]
+	smtpEncryption = tls
+	smtpServer = mb.smtp.startmail.com
+	smtpUser = dennis.hamester@startmail.com
+	smtpServerPort = 587
+[commit]
+	verbose = true
