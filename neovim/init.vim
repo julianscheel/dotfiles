@@ -5,6 +5,7 @@ call plug#begin('~/.config/nvim/plugins')
 Plug 'airblade/vim-gitgutter'
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'chrisbra/vim-diff-enhanced'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/incsearch.vim'
 Plug 'ludovicchabant/vim-gutentags'
@@ -21,7 +22,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
 Plug 'vimwiki/vimwiki'
-Plug 'wincent/command-t'
 call plug#end()
 " }}}
 
@@ -62,6 +62,15 @@ colorscheme gruvbox
 
 " {{{ 'bling/vim-airline'
 let g:airline_powerline_fonts = 1
+" }}}
+
+" {{{ 'ctrlpvim/ctrlp.vim'
+let g:ctrlp_user_command = {
+    \ 'types': {
+    \ 1: ['.git', 'cd %s && git ls-files -co --exclude-standard'],
+    \ },
+    \ 'fallback': 'find %s -type f'
+    \ }
 " }}}
 
 " {{{ 'haya14busa/incsearch.vim'
@@ -118,10 +127,6 @@ let g:vimwiki_folding = 'syntax'
 " autocmd FileType vimwiki inoremap <silent><buffer> <M-CR> <ESC>:VimwikiReturn 4 2<CR>
 " }}}
 
-" {{{ 'wincent/command-t'
-let g:CommandTFileScanner = "git"
-" }}}
-
 " }}}
 
 " {{{ Keybindings
@@ -147,7 +152,7 @@ nmap <silent> <leader>af :NERDTreeToggle<CR>
 " }}}
 
 " {{{ Buffers (b)
-nmap <leader>bb :CommandTBuffer<CR>
+nmap <leader>bb :CtrlPBuffer<CR>
 nmap <leader>bd :bd<CR>
 " }}}
 
@@ -159,7 +164,7 @@ map <leader>ca <plug>NERDCommenterAppend
 
 " {{{ Files (f)
 nmap <leader>fs :w<CR>
-nmap <leader>fp :CommandT<CR>
+nmap <leader>fp :CtrlP<CR>
 " }}}
 
 " {{{ Git (g)
@@ -182,7 +187,7 @@ noremap <leader>tt <C-]>
 nmap <silent> <leader>tj :tag<CR>
 nmap <silent> <leader>tk :pop<CR>
 nmap <silent> <leader>ts :tags<CR>
-nmap <silent> <leader>tf :CommandTTag<CR>
+" nmap <silent> <leader>tf :CtrlPTag<CR>
 " }}}
 
 " {{{ Toggles (T)
