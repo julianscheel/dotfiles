@@ -65,7 +65,7 @@ let g:airline_powerline_fonts = 1
 " }}}
 
 " {{{ 'haya14busa/incsearch.vim'
-map / <Plug>(incsearch-stay)
+map / <Plug>(incsearch-forward)
 " }}}
 
 " {{{ 'mbbill/undotree'
