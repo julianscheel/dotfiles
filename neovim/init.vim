@@ -3,7 +3,6 @@
 " {{{ Plugins
 call plug#begin('~/.config/nvim/plugins')
 Plug 'airblade/vim-gitgutter'
-Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
@@ -13,9 +12,9 @@ Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
 Plug 'morhetz/gruvbox'
 Plug 'rhysd/vim-clang-format'
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'sheerun/vim-polyglot'
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-fugitive'
 Plug 'Valloric/YouCompleteMe'
