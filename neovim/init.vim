@@ -63,6 +63,10 @@ colorscheme gruvbox
 let g:airline_powerline_fonts = 1
 " }}}
 
+" {{{ 'chrisbra/vim-diff-enhanced'
+let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=patience")'
+" }}}
+
 " {{{ 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_user_command = {
     \ 'types': {
