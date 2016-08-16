@@ -1,0 +1,5 @@
+[dotrix]
+ignore = [ "gray_stripes.png" ]
+
+[dotrix.link]
+".fehbg" = "fehbg"
