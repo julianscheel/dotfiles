@@ -12,22 +12,21 @@ source ~/.antigen/antigen.zsh
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 antigen bundle vi-mode
+antigen bundle colored-man-pages
 antigen bundle zsh-users/zsh-completions src
+antigen bundle mafredri/zsh-async
+antigen bundle sindresorhus/pure
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
-antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 antigen apply
 
-# Bullet Train configuration
-BULLETTRAIN_PROMPT_ORDER=(
-    status
-    dir
-    git
-)
-export BULLETTRAIN_GIT_EXTENDED=false
-export BULLETTRAIN_DIR_BG=7
-export BULLETTRAIN_DIR_FG=0
-export BULLETTRAIN_GIT_BG=4
+bindkey "$terminfo[kcbt]" reverse-menu-complete
+
+# Pure prompt configuration
+export PURE_GIT_PULL=0
+
+# Overwrite Oh My Zsh definition
+export LESS=FRX
 
 # dircolors
 eval $(dircolors)
