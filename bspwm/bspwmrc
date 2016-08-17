@@ -1,11 +1,8 @@
 #!/bin/sh
 
-xrdb -I$HOME ~/.Xresources
-compton --backend glx &
-~/.fehbg
+export BSPWM_SOCKET
+
 lemonbuddy_wrapper bar &
-redshift &
-dunst &
 sxhkd &
 
 bspc config border_width 4
