@@ -11,11 +11,14 @@ Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
 Plug 'morhetz/gruvbox'
+Plug 'osyo-manga/vim-over'
+Plug 'pelodelfuego/vim-swoop'
 Plug 'rhysd/vim-clang-format'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'sheerun/vim-polyglot'
 Plug 'SirVer/ultisnips'
+Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
 Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
@@ -77,10 +80,6 @@ let g:ctrlp_user_command = {
     \ }
 " }}}
 
-" {{{ 'haya14busa/incsearch.vim'
-map / <Plug>(incsearch-forward)
-" }}}
-
 " {{{ 'mbbill/undotree'
 let g:undotree_SetFocusWhenToggle = 1
 " }}}
@@ -88,6 +87,10 @@ let g:undotree_SetFocusWhenToggle = 1
 " {{{ 'mileszs/ack.vim'
 let g:ackprg = 'ag --vimgrep'
 cnoreabbrev ag Ack!
+" }}}
+
+" {{{ 'pelodelfuego/vim-swoop'
+let g:swoopUseDefaultKeyMap = 0
 " }}}
 
 " {{{ 'scrooloose/nerdcommenter'
@@ -148,6 +151,9 @@ noremap <A-k> <C-y>
 nmap <silent> <leader>n :nohlsearch<CR>
 map <M-CR> <S-CR>
 imap <M-CR> <S-CR>
+map / <Plug>(incsearch-forward)
+map ? <Plug>(incsearch-backward)
+map & :OverCommandLine<CR>
 " }}}
 
 " {{{ Applications (a)
@@ -184,6 +190,11 @@ nmap <silent> <leader>qo :copen<CR>
 nmap <silent> <leader>qc :cclose<CR>
 nmap <silent> <leader>qj :cnext<CR>
 nmap <silent> <leader>qk :cprevious<CR>
+" }}}
+
+" {{{ Search (s)
+nmap <silent> <leader>ss :call Swoop()<CR>
+nmap <silent> <leader>sm :call SwoopMulti()<CR>
 " }}}
 
 " {{{ Tags (t)
