@@ -1,25 +1,30 @@
 " vim: fdm=marker foldlevel=0
 
+set nocompatible
+
 " {{{ Plugins
-call plug#begin('~/.config/nvim/plugins')
+call plug#begin('~/.vim/plugins')
 Plug 'airblade/vim-gitgutter'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/incsearch.vim'
 Plug 'mbbill/undotree'
+Plug 'mhinz/vim-grepper'
 Plug 'mhinz/vim-startify'
-Plug 'mileszs/ack.vim'
 Plug 'morhetz/gruvbox'
+Plug 'neomake/neomake'
 Plug 'osyo-manga/vim-over'
-Plug 'pelodelfuego/vim-swoop'
 Plug 'rhysd/vim-clang-format'
+Plug 'romainl/vim-qf'
+Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'sheerun/vim-polyglot'
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -28,15 +33,26 @@ call plug#end()
 " }}}
 
 " {{{ General settings
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
+set autoindent
+set autoread
 set breakindent
+set directory=~/.vim/swapfiles//
 set expandtab
+set fileformats=unix,dos,mac
 set foldlevel=99
 set foldmethod=syntax
+set foldopen+=jump
+set formatoptions+=j
 set grepformat=%f:%l:%c:%m
-set grepprg=ag\ --vimgrep\ $*
+set grepprg=rg\ --vimgrep\ $*
+set history=1000
+set hlsearch
 set ignorecase
+set imactivatekey=C-N
+set incsearch
+set laststatus=2
 set linebreak
+set mouse=a
 set nobackup
 set nowritebackup
 set number
@@ -44,20 +60,37 @@ set scrolloff=12
 set shiftwidth=4
 set showbreak=...\ \ 
 set smartcase
+set smarttab
 set spelllang=en
 set splitbelow
 set splitright
 set tabstop=4
 set termguicolors
 set textwidth=100
+set timeoutlen=1000
 set title
+set ttimeoutlen=10
 set wildmode=longest,list
 " }}}
 
+" {{{ GUI
+if has("gui_running")
+    set guifont=Source\ Code\ Pro\ 10
+    set guioptions-=e
+    set guioptions-=L
+    set guioptions-=m
+    set guioptions-=r
+    set guioptions-=T
+endif
+" }}}
+
 " {{{ Colorscheme
+let g:gruvbox_termcolors=16
 set background=dark
 let g:gruvbox_italic = 1
+let g:gruvbox_bold = 0
 let g:gruvbox_contrast_dark = "soft"
+let g:gruvbox_invert_selection = 0
 colorscheme gruvbox
 " }}}
 
@@ -84,13 +117,15 @@ let g:ctrlp_user_command = {
 let g:undotree_SetFocusWhenToggle = 1
 " }}}
 
-" {{{ 'mileszs/ack.vim'
-let g:ackprg = 'ag --vimgrep'
-cnoreabbrev ag Ack!
+" {{{ 'mhinz/vim-grepper'
+let g:grepper = { }
+let g:grepper.tools = ['rg', 'ag', 'git', 'grep']
 " }}}
 
-" {{{ 'pelodelfuego/vim-swoop'
-let g:swoopUseDefaultKeyMap = 0
+" {{{ Plug 'neomake/neomake'
+autocmd! BufWritePost * Neomake
+let g:neomake_c_enabled_makers = [ ]
+let g:neomake_cpp_enabled_makers = [ ]
 " }}}
 
 " {{{ 'scrooloose/nerdcommenter'
@@ -98,6 +133,7 @@ let g:NERDCreateDefaultMappings = 0
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
 " }}}
 
 " {{{ 'scrooloose/nerdtree'
@@ -132,6 +168,10 @@ let g:ycm_key_list_previous_completion = ['<S-TAB>', '<Up>', '<C-k>']
 let g:vimwiki_map_prefix = '<Leader>aw'
 let g:vimwiki_folding = 'syntax'
 " autocmd FileType vimwiki inoremap <silent><buffer> <M-CR> <ESC>:VimwikiReturn 4 2<CR>
+" }}}
+
+" {{{ 'romainl/vim-qf'
+let g:qf_mapping_ack_style = 1
 " }}}
 
 " }}}
@@ -172,37 +212,46 @@ map <leader>cy <plug>NERDCommenterYank
 map <leader>ca <plug>NERDCommenterAppend
 " }}}
 
+" {{{ Errors / Quickfix (e) / Location List (r)
+nmap <silent> <leader>ee <plug>QfSwitch
+nmap <silent> <leader>eo <plug>QfCtoggle
+nmap <silent> <leader>ej <plug>QfCnext
+nmap <silent> <leader>ek <plug>QfCprevious
+nmap <silent> <leader>ro <plug>QfLtoggle
+nmap <silent> <leader>rj <plug>QfLnext
+nmap <silent> <leader>rk <plug>QfLprevious
+autocmd FileType qf map <buffer> <C-j> }
+autocmd FileType qf map <buffer> <C-k> {
+autocmd FileType qf map <silent> <buffer> q :q<CR>
+" }}}
+
 " {{{ Files (f)
 nmap <leader>fs :w<CR>
 nmap <leader>fp :CtrlP<CR>
 " }}}
 
-" {{{ Git (g)
+" {{{ Git / Grep (g)
 nmap <silent> <leader>gs :Gstatus<CR>
 nmap <silent> <leader>gc :Gcommit<CR>
 nmap <silent> <leader>gd :Gdiff<CR>
 nmap <leader>gw :Gwrite<CR>
+nmap <silent> <leader>* :Grepper -cword -noprompt<CR>
+nmap <leader>gg :Grepper<CR>
+nmap gs <plug>(GrepperOperator)
+xmap gs <plug>(GrepperOperator)
+nmap <silent> <leader>gs :Gstatus<CR>
 " }}}
 
-" {{{ Quit / Quickfix (q)
+" {{{ Quit (q)
 nmap <silent> <leader>qq :qa<CR>
-nmap <silent> <leader>qo :copen<CR>
-nmap <silent> <leader>qc :cclose<CR>
-nmap <silent> <leader>qj :cnext<CR>
-nmap <silent> <leader>qk :cprevious<CR>
-" }}}
-
-" {{{ Search (s)
-nmap <silent> <leader>ss :call Swoop()<CR>
-nmap <silent> <leader>sm :call SwoopMulti()<CR>
 " }}}
 
 " {{{ Tags (t)
-noremap <leader>tt <C-]>
+nmap <silent> <leader>tt :CtrlPTag<CR>
+noremap <leader>tl <C-]>
 nmap <silent> <leader>tj :tag<CR>
 nmap <silent> <leader>tk :pop<CR>
 nmap <silent> <leader>ts :tags<CR>
-" nmap <silent> <leader>tf :CtrlPTag<CR>
 " }}}
 
 " {{{ Toggles (T)

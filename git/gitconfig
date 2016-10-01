@@ -2,10 +2,10 @@
 	name = Dennis Hamester
 	email = dennis.hamester@startmail.com
 [diff]
-	tool = nvim -d
+	tool = gvimdiff
 	algorithm = minimal
 [merge]
-	tool = nvim -d
+	tool = gvimdiff
 [color]
 	ui = true
 [alias]

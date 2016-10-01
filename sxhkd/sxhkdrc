@@ -4,7 +4,7 @@ super + Return
 
 # editor
 super + shift + Return
-    termite -e nvim
+    gvim
 
 # program launcher
 super + d
