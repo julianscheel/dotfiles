@@ -1,4 +1,5 @@
 [dotrix.link]
+"scripts/add_720_mode.sh" = "add_720_mode.sh"
 "scripts/kb-backlight.py" = "kb-backlight.py"
 "scripts/lock-screen.sh" = "lock-screen.sh"
 "scripts/logout-menu.sh" = "logout-menu.sh"

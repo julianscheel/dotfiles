@@ -9,6 +9,7 @@ fi
 
 source ~/.xprofile
 
+~/scripts/add_720_mode.sh
 xrdb -I$HOME ~/.Xresources
 compton --backend glx &
 ~/.fehbg
