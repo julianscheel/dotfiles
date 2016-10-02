@@ -12,3 +12,7 @@
 VteTerminal, vte-terminal {
     padding: 4px;
 }
+
+#vim-main-window {
+    background-color: #32302f;
+}
