@@ -1,5 +1,5 @@
 gtk-theme-name = "Arc-Darker"
-gtk-font-name = "DejaVu Sans 10"
+gtk-font-name = "DejaVu Sans 8"
 
 style "vimfix" {
   bg[NORMAL] = "#282828"
