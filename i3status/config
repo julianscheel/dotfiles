@@ -10,30 +10,24 @@ general {
     color_good = "#80c283"
 }
 
-order += "volume master"
 order += "disk /home"
-order += "wireless wlp4s0"
+order += "wireless wlp1s0b1"
 order += "battery 0"
 order += "cpu_temperature 0"
 order += "cpu_usage"
 order += "tztime local"
 
-volume master {
-    format = "  %volume"
-    format_muted = "  %volume"
-}
-
 disk "/home" {
     format = "  %avail"
 }
 
-wireless wlp4s0 {
+wireless wlp1s0b1 {
     format_up = "  %essid"
     format_down = "  none"
 }
 
 battery 0 {
-    format = "  %percentage %remaining"
+    format = "  %percentage %remaining left"
     integer_battery_capacity = true
     threshold_type = "percentage"
     low_threshold = 10
@@ -41,7 +35,7 @@ battery 0 {
 
 cpu_temperature 0 {
     format = "  %degrees°C"
-    path = "/sys/class/thermal/thermal_zone1/temp"
+    path = "/sys/class/thermal/thermal_zone0/temp"
     max_threshold = 90
 }
 
