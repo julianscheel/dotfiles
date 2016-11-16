@@ -10,7 +10,7 @@ floating_modifier $mod
 # }}}
 
 # {{{ Theme
-font pango:Source Code Pro 11
+font pango:Source Code Pro 9
 new_window pixel 4
 gaps inner 4
 
@@ -22,10 +22,8 @@ client.urgent           #f54841 #f54841 #373532 #f54841
 # }}}
 
 # {{{ Keybindings
-bindsym $mod+Return           exec termite
-bindsym $mod+Shift+Return     exec gvim
+bindsym $mod+Return           exec i3-sensible-terminal
 bindsym $mod+d                exec rofi -show run -lines 5
-bindsym $mod+Shift+e          exec --no-startup-id ~/scripts/logout-menu.sh
 bindsym $mod+Shift+q          kill
 bindsym $mod+Shift+c          reload
 bindsym $mod+Shift+r          restart
@@ -71,16 +69,16 @@ bindsym $mod+Shift+9          move container to workspace 9
 bindsym $mod+Shift+0          move container to workspace 10
 bindsym $mod+Left             workspace prev
 bindsym $mod+Right            workspace next
-bindsym XF86AudioRaiseVolume  exec --no-startup-id "amixer -q set Master 2%+ unmute && killall -USR1 i3status"
-bindsym XF86AudioLowerVolume  exec --no-startup-id "amixer -q set Master 2%- && killall -USR1 i3status"
-bindsym XF86AudioMute         exec --no-startup-id "amixer -q set Master toggle && killall -USR1 i3status"
-bindsym XF86AudioPlay         exec --no-startup-id cmus-remote -u
-bindsym XF86AudioStop         exec --no-startup-id cmus-remote -s
-bindsym XF86AudioNext         exec --no-startup-id cmus-remote -n
-bindsym XF86AudioPrev         exec --no-startup-id cmus-remote -r
-bindsym XF86Sleep             exec --no-startup-id ~/scripts/lock-screen.sh
-bindsym XF86KbdBrightnessUp   exec --no-startup-id ~/scripts/kb-backlight.py +
-bindsym XF86KbdBrightnessDown exec --no-startup-id ~/scripts/kb-backlight.py -
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id /home/julian/bin/pulse-audio-volume-control.sh 0 up
+bindsym XF86AudioLowerVolume exec --no-startup-id /home/julian/bin/pulse-audio-volume-control.sh 0 down
+bindsym XF86AudioMute exec --no-startup-id /home/julian/bin/pulse-audio-volume-control.sh 0 toggle
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec /home/julian/bin/brightness.sh up
+bindsym XF86MonBrightnessDown exec /home/julian/bin/brightness.sh down
+
 # }}}
 
 # {{{ Resize mode
@@ -116,11 +114,12 @@ bar {
 # }}}
 
 # {{{ Autostart
-exec_always --no-startup-id "~/.fehbg"
-exec_always --no-startup-id "xrdb -I$HOME ~/.Xresources"
-exec        --no-startup-id "redshift"
-exec        --no-startup-id "compton --backend glx"
-exec        --no-startup-id "start-pulseaudio-x11"
-exec        --no-startup-id "dunst"
+#exec_always --no-startup-id "~/.fehbg"
+#exec        --no-startup-id "compton --backend glx"
 exec        --no-startup-id "nm-applet"
+# }}}
+
+# {{{ window settongs
+for_window [class="Wine"] floating enable
+for_window [title="VLC media player"] move to workspace 8
 # }}}
