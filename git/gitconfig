@@ -1,23 +1,30 @@
 [user]
-	name = Dennis Hamester
-	email = dennis.hamester@startmail.com
+	name = Julian Scheel
+	email = julian@jusst.de
+[sendemail]
+	smtpencryption = ssl
+	smtpserver = mail.jusst.de
+	smtpuser = julian@jusst.de
+[core]
+	editor = vim
+	excludesfile = /home/julian/.gitignore
+[push]
+	default = simple
+[color]
+	diff = auto
+	ui = true
+[log]
+	decorate = full
+
 [diff]
-	tool = gvimdiff
+	tool = vimdiff
 	algorithm = minimal
 [merge]
-	tool = gvimdiff
-[color]
-	ui = true
+	tool = vimdiff
 [alias]
+	lol = log --graph --pretty=format:\"%C(yellow)%h%Creset%C(cyan)%C(bold)%d%Creset %C(cyan)(%cr)%Creset %s\"
 	graph = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --branches --remotes
-[push]
-	default = nothing
 [rebase]
 	autosquash = true
-[sendemail]
-	smtpEncryption = tls
-	smtpServer = mb.smtp.startmail.com
-	smtpUser = dennis.hamester@startmail.com
-	smtpServerPort = 587
 [commit]
 	verbose = true
