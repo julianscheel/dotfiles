@@ -1,3 +1,5 @@
+set fish_key_bindings fish_vi_key_bindings
+
 #envoy -l; or envoy -a /home/julian/.ssh/id_dsa
 envoy -pf | source
 set -x VISUAL vim
