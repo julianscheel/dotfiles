@@ -114,7 +114,7 @@ command Fu CtrlPMRU
 
 let g:ctrlp_user_command = {
     \ 'types': {
-    \ 1: ['.git', 'cd %s && git ls-files -co --exclude-standard'],
+    \ 1: ['.git', 'cd %s; and git ls-files -co --exclude-standard'],
     \ },
     \ 'fallback': 'find %s -type f'
     \ }
