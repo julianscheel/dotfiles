@@ -28,6 +28,7 @@ Plug 'tpope/vim-surround'
 Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-utils/vim-man'
 Plug 'vimwiki/vimwiki'
 call plug#end()
 " }}}
