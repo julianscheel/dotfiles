@@ -11,7 +11,7 @@ floating_modifier $mod
 
 # {{{ Theme
 font pango:Source Code Pro 9
-new_window pixel 4
+new_window pixel 1
 gaps inner 4
 
                         #border backgr. text    indicator
@@ -96,7 +96,7 @@ mode "resize" {
 
 # {{{ Bar
 bar {
-    position top
+    position bottom
     status_command i3status
 
     colors {
@@ -114,8 +114,8 @@ bar {
 # }}}
 
 # {{{ Autostart
-#exec_always --no-startup-id "~/.fehbg"
-#exec        --no-startup-id "compton --backend glx"
+exec_always --no-startup-id "~/.fehbg"
+exec_always --no-startup-id "compton -c --backend xrender --vsync opengl"
 exec        --no-startup-id "nm-applet"
 # }}}
 
