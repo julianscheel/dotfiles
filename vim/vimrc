@@ -78,6 +78,7 @@ set timeoutlen=1000
 set title
 set ttimeoutlen=10
 set wildmode=longest,list
+set cc=80
 " }}}
 
 " {{{ GUI
