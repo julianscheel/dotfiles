@@ -156,6 +156,7 @@ let g:ycm_filetype_blacklist = {
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<C-j>']
 let g:ycm_key_list_previous_completion = ['<S-TAB>', '<Up>', '<C-k>']
 " }}}
+" }}}
 
 " {{{ Keybindings
 " }}}
