@@ -178,4 +178,11 @@ set noexpandtab
 " {{{ Trailing spaces
 highlight ExtraWhitespace term=standout ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
-" }
+" }}}
+
+" {{{ Filetype specifics
+au BufRead,BufNewFile *.tpl set filetype=htmlm4
+au Filetype htmlm4 setlocal sw=2
+au Filetype htmlm4 setlocal ts=2
+au Filetype htmlm4 setlocal tw=200
+" }}}
