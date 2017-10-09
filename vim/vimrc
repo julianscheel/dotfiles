@@ -173,3 +173,8 @@ set sw=8
 set tw=78
 set noexpandtab
 " }}}
+
+" {{{ Trailing spaces
+highlight ExtraWhitespace term=standout ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+" }
