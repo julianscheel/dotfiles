@@ -10,6 +10,7 @@
 	excludesfile = /home/julian/.gitignore
 [push]
 	default = simple
+	followTags = true
 [color]
 	diff = auto
 	ui = true
