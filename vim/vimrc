@@ -5,6 +5,7 @@ set nocompatible
 " {{{ Plugins
 call plug#begin('~/.vim/plugins')
 Plug 'airblade/vim-gitgutter'
+Plug 'jreybert/vimagit'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
@@ -31,6 +32,19 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-utils/vim-man'
 Plug 'vimwiki/vimwiki'
 Plug 'wakatime/vim-wakatime'
+Plug 'LucHermitte/VimFold4C'
+Plug 'tpope/vim-sleuth'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'moll/vim-bbye'
+Plug 'junegunn/goyo.vim'
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'majutsushi/tagbar'
+"Plug 'maralla/completor.vim'
+Plug 'reisub0/hot-reload.vim'
+Plug 'yegappan/grep'
+Plug 'luochen1990/rainbow'
+Plug 'w0rp/ale'
 call plug#end()
 " }}}
 
@@ -116,7 +130,7 @@ command Fu CtrlPMRU
 
 let g:ctrlp_user_command = {
     \ 'types': {
-    \ 1: ['.git', 'cd %s; and git ls-files -co --exclude-standard'],
+    \ 1: ['.git', 'cd %s; and git ls-files -c --recurse-submodules --exclude-standard'],
     \ },
     \ 'fallback': 'find %s -type f'
     \ }
@@ -156,9 +170,34 @@ let g:ycm_filetype_blacklist = {
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<C-j>']
 let g:ycm_key_list_previous_completion = ['<S-TAB>', '<Up>', '<C-k>']
 " }}}
+
+" {{{ 'vim-pandoc/vim-pandoc'
+let g:pandoc#formatting#textwidth = 78
+let g:pandoc#formatting#mode = "h"
 " }}}
 
-" {{{ Keybindings
+" {{{ 'junegunn/goyo.vim'
+function! s:goyo_leave()
+    :q
+endfunction
+
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+" }}}
+
+" {{{ 'w0rp/ale'
+let g:ale_linters = {
+            \    'dart': ['language_server'],
+            \ }
+let g:ale_fixers = {
+            \    'dart': ['dartfmt'],
+            \ }
+let g:ale_sign_error = '⨉'
+let g:ale_sign_warning = '⚠'
+
+map <C-F> :ALEFix<CR>
+map <C-]> :ALEGoToDefinition<CR>
+" }}}
+
 " }}}
 
 " {{{ Redundant spaces
@@ -185,4 +224,17 @@ au BufRead,BufNewFile *.tpl set filetype=htmlm4
 au Filetype htmlm4 setlocal sw=2
 au Filetype htmlm4 setlocal ts=2
 au Filetype htmlm4 setlocal tw=200
+
+" Mail editing using Goyo
+au Filetype mail setlocal textwidth=0
+au Filetype mail setlocal wrapmargin=0
+au Filetype mail setlocal linebreak
+au Filetype mail setlocal nobreakindent
+au Filetype mail setlocal showbreak=
+au FileType mail Goyo | 6
+
+" }}}
+
+" {{{ sudo write
+cmap w!! w !sudo tee > /dev/null %
 " }}}
