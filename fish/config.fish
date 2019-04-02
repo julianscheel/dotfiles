@@ -6,7 +6,16 @@ set -x VISUAL vim
 
 alias parents="pstree -h -s %self"
 alias bell='echo \a'
+
+# Git convenience
+alias g="git"
 alias gcp="git cherry-pick"
+alias gbs="git bisect"
+alias grb="git rebase"
+alias gco="git checkout"
+
+# Systemd
+alias sc="systemctl"
 
 set -l envfile "$HOME/.gnome-keyring.env"
 gnome-keyring-daemon --start --components=gpg,ssh,secrets > $envfile
