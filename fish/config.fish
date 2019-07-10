@@ -14,6 +14,11 @@ alias gbs="git bisect"
 alias grb="git rebase"
 alias gco="git checkout"
 
+alias gbd="git branch -d"
+function gbdr --description 'Delete git remote branch'
+    git push origin :$argv[1]
+end
+
 # Systemd
 alias sc="systemctl"
 
