@@ -43,6 +43,7 @@ Plug 'reisub0/hot-reload.vim'
 Plug 'luochen1990/rainbow'
 Plug 'w0rp/ale'
 Plug 'junegunn/fzf.vim'
+Plug 'bronson/vim-trailing-whitespace'
 call plug#end()
 " }}}
 
@@ -201,8 +202,8 @@ set noexpandtab
 " }}}
 
 " {{{ Trailing spaces
-highlight ExtraWhitespace term=standout ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
+set list!
 " }}}
 
 " {{{ Filetype specifics
