@@ -7,11 +7,9 @@ call plug#begin('~/.vim/plugins')
 Plug 'airblade/vim-gitgutter'
 Plug 'jreybert/vimagit'
 Plug 'chrisbra/vim-diff-enhanced'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/incsearch.vim'
 Plug 'mbbill/undotree'
-Plug 'mhinz/vim-grepper'
 Plug 'mhinz/vim-startify'
 Plug 'morhetz/gruvbox'
 Plug 'neomake/neomake'
@@ -42,9 +40,9 @@ Plug 'dart-lang/dart-vim-plugin'
 Plug 'majutsushi/tagbar'
 "Plug 'maralla/completor.vim'
 Plug 'reisub0/hot-reload.vim'
-Plug 'yegappan/grep'
 Plug 'luochen1990/rainbow'
 Plug 'w0rp/ale'
+Plug 'junegunn/fzf.vim'
 call plug#end()
 " }}}
 
@@ -63,8 +61,6 @@ set foldlevel=99
 set foldmethod=syntax
 set foldopen+=jump
 set formatoptions+=j
-set grepformat=%f:%l:%c:%m
-set grepprg=rg\ --vimgrep\ $*
 set history=1000
 set hlsearch
 set ignorecase
@@ -123,23 +119,13 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 " }}}
 
-" {{{ 'ctrlpvim/ctrlp.vim'
-command B CtrlPBuffer
-command F CtrlP
-command Fu CtrlPMRU
 
-let g:ctrlp_user_command = {
-    \ 'types': {
-    \ 1: ['.git', 'cd %s; and git ls-files -c --recurse-submodules --exclude-standard'],
-    \ },
-    \ 'fallback': 'find %s -type f'
-    \ }
+" {{{ 'junegunn/fzf.vim'
+command F Files
+command Fg Files
+command B Buffers
 " }}}
 
-" {{{ 'mhinz/vim-grepper'
-let g:grepper = { }
-let g:grepper.tools = ['rg', 'ag', 'git', 'grep']
-" }}}
 
 " {{{ 'scrooloose/nerdcommenter'
 let g:NERDCreateDefaultMappings = 0
