@@ -12,8 +12,9 @@ general {
 
 order += "disk /home"
 order += "wireless wlp1s0b1"
-order += "battery 0"
-order += "cpu_temperature 0"
+order += "ethernet enp5s0"
+#order += "battery 0"
+#order += "cpu_temperature 0"
 order += "cpu_usage"
 order += "tztime local"
 
@@ -22,27 +23,32 @@ disk "/home" {
 }
 
 wireless wlp1s0b1 {
-    format_up = "  %essid"
-    format_down = "  none"
+    format_up = " %essid"
+    format_down = " none"
+}
+
+ethernet enp5s0 {
+    format_up = " %ip"
+    format_down = " down"
 }
 
 battery 0 {
-    format = "  %percentage %remaining left"
+    format = "%percentage %remaining left"
     integer_battery_capacity = true
     threshold_type = "percentage"
     low_threshold = 10
 }
 
 cpu_temperature 0 {
-    format = "  %degrees°C"
+    format = "%degrees°C"
     path = "/sys/class/thermal/thermal_zone0/temp"
     max_threshold = 90
 }
 
 cpu_usage {
-    format = "  %usage"
+    format = " %usage"
 }
 
 tztime local {
-    format = "  %d.%m.%Y %H:%M"
+    format = " %d.%m.%Y %H:%M"
 }

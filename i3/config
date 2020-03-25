@@ -11,8 +11,10 @@ floating_modifier $mod
 
 # {{{ Theme
 font pango:Source Code Pro 9
-new_window pixel 1
+default_border pixel 2
 gaps inner 4
+
+#output DP-1 scale 2
 
                         #border backgr. text    indicator
 client.focused          #cdbf9c #cdbf9c #282828 #dca53b
@@ -24,6 +26,7 @@ client.urgent           #f54841 #f54841 #373532 #f54841
 # {{{ Keybindings
 bindsym $mod+Return           exec i3-sensible-terminal
 bindsym $mod+d                exec rofi -show run -lines 5
+bindsym $mod+c                exec gnome-calculator
 bindsym $mod+Shift+q          kill
 bindsym $mod+Shift+c          reload
 bindsym $mod+Shift+r          restart
@@ -47,37 +50,42 @@ bindsym $mod+a                focus parent
 bindsym $mod+Shift+a          focus child
 bindsym $mod+Shift+question   move scratchpad
 bindsym $mod+ssharp           scratchpad show
-bindsym $mod+1                workspace 1
-bindsym $mod+2                workspace 2
-bindsym $mod+3                workspace 3
-bindsym $mod+4                workspace 4
-bindsym $mod+5                workspace 5
-bindsym $mod+6                workspace 6
-bindsym $mod+7                workspace 7
-bindsym $mod+8                workspace 8
-bindsym $mod+9                workspace 9
-bindsym $mod+0                workspace 10
-bindsym $mod+Shift+1          move container to workspace 1
-bindsym $mod+Shift+2          move container to workspace 2
-bindsym $mod+Shift+3          move container to workspace 3
-bindsym $mod+Shift+4          move container to workspace 4
-bindsym $mod+Shift+5          move container to workspace 5
-bindsym $mod+Shift+6          move container to workspace 6
-bindsym $mod+Shift+7          move container to workspace 7
-bindsym $mod+Shift+8          move container to workspace 8
-bindsym $mod+Shift+9          move container to workspace 9
-bindsym $mod+Shift+0          move container to workspace 10
+bindsym $mod+1                workspace number 1
+bindsym $mod+2                workspace number 2
+bindsym $mod+3                workspace number 3
+bindsym $mod+4                workspace number 4
+bindsym $mod+5                workspace number 5
+bindsym $mod+6                workspace number 6
+bindsym $mod+7                workspace number 7
+bindsym $mod+8                workspace number 8
+bindsym $mod+9                workspace number 9
+bindsym $mod+0                workspace number 10
+bindsym $mod+Shift+1          move container to workspace number 1
+bindsym $mod+Shift+2          move container to workspace number 2
+bindsym $mod+Shift+3          move container to workspace number 3
+bindsym $mod+Shift+4          move container to workspace number 4
+bindsym $mod+Shift+5          move container to workspace number 5
+bindsym $mod+Shift+6          move container to workspace number 6
+bindsym $mod+Shift+7          move container to workspace number 7
+bindsym $mod+Shift+8          move container to workspace number 8
+bindsym $mod+Shift+9          move container to workspace number 9
+bindsym $mod+Shift+0          move container to workspace number 10
 bindsym $mod+Left             workspace prev
 bindsym $mod+Right            workspace next
+bindsym $mod+m                exec --no-startup-id /usr/local/bin/mark
+bindsym $mod+g                exec --no-startup-id /usr/local/bin/gt
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id /home/julian/bin/pulse-audio-volume-control.sh 0 up
-bindsym XF86AudioLowerVolume exec --no-startup-id /home/julian/bin/pulse-audio-volume-control.sh 0 down
-bindsym XF86AudioMute exec --no-startup-id /home/julian/bin/pulse-audio-volume-control.sh 0 toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id /home/julian/bin/streamapictl streamrefspeaker.ms.jusst.de volume up
+bindsym XF86AudioLowerVolume exec --no-startup-id /home/julian/bin/streamapictl streamrefspeaker.ms.jusst.de volume down
+bindsym XF86AudioMute exec --no-startup-id /home/julian/bin/streamapictl streamrefspeaker.ms.jusst.de mute
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec /home/julian/bin/brightness.sh up
 bindsym XF86MonBrightnessDown exec /home/julian/bin/brightness.sh down
+
+# Calculator
+bindsym XF86Calculator exec gnome-calculator
 
 # }}}
 
@@ -96,6 +104,7 @@ mode "resize" {
 
 # {{{ Bar
 bar {
+ #   tray_output DVI-I-1
     position bottom
     status_command i3status
 
@@ -114,12 +123,14 @@ bar {
 # }}}
 
 # {{{ Autostart
-exec_always --no-startup-id "~/.fehbg"
-exec_always --no-startup-id "compton -c --backend xrender --vsync opengl"
+exec_always --no-startup-id ~/.fehbg
+exec_always --no-startup-id "compton -c --backend glx --vsync"
 exec        --no-startup-id "nm-applet"
 # }}}
 
 # {{{ window settongs
 for_window [class="Wine"] floating enable
-for_window [title="VLC media player"] move to workspace 8
+#for_window [title="VLC media player"] move to workspace 8
+for_window [title="[.]*JRiver[.]*"] floating enable
+for_window [title="Taschenrechner"] floating enable
 # }}}
