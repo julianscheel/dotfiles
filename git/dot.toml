@@ -1,3 +1,4 @@
 [dotrix.link]
 ".gitconfig" = "gitconfig"
 ".gitignore" = "gitignore"
+".gitattributes" = "gitattributes"

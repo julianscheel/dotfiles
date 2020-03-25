@@ -8,18 +8,18 @@
 [core]
 	editor = vim
 	excludesfile = /home/julian/.gitignore
+	attributesfile = /home/julian/.gitattributes
 [push]
 	default = simple
 	followTags = true
 [color]
 	diff = auto
 	ui = true
-[log]
-	decorate = full
 
 [diff]
 	tool = vimdiff
 	algorithm = minimal
+	renameLimit = 3000
 [merge]
 	tool = vimdiff
 [alias]
@@ -29,3 +29,14 @@
 	autosquash = true
 [commit]
 	verbose = true
+[diff "pandoc"]
+	textconv = pandoc --to=markdown
+	prompt = false
+[alias]
+	wdiff = diff --word-diff=color --unified=1
+	appraise = !/home/julian/go/bin/git-appraise
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
