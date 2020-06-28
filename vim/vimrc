@@ -362,6 +362,16 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+" {{{{ coc-flutter
+nmap ms
+nmap fs :CocCommand flutter.run<cr>
+nmap fr :CocCommand flutter.dev.hotReload<cr>
+nmap fR :CocCommand flutter.dev.hotRestart<cr>
+nmap fl :CocCommand flutter.dev.openDevLog<cr>
+nmap fp :CocCommand flutter.dev.debugPaintSizeEnabled<cr>
+" }}}
+
 " }}}
 
 " }}}
