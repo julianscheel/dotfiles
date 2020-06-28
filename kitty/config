@@ -1,0 +1,57 @@
+# vim:fileencoding=utf-8:ft=conf:foldmethod=marker
+
+map cmd+k neighboring_window up
+map cmd+j neighboring_window down
+map cmd+h neighboring_window left
+map cmd+l neighboring_window right
+
+map shift+cmd+k move_window up
+map shift+cmd+j move_window down
+map shift+cmd+h move_window left
+map shift+cmd+l move_window right
+
+map cmd+left resize_window narrower
+map cmd+right resize_window wider
+map cmd+up resize_window taller
+map cmd+down resize_window shorter
+
+
+map cmd+1 goto_tab 1
+map cmd+2 goto_tab 2
+map cmd+3 goto_tab 3
+map cmd+4 goto_tab 4
+map cmd+5 goto_tab 5
+map cmd+6 goto_tab 6
+map cmd+7 goto_tab 7
+map cmd+8 goto_tab 8
+map cmd+9 goto_tab 9
+map cmd+10 goto_tab 10
+
+map cmd+f goto_layout stack
+map shift+cmd+enter launch --location=hsplit
+
+bell_on-tab yes
+
+enabled_layouts splits:split_axis=horizontal,stack
+
+tab_bar_style powerline
+tab_title_template "{index}: {title}"
+
+visual_bell_duration 0.0
+
+scrollback_lines 200000
+
+
+#: kittens
+
+kitty_mod ctrl+shift
+map kitty_mod+e kitten hints
+map kitty_mod+p>f kitten hints --type path --program -
+map kitty_mod+p>shift+f kitten hints --type path
+map kitty_mod+p>l kitten hints --type line --program -
+map kitty_mod+p>w kitten hints --type word --program -
+
+#: theme
+font_family Source Code Pro
+font_size 8.0
+include ./theme.conf
