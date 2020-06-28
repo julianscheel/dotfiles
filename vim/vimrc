@@ -48,6 +48,9 @@ Plug 'kergoth/vim-bitbake'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'chriskempson/base16-vim'
+Plug 'sflower/xc.vim'
+Plug 'LucHermitte/lh-vim-lib'
+Plug 'LucHermitte/alternate-lite'
 "
 call plug#end()
 " }}}
@@ -117,6 +120,12 @@ endif
 " }}}
 
 " {{{ Plugin settings
+
+" {{{ 'LucHermitte/alternate-lite'
+call lh#alternate#register_extension('g', 'h', g:alternates.extensions.h + ['xc'])
+call lh#alternate#register_extension('g', 'xc', ['h'])
+let g:alternates.fts.cpp += ['xc', 'c']
+" }}}
 
 " {{{ 'bling/vim-airline'
 let g:airline#extensions#tabline#enabled = 1
