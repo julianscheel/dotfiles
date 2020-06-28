@@ -101,6 +101,10 @@ set wildmode=longest,list
 set cc=80
 
 autocmd FileType gitcommit setlocal spell
+
+" Allow local per-project vimrc files
+set exrc
+set secure
 " }}}
 
 " {{{ GUI
