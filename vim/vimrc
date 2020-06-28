@@ -99,6 +99,8 @@ set title
 set ttimeoutlen=10
 set wildmode=longest,list
 set cc=80
+
+autocmd FileType gitcommit setlocal spell
 " }}}
 
 " {{{ GUI
