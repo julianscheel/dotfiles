@@ -4,7 +4,6 @@ set nocompatible
 
 " {{{ Plugins
 call plug#begin('~/.vim/plugins')
-"Plug 'maralla/completor.vim'
 Plug 'LucHermitte/VimFold4C'
 Plug 'LucHermitte/alternate-lite'
 Plug 'LucHermitte/lh-vim-lib'
@@ -23,18 +22,11 @@ Plug 'junegunn/goyo.vim'
 Plug 'kergoth/vim-bitbake'
 Plug 'luochen1990/rainbow'
 Plug 'majutsushi/tagbar'
-Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
 Plug 'moll/vim-bbye'
-Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neomake/neomake'
-Plug 'osyo-manga/vim-over'
-Plug 'reisub0/hot-reload.vim'
 Plug 'rhysd/vim-clang-format'
 Plug 'romainl/vim-qf'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -49,7 +41,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'vim-utils/vim-man'
 Plug 'vimwiki/vimwiki'
 "
 call plug#end()
