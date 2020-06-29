@@ -181,6 +181,10 @@ let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 " }}}
 
+" {{{ 'luochen1990/rainbow'
+let g:rainbow_active = 0
+" }}}
+
 " {{{ 'majutsushi/tagbar'
 if !exists("g:tagbar_type_dart")
   nmap <F8> :TagbarToggle<CR>
