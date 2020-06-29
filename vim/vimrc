@@ -139,19 +139,6 @@ let g:airline#extensions#tagbar#enabled = 1
 let g:airline_powerline_fonts = 1
 " }}}
 
-" {{{ 'ctrlpvim/ctrlp.vim'
-" command B CtrlPBuffer
-" command F CtrlP
-" command Fu CtrlPMRU
-" 
-" let g:ctrlp_user_command = {
-"     \ 'types': {
-"     \ 1: ['.git', 'cd %s; and git ls-files -c --recurse-submodules --exclude-standard'],
-"     \ },
-"     \ 'fallback': 'find %s -type f'
-"     \ }
-" }}}
-
 " {{{ 'junegunn/fzf.vim'
 command F Files
 command Fg Files
