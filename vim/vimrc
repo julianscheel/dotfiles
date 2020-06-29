@@ -55,7 +55,7 @@ endif
 
 set autoread
 set breakindent
-set directory=~/.vim/swapfiles//
+set directory=~/.vim/swapfiles/
 set fileformats=unix,dos,mac
 set foldlevel=99
 set foldmethod=syntax
