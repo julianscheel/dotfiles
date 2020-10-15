@@ -16,10 +16,11 @@ Plug 'dart-lang/dart-vim-plugin'
 Plug 'easymotion/vim-easymotion'
 Plug 'fszymanski/fzf-quickfix', {'on': 'Quickfix'}
 Plug 'haya14busa/incsearch.vim'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'jreybert/vimagit'
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim'
 Plug 'kergoth/vim-bitbake'
+Plug 'lambdalisue/suda.vim'
 Plug 'luochen1990/rainbow'
 Plug 'majutsushi/tagbar'
 Plug 'mhinz/vim-startify'
@@ -37,6 +38,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
+Plug 'troydm/zoomwintab.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-pandoc/vim-pandoc'
@@ -131,9 +133,9 @@ let g:airline_powerline_fonts = 1
 " }}}
 
 " {{{ 'junegunn/fzf.vim'
-command F Files
-command Fg Files
-command B Buffers
+command! F Files
+command! Fg Files
+command! B Buffers
 " }}}
 
 
@@ -341,11 +343,20 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " {{{{ coc-flutter
+function! FlutterLog()
+  let winNr = bufwinnr("output:///flutter-dev")
+  if winNr > 0
+    execute winNr . "wincmd w"
+  else
+    CocCommand flutter.dev.openDevLog
+  endif
+endfunction
+
 nmap ms
 nmap fs :CocCommand flutter.run<cr>
 nmap fr :CocCommand flutter.dev.hotReload<cr>
 nmap fR :CocCommand flutter.dev.hotRestart<cr>
-nmap fl :CocCommand flutter.dev.openDevLog<cr>
+nmap fl :call FlutterLog()<cr>
 nmap fp :CocCommand flutter.dev.debugPaintSizeEnabled<cr>
 " }}}
 
@@ -380,13 +391,6 @@ au Filetype htmlm4 setlocal sw=2
 au Filetype htmlm4 setlocal ts=2
 au Filetype htmlm4 setlocal tw=200
 
-" Mail editing using Goyo
-au Filetype mail setlocal textwidth=0
-au Filetype mail setlocal wrapmargin=0
-au Filetype mail setlocal linebreak
-au Filetype mail setlocal nobreakindent
-au Filetype mail setlocal showbreak=
-au FileType mail Goyo | 6
 
 " Make command for markdown
 au FileType pandoc let b:dispatch = '/home/julian/git/doc-templates/gendoc %'
