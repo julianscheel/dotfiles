@@ -26,6 +26,7 @@ alias grb="git rebase"
 alias gco="git checkout"
 alias gvm="vim +/HEAD (git diff --name-only | uniq)"
 alias gam="git add (git diff --name-only | uniq)"
+alias grh="git reset --hard @{upstream}"
 
 alias gbd="git branch -d"
 function gbdr --wraps "git branch -d" --description 'Delete git remote branch'
