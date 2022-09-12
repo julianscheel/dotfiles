@@ -80,10 +80,13 @@ function bwcp --description 'copy bitwarden password'
     end
 end
 
-set -l envfile "$HOME/.gnome-keyring.env"
-gnome-keyring-daemon --start --components=gpg,ssh,secrets > $envfile
-set var_set (cat "$envfile" |  sed -e 's/^\(.*\)/set -x \\1/' -e 's/=/ /' -e 's/\(.*\)$/\1;/')
-eval $var_set
+switch (uname)
+case Linux
+	set -l envfile "$HOME/.gnome-keyring.env"
+	gnome-keyring-daemon --start --components=gpg,ssh,secrets > $envfile
+	set var_set (cat "$envfile" |  sed -e 's/^\(.*\)/set -x \\1/' -e 's/=/ /' -e 's/\(.*\)$/\1;/')
+	eval $var_set
+end
 
 # Fix del key in st
 switch $TERMINAL
