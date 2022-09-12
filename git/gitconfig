@@ -6,7 +6,7 @@
 	smtpserver = mail.jusst.de
 	smtpuser = julian@jusst.de
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = /home/julian/.gitignore
 	attributesfile = /home/julian/.gitattributes
 [push]
@@ -18,7 +18,6 @@
 
 [diff]
 	tool = vimdiff
-	algorithm = minimal
 	renameLimit = 3000
 [merge]
 	tool = vimdiff
