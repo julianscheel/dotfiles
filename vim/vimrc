@@ -9,7 +9,6 @@ Plug 'LucHermitte/alternate-lite'
 Plug 'LucHermitte/lh-vim-lib'
 Plug 'PeterRincker/vim-argumentative'
 Plug 'airblade/vim-gitgutter'
-Plug 'bronson/vim-trailing-whitespace'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'chriskempson/base16-vim'
 Plug 'dart-lang/dart-vim-plugin'
@@ -44,7 +43,8 @@ Plug 'dhruvasagar/vim-table-mode'
 Plug 'cdelledonne/vim-cmake'
 
 Plug 'ibhagwan/fzf-lua', {'branch': 'main'}
-Plug 'kyazdani42/nvim-web-devicons'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'ziontee113/color-picker.nvim'
 
 call plug#end()
 " }}}
@@ -190,6 +190,9 @@ let g:vimwiki_list = [{'path': '~/vimwiki/',
 
 " {{{ 'luochen1990/rainbow'
 let g:rainbow_active = 0
+" }}}
+
+" {{{ 'ziontee113/color-picker.nvim'
 " }}}
 
 " {{{ 'neoclide/coc.nvim'
@@ -408,6 +411,14 @@ set list!
 " Make command for markdown
 au FileType pandoc let b:dispatch = '/home/julian/git/doc-templates/gendoc %'
 au FileType pandoc :nnoremap go :silent !xdg-open %:t:r.pdf &<CR>
+
+" Use space indent for JSON, HTML, XML and YAML
+:autocmd FileType json,html,xml,yaml call SetSpaceIndent()
+function SetSpaceIndent()
+	set tabstop=2
+	set shiftwidth=2
+	set expandtab
+endfunction
 
 " }}}
 
