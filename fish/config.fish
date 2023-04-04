@@ -21,7 +21,15 @@ end
 alias g="git"
 alias gcp="git cherry-pick"
 alias gbs="git bisect"
+
 alias grb="git rebase"
+alias grm="git rebase master"
+alias grc="git rebase --continue"
+
+alias gr="git commit"
+alias ga="git commit --amend"
+alias gas="git commit --amend -s"
+
 alias gco="git checkout"
 alias gvm="vim +/HEAD (git diff --name-only | uniq)"
 alias gam="git add (git diff --name-only | uniq)"
@@ -137,6 +145,6 @@ if status --is-interactive
 end
 
 # Env setup aliases
-alias _xmos "pushd /opt/XMOS/XTC/15.1.4/; bass source SetEnv; popd"
+alias _xmos "pushd /opt/XMOS/XTC/15.2.1/; bass source SetEnv; popd"
 alias _flutter "source ~/env/flutter.fish"
 alias _flutter-1.2 "source ~/env/flutter-1.2.fish"
