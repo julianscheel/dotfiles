@@ -1,0 +1,12 @@
+[fish.files]
+"fish/config.fish" = "~/.config/fish/config.fish"
+
+[vim.files]
+"vim/vimrc" = { target = "~/.vimrc", type = "symbolic" }
+"vim/init.vim" = "~/.config/nvim/init.vim"
+"vim/coc-settings.json" = "~/.config/nvim/coc-settings.json"
+
+[git.files]
+"git/gitconfig" = "~/.gitconfig"
+"git/gitignore" = "~/.gitignore"
+"git/gitattributes" = "~/.gitattributes"
