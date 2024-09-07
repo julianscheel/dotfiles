@@ -138,6 +138,9 @@ set -x FZF_DEFAULT_COMMAND "fd --type f"
 #set -x FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
 #set -x FZF_DEFAULT_OPTS "--preview 'bat --style=numbers --color=always {} | head -500'"
 
+# zoxide
+zoxide init fish | source
+
 # Base16 Shell
 if status --is-interactive
     set BASE16_SHELL "$HOME/.config/base16-shell/"
