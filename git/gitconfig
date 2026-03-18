@@ -27,6 +27,7 @@
 	renameLimit = 3000
 [merge]
 	tool = nvimdiff3
+	conflictstyle = zdiff3
 [mergetool]
 	hideResolved = true
 [alias]
