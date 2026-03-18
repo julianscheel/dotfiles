@@ -6,7 +6,8 @@
 	smtpserver = mail.jusst.de
 	smtpuser = julian@jusst.de
 [core]
-	editor = nvim
+	editor = hx
+	pager = delta
 	excludesfile = /home/julian/.gitignore
 	attributesfile = /home/julian/.gitattributes
 [push]
