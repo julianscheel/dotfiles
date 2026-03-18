@@ -10,6 +10,11 @@
 	pager = delta
 	excludesfile = /home/julian/.gitignore
 	attributesfile = /home/julian/.gitattributes
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true  # use n and N to move between diff sections
+	hyperlinks = true
 [push]
 	default = simple
 	followTags = true
