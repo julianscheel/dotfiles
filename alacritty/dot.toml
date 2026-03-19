@@ -1,2 +1,2 @@
 [dotrix.link]
-".config/alacritty/alacritty.yml" = "alacritty.yml"
+".config/alacritty/alacritty.toml" = "alacritty.toml"

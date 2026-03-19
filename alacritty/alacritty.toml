@@ -1,0 +1,50 @@
+[font]
+size = 9.0
+
+[font.normal]
+family = "Sauce Code Pro Nerd Font"
+
+[[hints.enabled]]
+command = "xdg-open"
+post_processing = true
+regex = "(mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
+
+[hints.enabled.binding]
+key = "U"
+mods = "Control|Shift"
+
+[hints.enabled.mouse]
+enabled = true
+mods = "None"
+
+[[hints.enabled]]
+action = "Paste"
+regex = '[^\s]+(.*[^\s]+)?'
+
+[hints.enabled.binding]
+key = "L"
+mods = "Control|Shift"
+
+[[hints.enabled]]
+action = "Paste"
+regex = '[^\s]+'
+
+[hints.enabled.binding]
+key = "W"
+mods = "Control|Shift"
+
+[[hints.enabled]]
+action = "Copy"
+regex = '[^\s]+(.*[^\s]+)?'
+
+[hints.enabled.binding]
+key = "L"
+mods = "Alt|Shift"
+
+[[hints.enabled]]
+action = "Copy"
+regex = '[^\s]+'
+
+[hints.enabled.binding]
+key = "W"
+mods = "Alt|Shift"
