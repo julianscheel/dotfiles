@@ -1,1 +1,8 @@
-/build
+*.pyc
+/build/work
+/tags
+.vim
+.helix
+bacon.toml
+.fvmrc
+.fvm
