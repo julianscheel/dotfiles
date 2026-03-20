@@ -121,16 +121,6 @@ switch $TERMINAL
         end
 end
 
-# Dart
-set -gx PATH $PATH $HOME/.pub-cache/bin
-
-# Rust
-set -gx PATH $PATH $HOME/.cargo/bin
-set -gx PATH $PATH /usr/lib/rustup/bin
-
-# doc-templates
-set -gx PATH $PATH $HOME/git/doc-templates
-
 # lease viewer
 set -gx LEASES_URL http://unifi:8082/leases
 
@@ -160,9 +150,6 @@ tinty init
 
 # Env setup aliases
 alias _xmos "pushd /opt/XMOS/XTC/15.3.1/; bass source SetEnv; popd"
-
-# fvm flutter version managemant
-set -x PATH "$PATH:$HOME/fvm/default/bin"
 
 if type -q micromamba
 
