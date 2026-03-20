@@ -142,13 +142,5 @@ tinty init
 # Env setup aliases
 alias _xmos "pushd /opt/XMOS/XTC/15.3.1/; bass source SetEnv; popd"
 
-if type -q micromamba
-
-    # >>> mamba initialize >>>
-    # !! Contents within this block are managed by 'mamba init' !!
-    set -gx MAMBA_EXE /usr/bin/micromamba
-    set -gx MAMBA_ROOT_PREFIX $HOME/micromamba
-    $MAMBA_EXE shell hook --shell fish --root-prefix $MAMBA_ROOT_PREFIX | source
-    # <<< mamba initialize <<<
-
-end
+# Micromamba initialisation
+eval "$(micromamba shell hook --shell fish)"
