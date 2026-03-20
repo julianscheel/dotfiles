@@ -10,3 +10,7 @@
 "git/gitconfig" = "~/.gitconfig"
 "git/gitignore" = "~/.gitignore"
 "git/gitattributes" = "~/.gitattributes"
+
+[waybar.files]
+"waybar/config.jsonc" = "~/.config/waybar/config.jsonc"
+"waybar/style.css" = "~/.config/waybar/style.css"
