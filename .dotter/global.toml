@@ -1,6 +1,9 @@
 [alacritty.files]
 "alacritty/alacritty.toml" = "~/.config/alacritty/alacritty.toml"
 
+[dunst.files]
+"dunst/dunstrc" = "~/.config/dunst/dunstrc"
+
 [fish.files]
 "fish/config.fish" = "~/.config/fish/config.fish"
 "fish/fish_plugins" = "~/.config/fish/fish_plugins"
@@ -15,7 +18,7 @@
 "helix/languages.toml" = "~/.config/helix/languages.toml"
 
 [niri]
-depends = ["waybar"]
+depends = ["dunst", "waybar"]
 
 [niri.files]
 "niri/config.kdl" = "~/.config/niri/config.kdl"
