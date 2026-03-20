@@ -121,9 +121,6 @@ switch $TERMINAL
         end
 end
 
-# lease viewer
-set -gx LEASES_URL http://unifi:8082/leases
-
 alias nsdk-run "$HOME/dev/su/streamsdk-dev-tools/docker/run -s $HOME/dev/su/"
 alias nsdk-run-19.04 "$HOME/dev/su/streamsdk-dev-tools/docker/run-19.04 -s $HOME/dev/su/"
 alias nsdk-run-20.02 "$HOME/dev/su/streamsdk-dev-tools/docker/run-20.02 -s $HOME/dev/su/"
@@ -135,12 +132,6 @@ alias nsdk-run-22.01 "$HOME/dev/su/streamsdk-dev-tools/docker/run-22.01 -s $HOME
 alias nsdk-run-22.02 "$HOME/dev/su/streamsdk-dev-tools/docker/run-22.02 -s $HOME/dev/su/"
 alias nsdk-run-23.03 "$HOME/dev/su/streamsdk-dev-tools/docker/run-23.03 -s $HOME/dev/su/"
 alias nsdk-run-legacy "$HOME/dev/su/streamsdk-dev-tools/docker/run-legacy -s $HOME/dev/su/"
-
-# fzf
-#fzf_key_bindings
-set -x FZF_DEFAULT_COMMAND "fd --type f"
-#set -x FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
-#set -x FZF_DEFAULT_OPTS "--preview 'bat --style=numbers --color=always {} | head -500'"
 
 # zoxide
 zoxide init fish | source
