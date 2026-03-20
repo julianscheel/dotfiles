@@ -19,6 +19,12 @@
 "helix/config.toml" = "~/.config/helix/config.toml"
 "helix/languages.toml" = "~/.config/helix/languages.toml"
 
+[niri]
+depends = ["waybar"]
+
+[niri.files]
+"niri/config.kdl" = "~/.config/niri/config.kdl"
+
 [waybar.files]
 "waybar/config.jsonc" = "~/.config/waybar/config.jsonc"
 "waybar/style.css" = "~/.config/waybar/style.css"
