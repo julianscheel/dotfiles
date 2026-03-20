@@ -1,3 +1,5 @@
+set -l os (uname)
+
 set fish_key_bindings fish_vi_key_bindings
 fish_helix_key_bindings
 
@@ -25,8 +27,10 @@ function cdc --wraps mkdir --description 'Create directory and change into it'
     mkdir $argv[1]; and cd $argv[1]
 end
 
-function wlscreenshot --wraps grim --description 'Capture screnshot of wayland window'
-    grim -g (swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp) $argv[1]
+if test "$os" = Linux
+    function wlscreenshot --wraps grim --description 'Capture screnshot of wayland window'
+        grim -g (swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp) $argv[1]
+    end
 end
 
 function deccanlog --description 'View a deccan log export in systemd json format'
@@ -65,37 +69,38 @@ function gbd! --wraps "git branch -d" --description 'Delete git local and remote
 end
 
 # Systemd
-alias sc="systemctl"
+if test "$os" = Linux
+    alias sc="systemctl"
+end
 
 # Project navigation
-alias p="cd /nas/projects"
-alias b="cd /nas/business\ administration/projects"
-alias p2="p; cd 2002-stream-unlimited"
-alias b2="b; cd 2002-stream-unlimited"
-function p2x --description 'goto stream-unlimited project (fuzzy match)'
-    p2
-    cd (ls -1 . | grep $argv[1] | head -n1)
+if test "$os" = Linux
+    alias p="cd /nas/projects"
+    alias b="cd /nas/business\ administration/projects"
+    alias p2="p; cd 2002-stream-unlimited"
+    alias b2="b; cd 2002-stream-unlimited"
+    function p2x --description 'goto stream-unlimited project (fuzzy match)'
+        p2
+        cd (ls -1 . | grep $argv[1] | head -n1)
+    end
+
+    function px --description 'goto project (fuzzy match)'
+        p
+        cd (ls -1 . | grep $argv[1] | head -n1)
+    end
+
+    function bx --description 'goto business project (fuzzy match)'
+        b
+        cd (ls -1 . | grep $argv[1] | head -n1)
+    end
+
+    function b2x --description 'goto business stream-unlimited project (fuzzy match)'
+        b2
+        cd (ls -1 . | grep $argv[1] | head -n1)
+    end
+
+    alias kapa="open /nas/projects/9000-jusst-internal/02-project-management/resource-planning/(date +%Y)/(date +%yW%V)-resource-planning.pdf"
 end
-
-function px --description 'goto project (fuzzy match)'
-    p
-    cd (ls -1 . | grep $argv[1] | head -n1)
-end
-
-function bx --description 'goto business project (fuzzy match)'
-    b
-    cd (ls -1 . | grep $argv[1] | head -n1)
-end
-
-function b2x --description 'goto business stream-unlimited project (fuzzy match)'
-    b2
-    cd (ls -1 . | grep $argv[1] | head -n1)
-end
-
-alias kapa="open /nas/projects/9000-jusst-internal/02-project-management/resource-planning/(date +%Y)/(date +%yW%V)-resource-planning.pdf"
-
-# Docker/StreamSDK development
-alias streamsdk-build-legacy="$HOME/dev/su/streamsdk-dev-tools/docker/run-legacy -s $HOME/dev/su/"
 
 # Bitwarden
 function bwcp --description 'copy bitwarden password'
@@ -121,20 +126,25 @@ switch $TERMINAL
         end
 end
 
-alias nsdk-run "$HOME/dev/su/streamsdk-dev-tools/docker/run -s $HOME/dev/su/"
-alias nsdk-run-19.04 "$HOME/dev/su/streamsdk-dev-tools/docker/run-19.04 -s $HOME/dev/su/"
-alias nsdk-run-20.02 "$HOME/dev/su/streamsdk-dev-tools/docker/run-20.02 -s $HOME/dev/su/"
-alias nsdk-run-20.03 "$HOME/dev/su/streamsdk-dev-tools/docker/run-20.03 -s $HOME/dev/su/"
-alias nsdk-run-21.01 "$HOME/dev/su/streamsdk-dev-tools/docker/run-21.01 -s $HOME/dev/su/"
-alias nsdk-run-21.02 "$HOME/dev/su/streamsdk-dev-tools/docker/run-21.02 -s $HOME/dev/su/"
-alias nsdk-run-21.03 "$HOME/dev/su/streamsdk-dev-tools/docker/run-21.03 -s $HOME/dev/su/"
-alias nsdk-run-22.01 "$HOME/dev/su/streamsdk-dev-tools/docker/run-22.01 -s $HOME/dev/su/"
-alias nsdk-run-22.02 "$HOME/dev/su/streamsdk-dev-tools/docker/run-22.02 -s $HOME/dev/su/"
-alias nsdk-run-23.03 "$HOME/dev/su/streamsdk-dev-tools/docker/run-23.03 -s $HOME/dev/su/"
-alias nsdk-run-legacy "$HOME/dev/su/streamsdk-dev-tools/docker/run-legacy -s $HOME/dev/su/"
+if test "$os" = Linux
+    # Docker/StreamSDK development
+    alias streamsdk-build-legacy="$HOME/dev/su/streamsdk-dev-tools/docker/run-legacy -s $HOME/dev/su/"
+
+    alias nsdk-run "$HOME/dev/su/streamsdk-dev-tools/docker/run -s $HOME/dev/su/"
+    alias nsdk-run-19.04 "$HOME/dev/su/streamsdk-dev-tools/docker/run-19.04 -s $HOME/dev/su/"
+    alias nsdk-run-20.02 "$HOME/dev/su/streamsdk-dev-tools/docker/run-20.02 -s $HOME/dev/su/"
+    alias nsdk-run-20.03 "$HOME/dev/su/streamsdk-dev-tools/docker/run-20.03 -s $HOME/dev/su/"
+    alias nsdk-run-21.01 "$HOME/dev/su/streamsdk-dev-tools/docker/run-21.01 -s $HOME/dev/su/"
+    alias nsdk-run-21.02 "$HOME/dev/su/streamsdk-dev-tools/docker/run-21.02 -s $HOME/dev/su/"
+    alias nsdk-run-21.03 "$HOME/dev/su/streamsdk-dev-tools/docker/run-21.03 -s $HOME/dev/su/"
+    alias nsdk-run-22.01 "$HOME/dev/su/streamsdk-dev-tools/docker/run-22.01 -s $HOME/dev/su/"
+    alias nsdk-run-22.02 "$HOME/dev/su/streamsdk-dev-tools/docker/run-22.02 -s $HOME/dev/su/"
+    alias nsdk-run-23.03 "$HOME/dev/su/streamsdk-dev-tools/docker/run-23.03 -s $HOME/dev/su/"
+    alias nsdk-run-legacy "$HOME/dev/su/streamsdk-dev-tools/docker/run-legacy -s $HOME/dev/su/"
+end
 
 # zoxide
-zoxide init fish | source
+eval "$(zoxide init fish)"
 
 # setup theme
 tinty init
