@@ -25,6 +25,9 @@ depends = ["waybar"]
 [niri.files]
 "niri/config.kdl" = "~/.config/niri/config.kdl"
 
+[tinty.files]
+"tinted-theming/tinty/config.toml" = "~/.config/tinted-theming/tinty/config.toml"
+
 [waybar.files]
 "waybar/config.jsonc" = "~/.config/waybar/config.jsonc"
 "waybar/style.css" = "~/.config/waybar/style.css"
