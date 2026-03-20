@@ -113,19 +113,6 @@ function bwcp --description 'copy bitwarden password'
     end
 end
 
-# Fix del key in st
-switch $TERMINAL
-    case st
-        #tput smkx
-        function fish_enable_keypad_transmit --on-event fish_postexec
-            tput smkx
-        end
-
-        function fish_disable_keypad_transmit --on-event fish_preexec
-            tput rmkx
-        end
-end
-
 if test "$os" = Linux
     # Docker/StreamSDK development
     alias streamsdk-build-legacy="$HOME/dev/su/streamsdk-dev-tools/docker/run-legacy -s $HOME/dev/su/"
