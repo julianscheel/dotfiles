@@ -1,0 +1,18 @@
+theme = "gruvbox"
+
+[editor]
+color-modes = true
+true-color = true
+trim-final-newlines = true
+trim-trailing-whitespace = true
+
+[editor.whitespace.render]
+tab = "all"
+
+[editor.whitespace.characters]
+tab = "→"
+tabpad = "·"
+
+[keys.normal]
+C-b = ":sh git blame --incremental -L %{cursor_line},+1 %{buffer_name} | head -n 1 | cut -d ' ' -f 1 | xargs git show"
+C-r = ":sh make run"

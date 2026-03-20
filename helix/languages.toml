@@ -1,0 +1,84 @@
+# SCLS offers word completion based on current buffer's contents
+[language-server.scls]
+command = "simple-completion-language-server"
+
+[language-server.scls.config]
+max_completion_items = 100           # set max completion results len for each group: words, snippets, unicode-input
+feature_words = true                 # enable completion by word
+feature_snippets = true              # enable snippets
+snippets_first = true                # completions will return before snippets by default
+snippets_inline_by_word_tail = false # suggest snippets by WORD tail, for example text `xsq|` become `x^2|` when snippet `sq` has body `^2`
+feature_unicode_input = false        # enable "unicode input"
+feature_paths = false                # enable path completion
+feature_citations = false            # enable citation completion (only on `citation` feature enabled)
+
+# Harper offers grammar and spell checking
+[language-server.harper-ls]
+command = "harper-ls"
+args = ["--stdio"]
+
+[language-server.tinymist]
+command = "tinymist"
+config = { preview.background.enabled = true, preview.background.args = ["--data-plane-host=127.0.0.1:23635", "--invert-colors=never", "--open"] }
+
+[language-server.dart]
+command = "fvm"
+args = [ "dart", "language-server", "--client-id=helix" ]
+
+[[language]]
+name = "git-commit"
+language-servers = [ "scls", "harper-ls" ]
+formatter = { command = "git-commit-formatter" }
+auto-format = true
+
+[[language]]
+name = "c"
+indent = { tab-width = 8, unit = "\t" }
+
+[[language]]
+name = "dart"
+scope = "source.dart"
+file-types = ["dart"]
+roots = ["pubspec.yaml"]
+auto-format = true
+comment-tokens = ["//", "///"]
+block-comment-tokens = { start = "/*", end = "*/" }
+language-servers = [ "dart", "harper-ls" ]
+indent = { tab-width = 2, unit = "  " }
+
+# introduce a new language to enable completion on any doc by forcing set language with :set-language stub
+[[language]]
+name = "stub"
+scope = "text.stub"
+file-types = []
+shebangs = []
+roots = []
+auto-format = false
+language-servers = [ "scls" ]
+
+# Use bash language for generic config files
+[[language]]
+name = "bash"
+file-types = ["config", "conf"]
+language-servers = [ "scls" ]
+
+[[language]]
+name = "markdown"
+language-servers = ["marksman", "markdown-oxide", "harper-ls"]
+
+# Use html for botte templates
+[[language]]
+name = "html"
+file-types = ["tpl"]
+
+[[language]]
+name = "typst"
+formatter = { command = "typstyle"  }
+auto-format = true
+
+# [language-server.svlangserver]
+# config = { "systemverilog.includeIndexing" = ["**/*.{v,sv,svh}"], "systemverilog.launchConfiguration" = "/usr/bin/verilator -sv --lint-only -Wall" }
+
+[[language]]
+name = "systemverilog"
+language-servers = ["svlangserver"]

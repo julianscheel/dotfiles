@@ -11,6 +11,10 @@
 "git/gitignore" = "~/.gitignore"
 "git/gitattributes" = "~/.gitattributes"
 
+[helix.files]
+"helix/config.toml" = "~/.config/helix/config.toml"
+"helix/languages.toml" = "~/.config/helix/languages.toml"
+
 [waybar.files]
 "waybar/config.jsonc" = "~/.config/waybar/config.jsonc"
 "waybar/style.css" = "~/.config/waybar/style.css"
