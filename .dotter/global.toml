@@ -5,11 +5,6 @@
 "fish/config.fish" = "~/.config/fish/config.fish"
 "fish/fish_plugins" = "~/.config/fish/fish_plugins"
 
-[vim.files]
-"vim/vimrc" = { target = "~/.vimrc", type = "symbolic" }
-"vim/init.vim" = "~/.config/nvim/init.vim"
-"vim/coc-settings.json" = "~/.config/nvim/coc-settings.json"
-
 [git.files]
 "git/gitconfig" = "~/.gitconfig"
 "git/gitignore" = "~/.gitignore"
