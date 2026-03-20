@@ -4,6 +4,11 @@
 [dunst.files]
 "dunst/dunstrc" = "~/.config/dunst/dunstrc"
 
+[environment.files]
+"environment.d/10-dart.conf" = "~/.config/environment.d/10-dart.conf"
+"environment.d/10-doc-templates.conf" = "~/.config/environment.d/10-doc-templates.conf"
+"environment.d/10-rust.conf" = "~/.config/environment.d/10-rust.conf"
+
 [fish.files]
 "fish/config.fish" = "~/.config/fish/config.fish"
 "fish/fish_plugins" = "~/.config/fish/fish_plugins"
