@@ -10,6 +10,7 @@
         "niri/window"
     ],
     "modules-right": [
+        "mpris",
         "custom/meteobar",
         "network",
         "cpu",
@@ -26,6 +27,16 @@
             "browser": "",
             "mail": ""
         }
+    },
+    "mpris": {
+        "format": "{player_icon} {artist} - {title} ",
+        "format-paused": "{status_icon} <i>{artist} - {title}</i> ",
+        "player-icons": {
+            "default": "▶",
+        },
+        "status-icons": {
+            "paused": "⏸"
+        },
     },
     "custom/meteobar": {
         "exec": "meteobar --location 'Hamburg'",
