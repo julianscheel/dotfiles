@@ -1,5 +1,5 @@
 # Global settings
-default-scheme = "base16-gruvbox-darks-soft"
+default-scheme = "base16-gruvbox-dark-soft"
 
 # Item configurations
 [[items]]
